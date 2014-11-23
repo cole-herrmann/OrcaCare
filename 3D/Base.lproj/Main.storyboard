@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Card View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="CardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -46,10 +46,6 @@
                                 <rect key="frame" x="0.0" y="126" width="423" height="415"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan-card" id="qEa-R3-jd7">
-                                        <rect key="frame" x="74" y="15" width="227" height="386"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orca-card" id="Fgm-GQ-7F0">
                                         <rect key="frame" x="544" y="15" width="227" height="387"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -58,6 +54,16 @@
                                         <rect key="frame" x="309" y="15" width="227" height="386"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BsH-9j-b4n" userLabel="plan-card">
+                                        <rect key="frame" x="74" y="15" width="227" height="386"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="plan-card">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cardClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="I4i-rq-uh2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
@@ -78,13 +84,158 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="254.5" y="447.5"/>
+            <point key="canvasLocation" x="-259.5" y="599.5"/>
+        </scene>
+        <!--Diagnosis View Controller-->
+        <scene sceneID="Mb0-MS-SyS">
+            <objects>
+                <viewController storyboardIdentifier="diagnosis" id="hbf-go-YB9" customClass="DiagnosisViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bJ7-8T-goW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mdB-bY-uyN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="diagnosis">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OTT-m4-eWL" kind="push" id="tQY-ZH-isF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QBx-op-nx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270.5" y="599.5"/>
+        </scene>
+        <!--Diagnosis Details View Controller-->
+        <scene sceneID="rpv-Zi-G2W">
+            <objects>
+                <viewController id="OTT-m4-eWL" customClass="DiagnosisDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d2u-ut-h1Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diagdetails" id="xfu-en-JxH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fgr-tg-2Wg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qYt-gX-AE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768.5" y="599.5"/>
+        </scene>
+        <!--Plan Shell View Controller-->
+        <scene sceneID="thA-9A-EXX">
+            <objects>
+                <viewController storyboardIdentifier="shell" id="5Gw-xe-zmo" customClass="PlanShellViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jrv-PB-ZaT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gOC-w5-Un9">
+                                <rect key="frame" x="12" y="12" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelClicked:" destination="5Gw-xe-zmo" eventType="touchUpInside" id="x9a-dS-pwk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="J8i-Nf-gXH"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GV1-aS-Rug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270.5" y="-159.5"/>
+        </scene>
+        <!--Treatment View Controller-->
+        <scene sceneID="FdV-VY-1rZ">
+            <objects>
+                <viewController storyboardIdentifier="treatment" id="qeP-jX-gA6" customClass="TreatmentViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CuL-6C-KFg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="treatment" id="KB1-RZ-73Y">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q7u-LW-YZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270.5" y="1352.5"/>
+        </scene>
+        <!--Recovery View Controller-->
+        <scene sceneID="ulH-tL-zs6">
+            <objects>
+                <viewController storyboardIdentifier="recovery" id="Fvz-yb-waV" customClass="RecoveryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CgR-kg-iVm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recovery" id="W0n-E9-ZOy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qO1-fr-uEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270.5" y="2097.5"/>
+        </scene>
+        <!--My Content View Controller-->
+        <scene sceneID="pHb-m7-h9S">
+            <objects>
+                <viewController storyboardIdentifier="mycontent" id="bFw-GI-5wk" customClass="MyContentViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Px-go-hbu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mycontent" id="6xh-v2-RcR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ycI-pl-Ccs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270.5" y="2851.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="3dman" width="1280" height="2272"/>
+        <image name="cancel" width="64" height="64"/>
+        <image name="diagdetails" width="1280" height="2272"/>
+        <image name="diagnosis" width="1280" height="2272"/>
+        <image name="mycontent" width="1280" height="2272"/>
         <image name="orca-card" width="850" height="1444"/>
         <image name="plan-card" width="730" height="1240"/>
+        <image name="recovery" width="1280" height="2272"/>
+        <image name="treatment" width="1280" height="2272"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

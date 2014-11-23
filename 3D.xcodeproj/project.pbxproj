@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE9C48301A22938000B2B3E6 /* PlanShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C482F1A22938000B2B3E6 /* PlanShellViewController.m */; };
+		BE9C48331A2293DC00B2B3E6 /* DiagnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48321A2293DC00B2B3E6 /* DiagnosisViewController.m */; };
+		BE9C48361A2293E900B2B3E6 /* TreatmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48351A2293E900B2B3E6 /* TreatmentViewController.m */; };
+		BE9C48391A2293F400B2B3E6 /* RecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48381A2293F400B2B3E6 /* RecoveryViewController.m */; };
+		BE9C483C1A22940A00B2B3E6 /* MyContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C483B1A22940A00B2B3E6 /* MyContentViewController.m */; };
+		BE9C483F1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C483E1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m */; };
 		E798236F1A1D4FE8006002D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E798236E1A1D4FE8006002D0 /* main.m */; };
 		E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823711A1D4FE8006002D0 /* AppDelegate.m */; };
-		E79823751A1D4FE8006002D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823741A1D4FE8006002D0 /* ViewController.m */; };
+		E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823741A1D4FE8006002D0 /* CardViewController.m */; };
 		E79823781A1D4FE8006002D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79823761A1D4FE8006002D0 /* Main.storyboard */; };
 		E798237A1A1D4FE8006002D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E79823791A1D4FE8006002D0 /* Images.xcassets */; };
 		E798237D1A1D4FE8006002D0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E798237B1A1D4FE8006002D0 /* LaunchScreen.xib */; };
@@ -30,13 +36,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE9C482E1A22938000B2B3E6 /* PlanShellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanShellViewController.h; sourceTree = "<group>"; };
+		BE9C482F1A22938000B2B3E6 /* PlanShellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanShellViewController.m; sourceTree = "<group>"; };
+		BE9C48311A2293DC00B2B3E6 /* DiagnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosisViewController.h; sourceTree = "<group>"; };
+		BE9C48321A2293DC00B2B3E6 /* DiagnosisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosisViewController.m; sourceTree = "<group>"; };
+		BE9C48341A2293E900B2B3E6 /* TreatmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreatmentViewController.h; sourceTree = "<group>"; };
+		BE9C48351A2293E900B2B3E6 /* TreatmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreatmentViewController.m; sourceTree = "<group>"; };
+		BE9C48371A2293F400B2B3E6 /* RecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecoveryViewController.h; sourceTree = "<group>"; };
+		BE9C48381A2293F400B2B3E6 /* RecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecoveryViewController.m; sourceTree = "<group>"; };
+		BE9C483A1A22940A00B2B3E6 /* MyContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContentViewController.h; sourceTree = "<group>"; };
+		BE9C483B1A22940A00B2B3E6 /* MyContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyContentViewController.m; sourceTree = "<group>"; };
+		BE9C483D1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosisDetailsViewController.h; sourceTree = "<group>"; };
+		BE9C483E1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosisDetailsViewController.m; sourceTree = "<group>"; };
 		E79823691A1D4FE8006002D0 /* 3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E798236D1A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E798236E1A1D4FE8006002D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E79823701A1D4FE8006002D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E79823711A1D4FE8006002D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E79823731A1D4FE8006002D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E79823741A1D4FE8006002D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E79823731A1D4FE8006002D0 /* CardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
+		E79823741A1D4FE8006002D0 /* CardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
 		E79823771A1D4FE8006002D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E79823791A1D4FE8006002D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E798237C1A1D4FE8006002D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -93,8 +111,20 @@
 				E7FA57011A1E6F5700D2DD2A /* fullbody.dae */,
 				E79823701A1D4FE8006002D0 /* AppDelegate.h */,
 				E79823711A1D4FE8006002D0 /* AppDelegate.m */,
-				E79823731A1D4FE8006002D0 /* ViewController.h */,
-				E79823741A1D4FE8006002D0 /* ViewController.m */,
+				E79823731A1D4FE8006002D0 /* CardViewController.h */,
+				E79823741A1D4FE8006002D0 /* CardViewController.m */,
+				BE9C482E1A22938000B2B3E6 /* PlanShellViewController.h */,
+				BE9C482F1A22938000B2B3E6 /* PlanShellViewController.m */,
+				BE9C48311A2293DC00B2B3E6 /* DiagnosisViewController.h */,
+				BE9C48321A2293DC00B2B3E6 /* DiagnosisViewController.m */,
+				BE9C48341A2293E900B2B3E6 /* TreatmentViewController.h */,
+				BE9C48351A2293E900B2B3E6 /* TreatmentViewController.m */,
+				BE9C48371A2293F400B2B3E6 /* RecoveryViewController.h */,
+				BE9C48381A2293F400B2B3E6 /* RecoveryViewController.m */,
+				BE9C483A1A22940A00B2B3E6 /* MyContentViewController.h */,
+				BE9C483B1A22940A00B2B3E6 /* MyContentViewController.m */,
+				BE9C483D1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.h */,
+				BE9C483E1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m */,
 				E79823761A1D4FE8006002D0 /* Main.storyboard */,
 				E79823791A1D4FE8006002D0 /* Images.xcassets */,
 				E798237B1A1D4FE8006002D0 /* LaunchScreen.xib */,
@@ -232,10 +262,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E79823751A1D4FE8006002D0 /* ViewController.m in Sources */,
+				BE9C48331A2293DC00B2B3E6 /* DiagnosisViewController.m in Sources */,
+				BE9C48391A2293F400B2B3E6 /* RecoveryViewController.m in Sources */,
+				BE9C483F1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m in Sources */,
+				BE9C48361A2293E900B2B3E6 /* TreatmentViewController.m in Sources */,
+				E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */,
+				BE9C483C1A22940A00B2B3E6 /* MyContentViewController.m in Sources */,
 				E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */,
 				E798236F1A1D4FE8006002D0 /* main.m in Sources */,
 				E798239F1A1E6419006002D0 /* ManView.m in Sources */,
+				BE9C48301A22938000B2B3E6 /* PlanShellViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

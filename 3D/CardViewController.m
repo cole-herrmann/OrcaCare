@@ -6,11 +6,12 @@
 //  Copyright (c) 2014 Cole Herrmann. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CardViewController.h"
 #import <SceneKit/SceneKit.h>
 #import "ManView.h"
+#import "PlanShellViewController.h"
 
-@interface ViewController ()
+@interface CardViewController () <PlanShellDelegate>
 @property (weak, nonatomic) IBOutlet ManView *sceneView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *reverse;
@@ -18,7 +19,7 @@
 
 @end
 
-@implementation ViewController
+@implementation CardViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,6 +55,31 @@
     }];
     
     [self.sceneView removeFeetAnimation];
+}
+
+- (IBAction)cardClicked:(id)sender {
+    UIStoryboard *stb = self.storyboard;
+    PlanShellViewController *shell = [stb instantiateViewControllerWithIdentifier:@"shell"];
+    shell.delegate = self;
+    
+    UIViewController *pg1 = [stb instantiateViewControllerWithIdentifier:@"diagnosis"];
+    UIViewController *pg2 = [stb instantiateViewControllerWithIdentifier:@"treatment"];
+    UIViewController *pg3 = [stb instantiateViewControllerWithIdentifier:@"recovery"];
+    UIViewController *pg4 = [stb instantiateViewControllerWithIdentifier:@"mycontent"];
+    
+    [shell addViewController:pg1];
+    [shell addViewController:pg2];
+    [shell addViewController:pg3];
+    [shell addViewController:pg4];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:shell];
+    nav.navigationBarHidden = YES;
+    [self presentViewController:nav animated:YES completion:nil];
+
+}
+
+- (void)closePressed:(PlanShellViewController *)vc {
+    [vc dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
