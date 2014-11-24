@@ -15,6 +15,8 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
 
 @property (weak, nonatomic) IBOutlet UIImageView *selectedImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *diagnosisDetialsImageView;
+@property (weak, nonatomic) IBOutlet UIView *backView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) NSArray *headerTitles;
 @property (nonatomic, strong) NSArray *titles;
@@ -67,7 +69,8 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:0.9];
+    self.tableView.backgroundColor = [UIColor clearColor];
     
     self.titles = @[@[@"Normal Rotator Cuff", @"Abnormal Rotator Cuff", @"Rotator Cuff MRI"], @[@"Normal Rotator Cuff Scope", @"Torn Rotator Cuff Scope"], @[@"Overview", @"Symptoms", @"Diagnosis"]];
     self.headerTitles = @[@"Images", @"Videos", @"Text"];
@@ -77,6 +80,22 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
     [self.tableView registerNib:sectionHeaderNib forHeaderFooterViewReuseIdentifier:TableHeaderViewIdentifier];
     self.tableView.tableFooterView = [[UIView alloc] init];
 }
+
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    
+//    self.navigationController.navigationBarHidden = NO;
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
+//    
+//    self.navigationController.navigationBarHidden = YES;
+//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 3;

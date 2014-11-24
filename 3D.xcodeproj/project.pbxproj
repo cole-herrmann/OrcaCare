@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE9C48301A22938000B2B3E6 /* PlanShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C482F1A22938000B2B3E6 /* PlanShellViewController.m */; };
 		BE9C48331A2293DC00B2B3E6 /* DiagnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48321A2293DC00B2B3E6 /* DiagnosisViewController.m */; };
 		BE9C48361A2293E900B2B3E6 /* TreatmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48351A2293E900B2B3E6 /* TreatmentViewController.m */; };
 		BE9C48391A2293F400B2B3E6 /* RecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48381A2293F400B2B3E6 /* RecoveryViewController.m */; };
@@ -16,6 +15,8 @@
 		BE9C48411A239C5500B2B3E6 /* Proxima Nova Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE9C48401A239C5500B2B3E6 /* Proxima Nova Light.ttf */; };
 		BE9C48431A239CDE00B2B3E6 /* TableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9C48421A239CDE00B2B3E6 /* TableHeader.xib */; };
 		BE9C48461A23A03600B2B3E6 /* TableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48451A23A03600B2B3E6 /* TableHeaderView.m */; };
+		BE9C48491A23D97000B2B3E6 /* ShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48481A23D97000B2B3E6 /* ShellViewController.m */; };
+		BE9C484B1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BE9C484A1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 */; };
 		E798236F1A1D4FE8006002D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E798236E1A1D4FE8006002D0 /* main.m */; };
 		E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823711A1D4FE8006002D0 /* AppDelegate.m */; };
 		E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823741A1D4FE8006002D0 /* CardViewController.m */; };
@@ -39,8 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BE9C482E1A22938000B2B3E6 /* PlanShellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanShellViewController.h; sourceTree = "<group>"; };
-		BE9C482F1A22938000B2B3E6 /* PlanShellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanShellViewController.m; sourceTree = "<group>"; };
 		BE9C48311A2293DC00B2B3E6 /* DiagnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosisViewController.h; sourceTree = "<group>"; };
 		BE9C48321A2293DC00B2B3E6 /* DiagnosisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosisViewController.m; sourceTree = "<group>"; };
 		BE9C48341A2293E900B2B3E6 /* TreatmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreatmentViewController.h; sourceTree = "<group>"; };
@@ -55,6 +54,9 @@
 		BE9C48421A239CDE00B2B3E6 /* TableHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeader.xib; sourceTree = "<group>"; };
 		BE9C48441A23A03600B2B3E6 /* TableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableHeaderView.h; sourceTree = "<group>"; };
 		BE9C48451A23A03600B2B3E6 /* TableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableHeaderView.m; sourceTree = "<group>"; };
+		BE9C48471A23D97000B2B3E6 /* ShellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShellViewController.h; sourceTree = "<group>"; };
+		BE9C48481A23D97000B2B3E6 /* ShellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShellViewController.m; sourceTree = "<group>"; };
+		BE9C484A1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rotatorCuffTear.mp4; sourceTree = "<group>"; };
 		E79823691A1D4FE8006002D0 /* 3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E798236D1A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E798236E1A1D4FE8006002D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -120,8 +122,8 @@
 				E79823711A1D4FE8006002D0 /* AppDelegate.m */,
 				E79823731A1D4FE8006002D0 /* CardViewController.h */,
 				E79823741A1D4FE8006002D0 /* CardViewController.m */,
-				BE9C482E1A22938000B2B3E6 /* PlanShellViewController.h */,
-				BE9C482F1A22938000B2B3E6 /* PlanShellViewController.m */,
+				BE9C48471A23D97000B2B3E6 /* ShellViewController.h */,
+				BE9C48481A23D97000B2B3E6 /* ShellViewController.m */,
 				BE9C48311A2293DC00B2B3E6 /* DiagnosisViewController.h */,
 				BE9C48321A2293DC00B2B3E6 /* DiagnosisViewController.m */,
 				BE9C48341A2293E900B2B3E6 /* TreatmentViewController.h */,
@@ -137,6 +139,7 @@
 				E79823761A1D4FE8006002D0 /* Main.storyboard */,
 				BE9C48421A239CDE00B2B3E6 /* TableHeader.xib */,
 				E79823791A1D4FE8006002D0 /* Images.xcassets */,
+				BE9C484A1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 */,
 				E798237B1A1D4FE8006002D0 /* LaunchScreen.xib */,
 				E798236C1A1D4FE8006002D0 /* Supporting Files */,
 				E798239D1A1E6419006002D0 /* ManView.h */,
@@ -255,6 +258,7 @@
 				E79823781A1D4FE8006002D0 /* Main.storyboard in Resources */,
 				E7FA57021A1E6F5700D2DD2A /* fullbody.dae in Resources */,
 				E798237D1A1D4FE8006002D0 /* LaunchScreen.xib in Resources */,
+				BE9C484B1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 in Resources */,
 				BE9C48411A239C5500B2B3E6 /* Proxima Nova Light.ttf in Resources */,
 				E798237A1A1D4FE8006002D0 /* Images.xcassets in Resources */,
 				BE9C48431A239CDE00B2B3E6 /* TableHeader.xib in Resources */,
@@ -285,7 +289,7 @@
 				E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */,
 				E798236F1A1D4FE8006002D0 /* main.m in Sources */,
 				E798239F1A1E6419006002D0 /* ManView.m in Sources */,
-				BE9C48301A22938000B2B3E6 /* PlanShellViewController.m in Sources */,
+				BE9C48491A23D97000B2B3E6 /* ShellViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

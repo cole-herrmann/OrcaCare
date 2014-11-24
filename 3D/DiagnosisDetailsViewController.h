@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DiagnosisDetailsViewController : UITableViewController
+@interface DiagnosisDetailsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

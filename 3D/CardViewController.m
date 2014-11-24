@@ -8,14 +8,10 @@
 
 #import "CardViewController.h"
 #import <SceneKit/SceneKit.h>
-#import "ManView.h"
-#import "PlanShellViewController.h"
 
-@interface CardViewController () <PlanShellDelegate>
-@property (weak, nonatomic) IBOutlet ManView *sceneView;
+@interface CardViewController ()
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIButton *reverse;
-@property (weak, nonatomic) IBOutlet UIButton *animate;
 
 @end
 
@@ -23,63 +19,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.reverse.alpha = 0;
-    // Do any additional setup after loading the view, typically from a nib.
+    
+//    [self setupNavBar];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        self.scrollView.alpha = 1.0f;
+    }];
 }
-- (IBAction)animate:(id)sender {
-    
-    [UIView animateWithDuration:0.7 animations:^{
-        self.scrollView.alpha = 1;
-        self.animate.alpha = 0;
-    }];
-    
-    [UIView animateWithDuration:1.5 animations:^{
-        self.reverse.alpha = 1;
-    }];
-    
-    [self.sceneView animateToFeet];
-}
-- (IBAction)reverse:(id)sender {
-    [UIView animateWithDuration:0.7 animations:^{
-        self.scrollView.alpha = 0;
-        self.reverse.alpha = 0;
-    }];
-    
-    [UIView animateWithDuration:1.5 animations:^{
-        self.animate.alpha = 1;
-    }];
-    
-    [self.sceneView removeFeetAnimation];
-}
+
+//- (void)setupNavBar {
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.shadowImage = [UIImage new];
+//    self.navigationController.navigationBar.translucent = YES;
+//    self.navigationController.view.backgroundColor = [UIColor clearColor];
+//}
 
 - (IBAction)cardClicked:(id)sender {
-    UIStoryboard *stb = self.storyboard;
-    PlanShellViewController *shell = [stb instantiateViewControllerWithIdentifier:@"shell"];
-    shell.delegate = self;
     
-    UIViewController *pg1 = [stb instantiateViewControllerWithIdentifier:@"diagnosis"];
-    UIViewController *pg2 = [stb instantiateViewControllerWithIdentifier:@"treatment"];
-    UIViewController *pg3 = [stb instantiateViewControllerWithIdentifier:@"recovery"];
-    UIViewController *pg4 = [stb instantiateViewControllerWithIdentifier:@"mycontent"];
-    
-    [shell addViewController:pg1];
-    [shell addViewController:pg2];
-    [shell addViewController:pg3];
-    [shell addViewController:pg4];
-    
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:shell];
-    nav.navigationBarHidden = YES;
-    [self presentViewController:nav animated:YES completion:nil];
-
+    [UIView animateWithDuration:0.4 animations:^{
+        self.scrollView.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        [self presentPlan];
+    }];
 }
 
-- (void)closePressed:(PlanShellViewController *)vc {
-    [vc dismissViewControllerAnimated:YES completion:nil];
+- (void)presentPlan {
+    UIStoryboard *stb = self.storyboard;
+    UINavigationController *nav = [stb instantiateViewControllerWithIdentifier:@"planNav"];
+    
+    [self addChildViewController:nav];
+    [self.view addSubview:nav.view];
+    
+    CGRect navFrame = nav.view.frame;
+    navFrame.origin.y = CGRectGetMaxY(self.view.frame);
+    nav.view.frame = navFrame;
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        nav.view.frame = self.view.bounds;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 @end
