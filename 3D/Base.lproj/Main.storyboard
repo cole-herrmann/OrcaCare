@@ -3,6 +3,11 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Proxima Nova Light.ttf">
+            <string>ProximaNova-Light</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Card View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -101,7 +106,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="OTT-m4-eWL" kind="push" id="tQY-ZH-isF"/>
+                                    <segue destination="d48-ao-vwq" kind="push" id="Rsq-OI-uYB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,17 +123,12 @@
             <objects>
                 <viewController id="OTT-m4-eWL" customClass="DiagnosisDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d2u-ut-h1Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diagdetails" id="xfu-en-JxH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ZHF-yG-WiE" userLabel="selectedimageview">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.89411764705882357" green="0.89411764705882357" blue="0.89411764705882357" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HQv-2s-Otf" userLabel="backbutton">
                                 <rect key="frame" x="0.0" y="5" width="44" height="44"/>
@@ -151,6 +151,11 @@
                                     <action selector="showNormalRotatorCuff:" destination="OTT-m4-eWL" eventType="touchUpInside" id="JDT-g0-wca"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ZHF-yG-WiE" userLabel="selectedimageview">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89411764705882357" green="0.89411764705882357" blue="0.89411764705882357" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -163,6 +168,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYt-gX-AE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="768.5" y="599.5"/>
+        </scene>
+        <!--Diagnosis Details View Controller-->
+        <scene sceneID="OYh-Ta-goH">
+            <objects>
+                <tableViewController id="d48-ao-vwq" customClass="DiagnosisDetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="seo-Ng-hML">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DiagnosisCellIdentifier" textLabel="C8g-1g-WRo" style="IBUITableViewCellStyleDefault" id="HS9-sn-uhe">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HS9-sn-uhe" id="k5m-OX-xrH">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C8g-1g-WRo" userLabel="white title">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="d48-ao-vwq" id="IRK-Uk-rhq"/>
+                            <outlet property="delegate" destination="d48-ao-vwq" id="Fht-8C-Vbj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="mQ5-Pu-TEF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BDP-ZW-h5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1146.5" y="387.5"/>
         </scene>
         <!--Plan Shell View Controller-->
         <scene sceneID="thA-9A-EXX">
