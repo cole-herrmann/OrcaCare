@@ -10,12 +10,24 @@
 
 @interface DiagnosisDetailsViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *selectedImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *diagnosisDetialsImageView;
+
 @end
 
 @implementation DiagnosisDetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.selectedImageView.alpha = 0;
+    self.selectedImageView.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissImage:)];
+    
+    [self.selectedImageView addGestureRecognizer:tap];
+
     // Do any additional setup after loading the view.
 }
 
@@ -23,15 +35,26 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)back:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+- (IBAction)showNormalRotatorCuff:(id)sender {
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        self.diagnosisDetialsImageView.alpha = 0;
+        self.selectedImageView.image = [UIImage imageNamed:@"rotatorcuff"];
+        self.selectedImageView.alpha = 1;
+    }];
+}
+
+-(void)dismissImage:(id)sender
+{
+    [UIView animateWithDuration:0.4 animations:^{
+        self.diagnosisDetialsImageView.alpha = 1;
+        self.selectedImageView.alpha = 0;
+    }];
+}
 
 @end
