@@ -8,10 +8,13 @@
 
 #import "CardViewController.h"
 #import <SceneKit/SceneKit.h>
+#import <Shimmer/FBShimmeringView.h>
 
 @interface CardViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (weak, nonatomic) IBOutlet FBShimmeringView *shimmerView;
 
 @end
 
@@ -20,7 +23,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self setupNavBar];
+    UILabel *loadingLabel = [[UILabel alloc] initWithFrame:self.shimmerView.bounds];
+    loadingLabel.font = [UIFont fontWithName:@"ProximaNova-Light" size:24];
+    loadingLabel.textColor = [UIColor whiteColor];
+    loadingLabel.textAlignment = NSTextAlignmentCenter;
+    loadingLabel.text = NSLocalizedString(@"New Care Plan", nil);
+    self.shimmerView.contentView = loadingLabel;
+    
+    // Start shimmering.
+    self.shimmerView.shimmering = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

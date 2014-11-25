@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoulder" id="5hx-7I-GpL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spine" id="5hx-7I-GpL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -145,6 +145,10 @@
                                             <action selector="cardClicked:" destination="pO7-9R-K2k" eventType="touchUpInside" id="cwJ-p2-PT8"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" id="aj6-P2-OWH" customClass="FBShimmeringView">
+                                        <rect key="frame" x="81" y="36" width="213" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
@@ -158,6 +162,7 @@
                     <navigationItem key="navigationItem" id="JYH-QA-IVV"/>
                     <connections>
                         <outlet property="scrollView" destination="iyI-oI-M8W" id="HsV-GO-icH"/>
+                        <outlet property="shimmerView" destination="aj6-P2-OWH" id="4Sn-JD-bty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w75-va-Lh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -218,8 +223,8 @@
         <image name="back" width="176" height="176"/>
         <image name="list" width="1280" height="2272"/>
         <image name="orca-card" width="850" height="1444"/>
-        <image name="plan-card" width="730" height="1240"/>
-        <image name="shoulder" width="1280" height="1430"/>
+        <image name="plan-card" width="850" height="1444"/>
+        <image name="spine" width="1102" height="1536"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
