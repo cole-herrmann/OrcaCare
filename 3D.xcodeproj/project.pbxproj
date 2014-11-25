@@ -17,6 +17,8 @@
 		BE9C48461A23A03600B2B3E6 /* TableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48451A23A03600B2B3E6 /* TableHeaderView.m */; };
 		BE9C48491A23D97000B2B3E6 /* ShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48481A23D97000B2B3E6 /* ShellViewController.m */; };
 		BE9C484B1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BE9C484A1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 */; };
+		E70AAD691A24E847009F7A71 /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E70AAD681A24E847009F7A71 /* TransitionAnimator.m */; };
+		E70AAD6C1A24EAD6009F7A71 /* PlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E70AAD6B1A24EAD6009F7A71 /* PlanViewController.m */; };
 		E798236F1A1D4FE8006002D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E798236E1A1D4FE8006002D0 /* main.m */; };
 		E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823711A1D4FE8006002D0 /* AppDelegate.m */; };
 		E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823741A1D4FE8006002D0 /* CardViewController.m */; };
@@ -57,6 +59,10 @@
 		BE9C48471A23D97000B2B3E6 /* ShellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShellViewController.h; sourceTree = "<group>"; };
 		BE9C48481A23D97000B2B3E6 /* ShellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShellViewController.m; sourceTree = "<group>"; };
 		BE9C484A1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rotatorCuffTear.mp4; sourceTree = "<group>"; };
+		E70AAD671A24E847009F7A71 /* TransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionAnimator.h; sourceTree = "<group>"; };
+		E70AAD681A24E847009F7A71 /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
+		E70AAD6A1A24EAD6009F7A71 /* PlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanViewController.h; sourceTree = "<group>"; };
+		E70AAD6B1A24EAD6009F7A71 /* PlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanViewController.m; sourceTree = "<group>"; };
 		E79823691A1D4FE8006002D0 /* 3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E798236D1A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E798236E1A1D4FE8006002D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -144,6 +150,10 @@
 				E798236C1A1D4FE8006002D0 /* Supporting Files */,
 				E798239D1A1E6419006002D0 /* ManView.h */,
 				E798239E1A1E6419006002D0 /* ManView.m */,
+				E70AAD671A24E847009F7A71 /* TransitionAnimator.h */,
+				E70AAD681A24E847009F7A71 /* TransitionAnimator.m */,
+				E70AAD6A1A24EAD6009F7A71 /* PlanViewController.h */,
+				E70AAD6B1A24EAD6009F7A71 /* PlanViewController.m */,
 			);
 			path = 3D;
 			sourceTree = "<group>";
@@ -280,6 +290,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE9C48331A2293DC00B2B3E6 /* DiagnosisViewController.m in Sources */,
+				E70AAD691A24E847009F7A71 /* TransitionAnimator.m in Sources */,
+				E70AAD6C1A24EAD6009F7A71 /* PlanViewController.m in Sources */,
 				BE9C48391A2293F400B2B3E6 /* RecoveryViewController.m in Sources */,
 				BE9C483F1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m in Sources */,
 				BE9C48361A2293E900B2B3E6 /* TreatmentViewController.m in Sources */,
