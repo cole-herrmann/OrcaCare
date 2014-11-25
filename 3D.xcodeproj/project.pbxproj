@@ -142,6 +142,10 @@
 				BE9C483E1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m */,
 				BE9C48441A23A03600B2B3E6 /* TableHeaderView.h */,
 				BE9C48451A23A03600B2B3E6 /* TableHeaderView.m */,
+				E70AAD671A24E847009F7A71 /* TransitionAnimator.h */,
+				E70AAD681A24E847009F7A71 /* TransitionAnimator.m */,
+				E70AAD6A1A24EAD6009F7A71 /* PlanViewController.h */,
+				E70AAD6B1A24EAD6009F7A71 /* PlanViewController.m */,
 				E79823761A1D4FE8006002D0 /* Main.storyboard */,
 				BE9C48421A239CDE00B2B3E6 /* TableHeader.xib */,
 				E79823791A1D4FE8006002D0 /* Images.xcassets */,
@@ -150,10 +154,6 @@
 				E798236C1A1D4FE8006002D0 /* Supporting Files */,
 				E798239D1A1E6419006002D0 /* ManView.h */,
 				E798239E1A1E6419006002D0 /* ManView.m */,
-				E70AAD671A24E847009F7A71 /* TransitionAnimator.h */,
-				E70AAD681A24E847009F7A71 /* TransitionAnimator.m */,
-				E70AAD6A1A24EAD6009F7A71 /* PlanViewController.h */,
-				E70AAD6B1A24EAD6009F7A71 /* PlanViewController.m */,
 			);
 			path = 3D;
 			sourceTree = "<group>";

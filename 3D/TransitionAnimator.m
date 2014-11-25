@@ -16,17 +16,20 @@
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     // Grab the from and to view controllers from the context
+    
+    int dir = (self.isPushing) ? -1 : 1;
+    
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
     [transitionContext.containerView addSubview:fromViewController.view];
     [transitionContext.containerView addSubview:toViewController.view];
-    
-    CGRect toVCEndFrame = CGRectMake(0, 0, toViewController.view.frame.size.width, toViewController.view.frame.size.height);
-    CGRect fromVCEndFrame = CGRectMake(-fromViewController.view.frame.size.width, 0, toViewController.view.frame.size.width, toViewController.view.frame.size.height);
+    CGRect toVCEndFrame = toViewController.view.bounds;
+    CGRect fromVCEndFrame = CGRectMake(dir * fromViewController.view.frame.size.width, 0, toViewController.view.frame.size.width, toViewController.view.frame.size.height);
     
     CGRect toVCStartFrame = toVCEndFrame;
-    toVCStartFrame.origin.x += toViewController.view.frame.size.width;
+    CGFloat width = toViewController.view.frame.size.width * ((self.isPushing) ? 1 : -1);
+    toVCStartFrame.origin.x += width;
     toViewController.view.frame = toVCStartFrame;
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{

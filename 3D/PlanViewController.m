@@ -31,10 +31,14 @@
                                                fromViewController:(UIViewController*)fromVC
                                                  toViewController:(UIViewController*)toVC
 {
+    TransitionAnimator *ta = [TransitionAnimator new];
     if (operation == UINavigationControllerOperationPush) {
-//        self.navigationController.delegate = nil;
-        return [TransitionAnimator new];
+        ta.isPushing = YES;
+        return ta;
+    } else if(operation == UINavigationControllerOperationPop) {
+        return ta;
     }
+    
     return nil;
 }
 

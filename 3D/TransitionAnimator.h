@@ -11,4 +11,6 @@
 
 @interface TransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 
+@property (nonatomic, assign) BOOL isPushing;
+
 @end
