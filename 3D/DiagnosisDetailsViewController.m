@@ -8,6 +8,7 @@
 
 #import "DiagnosisDetailsViewController.h"
 #import "TableHeaderView.h"
+#import "TextViewController.h"
 
 static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
 
@@ -17,6 +18,8 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
 @property (weak, nonatomic) IBOutlet UIImageView *diagnosisDetialsImageView;
 @property (weak, nonatomic) IBOutlet UIView *backView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) NSDictionary *plistDictionary;
 
 @property (nonatomic, strong) NSArray *headerTitles;
 @property (nonatomic, strong) NSArray *titles;
@@ -69,10 +72,12 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:0.9];
     self.tableView.backgroundColor = [UIColor clearColor];
     
-    self.titles = @[@[@"Normal Disc", @"Abnormal Disc"], @[@"Lumbar Disc Herniation Explained"], @[@"Overview", @"Symptoms", @"Diagnosis"]];
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"ConditionText" ofType:@"plist"];
+    self.plistDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    
+    self.titles = @[@[@"Normal Disc", @"Abnormal Disc"], @[@"Lumbar Disc Herniation Explained"], [self.plistDictionary objectForKey:@"titles"]];
     self.headerTitles = @[@"Images", @"Videos", @"Text"];
     self.headerImages = @[[UIImage imageNamed:@"camera"], [UIImage imageNamed:@"video"], [UIImage imageNamed:@"text"]];
     
@@ -149,6 +154,8 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
             notifcationKey = @"image";
             notifcationValue = @"abnormal";
         }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"changeBackground" object:nil userInfo:@{ notifcationKey : notifcationValue }];
+
         
     } else if(section == 1) {
         
@@ -157,25 +164,23 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
             notifcationKey = @"video";
             notifcationValue = @"lumbarvideo";
         }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"changeBackground" object:nil userInfo:@{ notifcationKey : notifcationValue }];
         
     } else if (section == 2) {
-        
-        //text
-        if(indexPath.row == 0){
-            notifcationKey = @"text";
-            notifcationValue = @"overview";
-        }else if(indexPath.row == 1){
-            notifcationKey = @"text";
-            notifcationValue = @"symptoms";
-        }else if(indexPath.row == 2){
-            notifcationKey = @"text";
-            notifcationValue = @"diagnosis";
-        }
-        
+        [self performSegueWithIdentifier:@"textSegue" sender:[NSNumber numberWithInteger:indexPath.row]];
     }
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeBackground" object:nil userInfo:@{ notifcationKey : notifcationValue }];
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"textSegue"]) {
+        TextViewController *vc = [segue destinationViewController];
+        vc.view.backgroundColor = self.view.backgroundColor;
+        int row = [sender intValue];
+        NSArray *titles = [self.plistDictionary objectForKey:@"titles"];
+        NSArray *texts = [self.plistDictionary objectForKey:@"texts"];
+        vc.titleLabel.text = titles[row];
+        vc.textView.text = texts[row];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

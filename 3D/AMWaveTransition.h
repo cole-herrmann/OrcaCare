@@ -10,7 +10,8 @@
 
 @protocol AMWaveTransitioning <NSObject>
 
-- (NSArray*)visibleCells;
+@optional
+- (NSArray *)visibleCells;
 
 @end
 

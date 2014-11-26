@@ -10,4 +10,6 @@
 
 @interface DiagnosisDetailsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
 @end

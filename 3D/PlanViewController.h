@@ -16,7 +16,7 @@
 
 @end
 
-@interface PlanViewController : UIViewController
+@interface PlanViewController : UITableViewController
 
 @property (nonatomic, weak) UIViewController<PlanVCDelegate> *delegate;
 

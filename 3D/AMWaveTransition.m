@@ -211,7 +211,7 @@ const CGFloat MAX_DELAY = 0.15;
                     [self setPresentedFrameForView:view];
                 }];
             } completion:^(BOOL finished) {
-//                toVC.view.backgroundColor = fromVC.view.backgroundColor;
+                toVC.view.backgroundColor = fromVC.view.backgroundColor;
                 [toViews enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
                     [self animationCompletionForInteractiveTransitionForView:view];
                 }];
@@ -413,7 +413,7 @@ const CGFloat MAX_DELAY = 0.15;
 //    // And kick it aside
 //    toVC.view.transform = CGAffineTransformMakeTranslation(delta, 0);
 //    
-////    [transitionContext containerView].backgroundColor = [UIColor clearColor];
+//    [transitionContext containerView].backgroundColor = [toVC finalColor];
     
     // First step is required to trigger the load of the visible cells.
     [UIView animateWithDuration:0 delay:0 options:UIViewAnimationOptionCurveLinear animations:nil completion:^(BOOL finished) {
