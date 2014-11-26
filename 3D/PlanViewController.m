@@ -9,12 +9,18 @@
 #import "PlanViewController.h"
 #import "TransitionAnimator.h"
 #import "AMWaveTransition.h"
+#import "EncounterTableViewCell.h"
+#import "DiagnosisDetailsViewController.h"
 
 @interface PlanViewController () <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *dismissView;
 @property (weak, nonatomic) IBOutlet UIView *progressRing;
-@property (strong, nonatomic) CAShapeLayer *shapeLayer;
+@property (weak, nonatomic) CAShapeLayer *shapeLayer;
+
+@property (nonatomic, strong) NSArray *textArray;
+@property (nonatomic, strong) NSArray *colorsArray;
+@property (nonatomic, strong) NSArray *imageNameArray;
 
 @end
 
@@ -23,25 +29,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.textArray = @[@"Diagnosis", @"Treatment", @"Recovery", @"Checkup"];
+    self.colorsArray = @[[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:.9], [UIColor colorWithRed:1/255.0f green:138/255.0f blue:139/255.0f alpha:.9], [UIColor colorWithRed:255/255.0f green:152/255.0f blue:62/255.0f alpha:.9], [UIColor colorWithRed:10/255.0f green:147/255.0f blue:196/255.0f alpha:.9]];
+    self.imageNameArray = @[];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    NSLog(@"%@", NSStringFromCGRect(self.refreshControl.frame));
+    
     UIBezierPath * circle = [UIBezierPath bezierPathWithOvalInRect:self.progressRing.bounds];
     
-    self.shapeLayer = [CAShapeLayer layer];
-    self.shapeLayer.path = circle.CGPath;
-    self.shapeLayer.strokeColor =[[UIColor whiteColor]CGColor];
-    self.shapeLayer.fillColor = [[UIColor clearColor]CGColor];
-    [self.shapeLayer setLineWidth:1.0];
-    [self.progressRing.layer addSublayer:self.shapeLayer];
-    
-    CABasicAnimation *anim = [self pullDownAnimation];
-    [self.shapeLayer addAnimation:anim
-                                   forKey:@"fill circle as you drag"];
-    self.shapeLayer.speed = 0.0f;
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    self.shapeLayer = shapeLayer;
+    shapeLayer.path = circle.CGPath;
+    shapeLayer.strokeColor =[[UIColor whiteColor]CGColor];
+    shapeLayer.fillColor = [[UIColor clearColor]CGColor];
+    [shapeLayer setLineWidth:1.0];
+    [self.progressRing.layer addSublayer:shapeLayer];
+    [shapeLayer addAnimation:[self pullDownAnimation] forKey:@"fill circle as you drag"];
+    shapeLayer.speed = 0.0f;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.textArray count];
+}
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *encounterCellIdentifier = @"EncounterCellIdentifier";
+    EncounterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:encounterCellIdentifier];
+    
+    cell.backgroundColor = self.colorsArray[indexPath.row];
+    cell.titleLabel.text = self.textArray[indexPath.row];
+//    cell.numberImageView.image = [UIImage imageNamed:self.imageNameArray[indexPath.row]];
+    
+    return cell;
+}
 
+- (NSArray *)visibleCells {
+    NSArray *cells = [self.tableView visibleCells];
+    NSMutableArray *labels = [NSMutableArray arrayWithCapacity:cells.count];
+    for(EncounterTableViewCell *cell in cells) {
+        [labels addObject:cell.titleLabel];
+    }
+    
+    return labels;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(EncounterTableViewCell *)sender {
     self.navigationController.delegate = self;
+    DiagnosisDetailsViewController *detailsVC = [segue destinationViewController];
+    detailsVC.view.backgroundColor = sender.backgroundColor;
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
@@ -49,7 +85,11 @@
                                                fromViewController:(UIViewController*)fromVC
                                                  toViewController:(UIViewController*)toVC
 {
-    return [AMWaveTransition transitionWithOperation:operation andTransitionType:AMWaveTransitionTypeBounce];    
+    return [AMWaveTransition transitionWithOperation:operation andTransitionType:AMWaveTransitionTypeBounce];
+
+    TransitionAnimator *anim = [[TransitionAnimator alloc] init];
+    anim.isPushing = (operation == UINavigationControllerOperationPush);
+    return anim;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

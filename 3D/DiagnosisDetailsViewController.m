@@ -69,7 +69,6 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:0.9];
     self.tableView.backgroundColor = [UIColor clearColor];
     
     self.titles = @[@[@"Normal Disc", @"Abnormal Disc"], @[@"Lumbar Disc Herniation Explained"], @[@"Overview", @"Symptoms", @"Diagnosis"]];

@@ -21,6 +21,8 @@
 		BE9C48501A251F1200B2B3E6 /* PlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C484D1A251F1200B2B3E6 /* PlanViewController.m */; };
 		BE9C48511A251F1200B2B3E6 /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C484F1A251F1200B2B3E6 /* TransitionAnimator.m */; };
 		BE9C48541A25509100B2B3E6 /* AMWaveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48531A25509100B2B3E6 /* AMWaveTransition.m */; };
+		BE9C48561A26593300B2B3E6 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9C48551A26593300B2B3E6 /* View.xib */; };
+		BE9C48591A265C3500B2B3E6 /* EncounterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48581A265C3500B2B3E6 /* EncounterTableViewCell.m */; };
 		E798236F1A1D4FE8006002D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E798236E1A1D4FE8006002D0 /* main.m */; };
 		E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823711A1D4FE8006002D0 /* AppDelegate.m */; };
 		E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823741A1D4FE8006002D0 /* CardViewController.m */; };
@@ -70,6 +72,9 @@
 		BE9C484F1A251F1200B2B3E6 /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
 		BE9C48521A25509100B2B3E6 /* AMWaveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMWaveTransition.h; sourceTree = "<group>"; };
 		BE9C48531A25509100B2B3E6 /* AMWaveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMWaveTransition.m; sourceTree = "<group>"; };
+		BE9C48551A26593300B2B3E6 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		BE9C48571A265C3500B2B3E6 /* EncounterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncounterTableViewCell.h; sourceTree = "<group>"; };
+		BE9C48581A265C3500B2B3E6 /* EncounterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncounterTableViewCell.m; sourceTree = "<group>"; };
 		E79823691A1D4FE8006002D0 /* 3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E798236D1A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E798236E1A1D4FE8006002D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -168,7 +173,10 @@
 				BE9C484E1A251F1200B2B3E6 /* TransitionAnimator.h */,
 				BE9C484F1A251F1200B2B3E6 /* TransitionAnimator.m */,
 				E79823761A1D4FE8006002D0 /* Main.storyboard */,
+				BE9C48571A265C3500B2B3E6 /* EncounterTableViewCell.h */,
+				BE9C48581A265C3500B2B3E6 /* EncounterTableViewCell.m */,
 				BE9C48421A239CDE00B2B3E6 /* TableHeader.xib */,
+				BE9C48551A26593300B2B3E6 /* View.xib */,
 				E79823791A1D4FE8006002D0 /* Images.xcassets */,
 				BE9C484A1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 */,
 				E798237B1A1D4FE8006002D0 /* LaunchScreen.xib */,
@@ -300,6 +308,7 @@
 				E7FA57021A1E6F5700D2DD2A /* fullbody.dae in Resources */,
 				E798237D1A1D4FE8006002D0 /* LaunchScreen.xib in Resources */,
 				BE9C484B1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 in Resources */,
+				BE9C48561A26593300B2B3E6 /* View.xib in Resources */,
 				BE9C48411A239C5500B2B3E6 /* Proxima Nova Light.ttf in Resources */,
 				E798237A1A1D4FE8006002D0 /* Images.xcassets in Resources */,
 				BE9C48431A239CDE00B2B3E6 /* TableHeader.xib in Resources */,
@@ -354,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE9C48331A2293DC00B2B3E6 /* DiagnosisViewController.m in Sources */,
+				BE9C48591A265C3500B2B3E6 /* EncounterTableViewCell.m in Sources */,
 				BE9C48501A251F1200B2B3E6 /* PlanViewController.m in Sources */,
 				BE9C48391A2293F400B2B3E6 /* RecoveryViewController.m in Sources */,
 				BE9C48511A251F1200B2B3E6 /* TransitionAnimator.m in Sources */,

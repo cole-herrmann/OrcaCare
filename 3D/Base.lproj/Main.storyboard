@@ -171,69 +171,50 @@
             <point key="canvasLocation" x="-222.5" y="-62.5"/>
         </scene>
         <!--Plan View Controller-->
-        <scene sceneID="NhJ-7n-jKR">
+        <scene sceneID="7Gy-8A-1z0">
             <objects>
-                <viewController id="A9x-aZ-cAm" customClass="PlanViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Z3q-Do-Ll7">
+                <tableViewController id="ljQ-az-ZUV" customClass="PlanViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="166.75" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wnd-NE-Pui">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="9fb-4F-RXN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="k3D-XB-E0Y">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="166"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="4KX-KH-PAA" kind="push" id="SAl-BB-zD6"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list" id="bwr-3k-rNO">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" id="6bE-TG-MxQ">
-                                        <rect key="frame" x="0.0" y="-142" width="375" height="142"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep pulling to dismiss" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1xG-2F-usu">
-                                                <rect key="frame" x="99" y="100" width="176" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="17"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" id="nzn-a4-qeH">
-                                                <rect key="frame" x="61" y="96" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.031372549019607843" green="0.29019607843137257" blue="0.52156862745098043" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                </subviews>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
-                                        <size key="value" width="0.0" height="667"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EncounterCellIdentifier" rowHeight="166" id="cfJ-zB-Kqb" customClass="EncounterTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfJ-zB-Kqb" id="sWy-P3-4M4">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="27u-uU-YdE">
+                                            <rect key="frame" x="8" y="0.5" width="112" height="167"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xDT-kk-161">
+                                            <rect key="frame" x="116" y="63" width="251" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="30"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="delegate" destination="A9x-aZ-cAm" id="neb-NX-Te8"/>
+                                    <outlet property="numberImageView" destination="27u-uU-YdE" id="rMs-z1-PsD"/>
+                                    <outlet property="titleLabel" destination="xDT-kk-161" id="U9L-dY-fpe"/>
+                                    <segue destination="4KX-KH-PAA" kind="push" id="4x9-MP-ovL"/>
                                 </connections>
-                            </scrollView>
-                        </subviews>
-                    </view>
-                    <navigationItem key="navigationItem" id="vf7-D9-XVc"/>
-                    <connections>
-                        <outlet property="dismissView" destination="6bE-TG-MxQ" id="Goe-iL-dIb"/>
-                        <outlet property="progressRing" destination="nzn-a4-qeH" id="96n-Xi-9wL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cbP-2a-fbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ljQ-az-ZUV" id="t2l-IY-u7G"/>
+                            <outlet property="delegate" destination="ljQ-az-ZUV" id="KHm-6J-RMB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="rnI-5B-gTy"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5CO-9C-XGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-222.5" y="680.5"/>
         </scene>
@@ -249,7 +230,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="A9x-aZ-cAm" kind="relationship" relationship="rootViewController" id="hP5-Od-I3B"/>
+                        <segue destination="ljQ-az-ZUV" kind="relationship" relationship="rootViewController" id="xqA-t0-gpU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xf-Y6-0Bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -259,7 +240,6 @@
     </scenes>
     <resources>
         <image name="back" width="176" height="176"/>
-        <image name="list" width="1280" height="2272"/>
         <image name="orca-card" width="850" height="1444"/>
         <image name="plan-card" width="850" height="1444"/>
         <image name="spine" width="1102" height="1536"/>
