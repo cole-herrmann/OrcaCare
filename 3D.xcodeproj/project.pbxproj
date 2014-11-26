@@ -20,6 +20,7 @@
 		BE9C484B1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BE9C484A1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 */; };
 		BE9C48501A251F1200B2B3E6 /* PlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C484D1A251F1200B2B3E6 /* PlanViewController.m */; };
 		BE9C48511A251F1200B2B3E6 /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C484F1A251F1200B2B3E6 /* TransitionAnimator.m */; };
+		BE9C48541A25509100B2B3E6 /* AMWaveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48531A25509100B2B3E6 /* AMWaveTransition.m */; };
 		E798236F1A1D4FE8006002D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E798236E1A1D4FE8006002D0 /* main.m */; };
 		E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823711A1D4FE8006002D0 /* AppDelegate.m */; };
 		E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823741A1D4FE8006002D0 /* CardViewController.m */; };
@@ -67,6 +68,8 @@
 		BE9C484D1A251F1200B2B3E6 /* PlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanViewController.m; sourceTree = "<group>"; };
 		BE9C484E1A251F1200B2B3E6 /* TransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionAnimator.h; sourceTree = "<group>"; };
 		BE9C484F1A251F1200B2B3E6 /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
+		BE9C48521A25509100B2B3E6 /* AMWaveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMWaveTransition.h; sourceTree = "<group>"; };
+		BE9C48531A25509100B2B3E6 /* AMWaveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMWaveTransition.m; sourceTree = "<group>"; };
 		E79823691A1D4FE8006002D0 /* 3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E798236D1A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E798236E1A1D4FE8006002D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				BE9C48371A2293F400B2B3E6 /* RecoveryViewController.h */,
 				BE9C48381A2293F400B2B3E6 /* RecoveryViewController.m */,
 				BE9C483A1A22940A00B2B3E6 /* MyContentViewController.h */,
+				BE9C48521A25509100B2B3E6 /* AMWaveTransition.h */,
+				BE9C48531A25509100B2B3E6 /* AMWaveTransition.m */,
 				BE9C483B1A22940A00B2B3E6 /* MyContentViewController.m */,
 				BE9C483D1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.h */,
 				BE9C483E1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m */,
@@ -355,6 +360,7 @@
 				BE9C483F1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m in Sources */,
 				BE9C48361A2293E900B2B3E6 /* TreatmentViewController.m in Sources */,
 				E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */,
+				BE9C48541A25509100B2B3E6 /* AMWaveTransition.m in Sources */,
 				BE9C483C1A22940A00B2B3E6 /* MyContentViewController.m in Sources */,
 				BE9C48461A23A03600B2B3E6 /* TableHeaderView.m in Sources */,
 				E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */,

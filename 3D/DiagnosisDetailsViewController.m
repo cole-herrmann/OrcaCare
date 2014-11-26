@@ -72,7 +72,7 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
     self.view.backgroundColor = [UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:0.9];
     self.tableView.backgroundColor = [UIColor clearColor];
     
-    self.titles = @[@[@"Normal Rotator Cuff", @"Abnormal Rotator Cuff", @"Rotator Cuff MRI"], @[@"Normal Rotator Cuff Scope", @"Torn Rotator Cuff Scope"], @[@"Overview", @"Symptoms", @"Diagnosis"]];
+    self.titles = @[@[@"Normal Disc", @"Abnormal Disc"], @[@"Lumbar Disc Herniation Explained"], @[@"Overview", @"Symptoms", @"Diagnosis"]];
     self.headerTitles = @[@"Images", @"Videos", @"Text"];
     self.headerImages = @[[UIImage imageNamed:@"camera"], [UIImage imageNamed:@"video"], [UIImage imageNamed:@"text"]];
     
@@ -83,6 +83,22 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
 
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (NSArray*)visibleCells
+{
+    NSMutableArray *array = [NSMutableArray array];
+    [array addObject:self.backView];
+    NSInteger sections = [self.tableView numberOfSections];
+    for(int i = 0; i < sections; i++) {
+        [array addObject:[self.tableView headerViewForSection:i]];
+        NSInteger rows = [self.tableView numberOfRowsInSection:i];
+        for(int j = 0; j < rows; j++) {
+            [array addObject:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:j inSection:i]]];
+        }
+    }
+
+    return array;
 }
 
 //- (void)viewWillAppear:(BOOL)animated {
@@ -115,6 +131,23 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
     cell.textLabel.text = self.titles[indexPath.section][indexPath.row];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = indexPath.section;
+    if(section == 0) {
+        //Image
+        
+        [UIView animateWithDuration:0.4 animations:^{
+            self.view.alpha = 0;
+        } completion:^(BOOL finished) {
+            
+        }];
+    } else if(section == 1) {
+        //Video
+    } else if (section == 2) {
+        //Text
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

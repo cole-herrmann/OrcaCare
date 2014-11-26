@@ -8,6 +8,7 @@
 
 #import "PlanViewController.h"
 #import "TransitionAnimator.h"
+#import "AMWaveTransition.h"
 
 @interface PlanViewController () <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate>
 
@@ -31,13 +32,15 @@
                                                fromViewController:(UIViewController*)fromVC
                                                  toViewController:(UIViewController*)toVC
 {
-    TransitionAnimator *ta = [TransitionAnimator new];
-    if (operation == UINavigationControllerOperationPush) {
-        ta.isPushing = YES;
-        return ta;
-    } else if(operation == UINavigationControllerOperationPop) {
-        return ta;
-    }
+//    TransitionAnimator *ta = [TransitionAnimator new];
+//    if (operation == UINavigationControllerOperationPush) {
+//        ta.isPushing = YES;
+//        return ta;
+//    } else if(operation == UINavigationControllerOperationPop) {
+//        return ta;
+//    }
+    
+    return [AMWaveTransition transitionWithOperation:operation andTransitionType:AMWaveTransitionTypeBounce];
     
     return nil;
 }
