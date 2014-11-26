@@ -9,8 +9,9 @@
 #import "CardViewController.h"
 #import <SceneKit/SceneKit.h>
 #import <Shimmer/FBShimmeringView.h>
+#import "PlanViewController.h"
 
-@interface CardViewController ()
+@interface CardViewController () <PlanVCDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -37,6 +38,10 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+//    [self showScrollview];
+}
+
+- (void)showScrollview {
     [UIView animateWithDuration:0.4 animations:^{
         self.scrollView.alpha = 1.0f;
     }];
@@ -61,6 +66,9 @@
 - (void)presentPlan {
     UIStoryboard *stb = self.storyboard;
     UINavigationController *nav = [stb instantiateViewControllerWithIdentifier:@"planNav"];
+//    NSArray *vcs = nav.viewControllers;
+    PlanViewController *planVC = [nav.viewControllers firstObject];
+    planVC.delegate = self;
     
     [self addChildViewController:nav];
     [self.view addSubview:nav.view];
@@ -74,6 +82,15 @@
     } completion:^(BOOL finished) {
         
     }];
+}
+
+- (void)planVCShouldDismiss:(PlanViewController *)planVC {
+    
+    [planVC.navigationController.view removeFromSuperview];
+    [planVC.navigationController removeFromParentViewController];
+    
+    [self showScrollview];
+    
 }
 
 @end

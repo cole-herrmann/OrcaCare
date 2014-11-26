@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class PlanViewController;
+
+@protocol PlanVCDelegate <NSObject>
+
+- (void)planVCShouldDismiss:(PlanViewController *)planVC;
+
+@end
+
 @interface PlanViewController : UIViewController
+
+@property (nonatomic, weak) UIViewController<PlanVCDelegate> *delegate;
 
 @end
