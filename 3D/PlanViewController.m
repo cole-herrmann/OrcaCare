@@ -11,16 +11,17 @@
 #import "AMWaveTransition.h"
 #import "EncounterTableViewCell.h"
 #import "DiagnosisDetailsViewController.h"
+#import "RefreshView.h"
 
 @interface PlanViewController () <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *dismissView;
-@property (weak, nonatomic) IBOutlet UIView *progressRing;
-@property (weak, nonatomic) CAShapeLayer *shapeLayer;
-
+@property (nonatomic, weak) UIImageView *numberedLinesView;
 @property (nonatomic, strong) NSArray *textArray;
 @property (nonatomic, strong) NSArray *colorsArray;
-@property (nonatomic, strong) NSArray *imageNameArray;
+
+@property (nonatomic, weak) IBOutlet RefreshView *refreshView;
+
+@property (nonatomic) BOOL animationBegan;
 
 @end
 
@@ -29,24 +30,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"numberedlines"]];
+//    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:imageView];
+    imageView.frame = CGRectMake(20, 0, 90, self.view.bounds.size.height);
+    self.numberedLinesView = imageView;
+    
     self.textArray = @[@"Diagnosis", @"Treatment", @"Recovery", @"Checkup"];
-    self.colorsArray = @[[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:.9], [UIColor colorWithRed:1/255.0f green:138/255.0f blue:139/255.0f alpha:.9], [UIColor colorWithRed:255/255.0f green:152/255.0f blue:62/255.0f alpha:.9], [UIColor colorWithRed:10/255.0f green:147/255.0f blue:196/255.0f alpha:.9]];
-    self.imageNameArray = @[];
+    self.colorsArray = @[[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:.9], [UIColor colorWithRed:1/255.0f green:138/255.0f blue:139/255.0f alpha:.9], [UIColor colorWithRed:0.071 green:0.145 blue:0.231 alpha:.9], [UIColor colorWithRed:0.596 green:0.282 blue:0.063 alpha:.9]];
     
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    NSLog(@"%@", NSStringFromCGRect(self.refreshControl.frame));
-    
-    UIBezierPath * circle = [UIBezierPath bezierPathWithOvalInRect:self.progressRing.bounds];
-    
-    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-    self.shapeLayer = shapeLayer;
-    shapeLayer.path = circle.CGPath;
-    shapeLayer.strokeColor =[[UIColor whiteColor]CGColor];
-    shapeLayer.fillColor = [[UIColor clearColor]CGColor];
-    [shapeLayer setLineWidth:1.0];
-    [self.progressRing.layer addSublayer:shapeLayer];
-    [shapeLayer addAnimation:[self pullDownAnimation] forKey:@"fill circle as you drag"];
-    shapeLayer.speed = 0.0f;
+    [[NSBundle mainBundle] loadNibNamed:@"RefreshView" owner:self options:nil];
+
+    CGRect frame = self.refreshView.frame;
+    frame.origin = CGPointMake(0, -self.refreshView.bounds.size.height);
+    self.refreshView.frame = frame;
+    [self.view addSubview:self.refreshView];
+    self.refreshView.backgroundColor = [self.colorsArray firstObject];
+    [self.refreshView.progressLayer addAnimation:[self pullDownAnimation] forKey:@"fill circle as you drag"];
+    self.refreshView.progressLayer.speed = 0.0f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -59,7 +60,6 @@
     
     cell.backgroundColor = self.colorsArray[indexPath.row];
     cell.titleLabel.text = self.textArray[indexPath.row];
-//    cell.numberImageView.image = [UIImage imageNamed:self.imageNameArray[indexPath.row]];
     
     return cell;
 }
@@ -70,7 +70,7 @@
     for(EncounterTableViewCell *cell in cells) {
         [labels addObject:cell.titleLabel];
     }
-    
+    [labels addObject:self.numberedLinesView];
     return labels;
 }
 
@@ -78,6 +78,7 @@
     self.navigationController.delegate = self;
     DiagnosisDetailsViewController *detailsVC = [segue destinationViewController];
     detailsVC.view.backgroundColor = sender.backgroundColor;
+    detailsVC.titleLabel.text = sender.titleLabel.text;
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
@@ -90,17 +91,21 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    self.shapeLayer.timeOffset = (-(scrollView.contentOffset.y / 120));
+    self.refreshView.progressLayer.timeOffset = (-(scrollView.contentOffset.y / 120));
    
-    if(scrollView.contentOffset.y == -120){
-       
-        [UIView animateWithDuration:0.4 animations:^{
-            self.view.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
-        } completion:^(BOOL finished) {
-            if([self.delegate respondsToSelector:@selector(planVCShouldDismiss:)]) {
-                [self.delegate planVCShouldDismiss:self];
-            }
-        }];
+    if(scrollView.contentOffset.y <= -120){
+        
+        if(!self.animationBegan) {
+            self.animationBegan = YES;
+            [UIView animateWithDuration:0.4 animations:^{
+                self.view.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+            } completion:^(BOOL finished) {
+                if([self.delegate respondsToSelector:@selector(planVCShouldDismiss:)]) {
+                    [self.delegate planVCShouldDismiss:self];
+                }
+                self.animationBegan = NO;
+            }];
+        }
     }
 }
 

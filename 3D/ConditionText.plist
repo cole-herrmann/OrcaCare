@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>texts</key>
+	<array>
+		<string>A cervical disc herniation occurs when the soft inner core of the disc in your neck herniates through the firm outer layer of the disc. It is more likely to occur in men and usually occurs during the 4th and 5th decades of life. Cervical disc herniations most commonly occur in the lower part of the neck, specifically C5-6 and C6-7, because this is where the most of the motion in the neck occurs. This typically causes neck pain and in some cases the disc herniation pinches the nerves, which may lead to arm pain, numbness, tingling, and weakness. Risk factors include smoking, lifting, genetics, and excessive driving.</string>
+		<string>Cervical disc herniations almost always cause some degree of neck pain, due to the trauma of the disc rupture. This pain can vary dramatically, causing some people to have to alter their daily routine, while others can continue with their daily activities. In situations where the nerves are pinched by the disc herniation, it is common to have cervical radiculopathy, which consists of arm pain that can go down the base of the neck, shoulders, forearms, and even into the hands and fingers. This is often accompanied by numbness and tingling that may be localized to a certain part of the upper extremity. In some cases patients will experience weakness in certain muscle groups. For example, when the C7 nerve root is pinched, patients may have trouble with the triceps, which allows you to keep your elbow straight. When the spinal cord is pinched by the disc herniation, patients may experience signs and symptoms of cervical myelopathy. This is a potentially serious condition that is characterized by difficulty with balance and walking, over-active nerve reflexes, trouble with delicate finger movements such as buttoning buttons, and issues with bowel and bladder function.</string>
+		<string>X-rays only show bones and thus cannot demonstrate a disc herniation. At times they will show narrowing of a disc space level where the disc is herniated because of degenerative disc disease.   With persistent neck and arm symptoms that are unbearable or have lasted longer than a month, an MRI is often necessary. MRI scans, unlike x-rays, have the ability to illustrate soft tissue such as disc herniations. In addition to demonstrating a disc herniation, an MRI will also show whether or not a herniation is pinching a nerve or the spinal cord.</string>
+	</array>
+	<key>titles</key>
+	<array>
+		<string>Overview</string>
+		<string>Symptoms</string>
+		<string>Diagnosis</string>
+	</array>
+</dict>
+</plist>
