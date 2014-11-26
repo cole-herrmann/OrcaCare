@@ -78,6 +78,7 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
     UINib *sectionHeaderNib = [UINib nibWithNibName:@"TableHeader" bundle:nil];
     [self.tableView registerNib:sectionHeaderNib forHeaderFooterViewReuseIdentifier:TableHeaderViewIdentifier];
     self.tableView.tableFooterView = [[UIView alloc] init];
+    
 }
 
 - (IBAction)back:(id)sender {
@@ -134,19 +135,46 @@ static NSString *TableHeaderViewIdentifier = @"TableHeaderViewIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger section = indexPath.section;
+    NSString *notifcationKey;
+    NSString *notifcationValue;
+    
     if(section == 0) {
-        //Image
+
+        //image
+        if (indexPath.row == 0) {
+            notifcationKey = @"image";
+            notifcationValue = @"normal";
+        } else if(indexPath.row == 1){
+            notifcationKey = @"image";
+            notifcationValue = @"abnormal";
+        }
         
-        [UIView animateWithDuration:0.4 animations:^{
-            self.view.alpha = 0;
-        } completion:^(BOOL finished) {
-            
-        }];
     } else if(section == 1) {
-        //Video
+        
+        //video
+        if(indexPath.row == 0){
+            notifcationKey = @"video";
+            notifcationValue = @"lumbarvideo";
+        }
+        
     } else if (section == 2) {
-        //Text
+        
+        //text
+        if(indexPath.row == 0){
+            notifcationKey = @"text";
+            notifcationValue = @"overview";
+        }else if(indexPath.row == 1){
+            notifcationKey = @"text";
+            notifcationValue = @"symptoms";
+        }else if(indexPath.row == 2){
+            notifcationKey = @"text";
+            notifcationValue = @"diagnosis";
+        }
+        
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeBackground" object:nil userInfo:@{ notifcationKey : notifcationValue }];
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

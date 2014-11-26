@@ -86,10 +86,6 @@
                                                  toViewController:(UIViewController*)toVC
 {
     return [AMWaveTransition transitionWithOperation:operation andTransitionType:AMWaveTransitionTypeBounce];
-
-    TransitionAnimator *anim = [[TransitionAnimator alloc] init];
-    anim.isPushing = (operation == UINavigationControllerOperationPush);
-    return anim;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

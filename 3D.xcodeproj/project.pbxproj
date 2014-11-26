@@ -32,6 +32,7 @@
 		E79823891A1D4FE8006002D0 /* _DTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823881A1D4FE8006002D0 /* _DTests.m */; };
 		E79823931A1D505D006002D0 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79823921A1D505D006002D0 /* SceneKit.framework */; };
 		E798239F1A1E6419006002D0 /* ManView.m in Sources */ = {isa = PBXBuildFile; fileRef = E798239E1A1E6419006002D0 /* ManView.m */; };
+		E7C6E0C51A265D24000FA032 /* lumbarvideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E7C6E0C41A265D24000FA032 /* lumbarvideo.mp4 */; };
 		E7FA57021A1E6F5700D2DD2A /* fullbody.dae in Resources */ = {isa = PBXBuildFile; fileRef = E7FA57011A1E6F5700D2DD2A /* fullbody.dae */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		E79823921A1D505D006002D0 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		E798239D1A1E6419006002D0 /* ManView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManView.h; sourceTree = "<group>"; };
 		E798239E1A1E6419006002D0 /* ManView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManView.m; sourceTree = "<group>"; };
+		E7C6E0C41A265D24000FA032 /* lumbarvideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lumbarvideo.mp4; sourceTree = "<group>"; };
 		E7FA57011A1E6F5700D2DD2A /* fullbody.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = fullbody.dae; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +180,7 @@
 				BE9C48421A239CDE00B2B3E6 /* TableHeader.xib */,
 				BE9C48551A26593300B2B3E6 /* View.xib */,
 				E79823791A1D4FE8006002D0 /* Images.xcassets */,
+				E7C6E0C41A265D24000FA032 /* lumbarvideo.mp4 */,
 				BE9C484A1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 */,
 				E798237B1A1D4FE8006002D0 /* LaunchScreen.xib */,
 				E798236C1A1D4FE8006002D0 /* Supporting Files */,
@@ -304,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C6E0C51A265D24000FA032 /* lumbarvideo.mp4 in Resources */,
 				E79823781A1D4FE8006002D0 /* Main.storyboard in Resources */,
 				E7FA57021A1E6F5700D2DD2A /* fullbody.dae in Resources */,
 				E798237D1A1D4FE8006002D0 /* LaunchScreen.xib in Resources */,
