@@ -86,7 +86,7 @@
 		BE9C485F1A26966800B2B3E6 /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		BE9C48611A26988800B2B3E6 /* RefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshView.h; sourceTree = "<group>"; };
 		BE9C48621A26988800B2B3E6 /* RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshView.m; sourceTree = "<group>"; };
-		E79823691A1D4FE8006002D0 /* 3D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3D.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E79823691A1D4FE8006002D0 /* Orca Care.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orca Care.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E798236D1A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E798236E1A1D4FE8006002D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E79823701A1D4FE8006002D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		E79823771A1D4FE8006002D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E79823791A1D4FE8006002D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E798237C1A1D4FE8006002D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E79823821A1D4FE8006002D0 /* 3DTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3DTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E79823821A1D4FE8006002D0 /* Orca CareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orca CareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79823871A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E79823881A1D4FE8006002D0 /* _DTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _DTests.m; sourceTree = "<group>"; };
 		E79823921A1D505D006002D0 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
@@ -150,8 +150,8 @@
 		E798236A1A1D4FE8006002D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E79823691A1D4FE8006002D0 /* 3D.app */,
-				E79823821A1D4FE8006002D0 /* 3DTests.xctest */,
+				E79823691A1D4FE8006002D0 /* Orca Care.app */,
+				E79823821A1D4FE8006002D0 /* Orca CareTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,9 +244,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E79823681A1D4FE8006002D0 /* 3D */ = {
+		E79823681A1D4FE8006002D0 /* Orca Care */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E798238C1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "3D" */;
+			buildConfigurationList = E798238C1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "Orca Care" */;
 			buildPhases = (
 				91EA28D34FABB2421CB5A82D /* Check Pods Manifest.lock */,
 				E79823651A1D4FE8006002D0 /* Sources */,
@@ -258,14 +258,14 @@
 			);
 			dependencies = (
 			);
-			name = 3D;
+			name = "Orca Care";
 			productName = 3D;
-			productReference = E79823691A1D4FE8006002D0 /* 3D.app */;
+			productReference = E79823691A1D4FE8006002D0 /* Orca Care.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E79823811A1D4FE8006002D0 /* 3DTests */ = {
+		E79823811A1D4FE8006002D0 /* Orca CareTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E798238F1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "3DTests" */;
+			buildConfigurationList = E798238F1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "Orca CareTests" */;
 			buildPhases = (
 				E798237E1A1D4FE8006002D0 /* Sources */,
 				E798237F1A1D4FE8006002D0 /* Frameworks */,
@@ -276,9 +276,9 @@
 			dependencies = (
 				E79823841A1D4FE8006002D0 /* PBXTargetDependency */,
 			);
-			name = 3DTests;
+			name = "Orca CareTests";
 			productName = 3DTests;
-			productReference = E79823821A1D4FE8006002D0 /* 3DTests.xctest */;
+			productReference = E79823821A1D4FE8006002D0 /* Orca CareTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -299,7 +299,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E79823641A1D4FE8006002D0 /* Build configuration list for PBXProject "3D" */;
+			buildConfigurationList = E79823641A1D4FE8006002D0 /* Build configuration list for PBXProject "Orca Care" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -312,8 +312,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E79823681A1D4FE8006002D0 /* 3D */,
-				E79823811A1D4FE8006002D0 /* 3DTests */,
+				E79823681A1D4FE8006002D0 /* Orca Care */,
+				E79823811A1D4FE8006002D0 /* Orca CareTests */,
 			);
 		};
 /* End PBXProject section */
@@ -417,7 +417,7 @@
 /* Begin PBXTargetDependency section */
 		E79823841A1D4FE8006002D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E79823681A1D4FE8006002D0 /* 3D */;
+			target = E79823681A1D4FE8006002D0 /* Orca Care */;
 			targetProxy = E79823831A1D4FE8006002D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -525,7 +525,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = 3D/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Orca Care";
 			};
 			name = Debug;
 		};
@@ -534,9 +534,10 @@
 			baseConfigurationReference = 2BE7AC7607824D0864C90551 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = 3D/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Orca Care";
 			};
 			name = Release;
 		};
@@ -554,7 +555,7 @@
 				);
 				INFOPLIST_FILE = 3DTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Orca CareTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/3D.app/3D";
 			};
 			name = Debug;
@@ -569,7 +570,7 @@
 				);
 				INFOPLIST_FILE = 3DTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Orca CareTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/3D.app/3D";
 			};
 			name = Release;
@@ -577,7 +578,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E79823641A1D4FE8006002D0 /* Build configuration list for PBXProject "3D" */ = {
+		E79823641A1D4FE8006002D0 /* Build configuration list for PBXProject "Orca Care" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E798238A1A1D4FE8006002D0 /* Debug */,
@@ -586,7 +587,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E798238C1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "3D" */ = {
+		E798238C1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "Orca Care" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E798238D1A1D4FE8006002D0 /* Debug */,
@@ -595,7 +596,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E798238F1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "3DTests" */ = {
+		E798238F1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "Orca CareTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E79823901A1D4FE8006002D0 /* Debug */,
