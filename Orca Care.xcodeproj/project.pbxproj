@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		061C2E1EE620F59EA660CA7A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 990000186EABDE1398D8D368 /* libPods.a */; };
+		BE910A581A30E4C900CBCC7B /* CircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE910A561A30E4C900CBCC7B /* CircleTransitionAnimator.swift */; };
+		BE910A5D1A30F5B300CBCC7B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE910A5C1A30F5B300CBCC7B /* SearchViewController.m */; };
+		BE910A601A30F5BE00CBCC7B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE910A5F1A30F5BE00CBCC7B /* SettingsViewController.m */; };
+		BE910A631A31058800CBCC7B /* CheckupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE910A621A31058800CBCC7B /* CheckupsViewController.m */; };
+		BE910A651A31093500CBCC7B /* ProximaNova-Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE910A641A31093500CBCC7B /* ProximaNova-Reg.otf */; };
 		BE9C48331A2293DC00B2B3E6 /* DiagnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48321A2293DC00B2B3E6 /* DiagnosisViewController.m */; };
 		BE9C48361A2293E900B2B3E6 /* TreatmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48351A2293E900B2B3E6 /* TreatmentViewController.m */; };
 		BE9C48391A2293F400B2B3E6 /* RecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48381A2293F400B2B3E6 /* RecoveryViewController.m */; };
@@ -54,6 +59,15 @@
 		2BE7AC7607824D0864C90551 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3EA16F092A7657E359D32763 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		990000186EABDE1398D8D368 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE910A561A30E4C900CBCC7B /* CircleTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTransitionAnimator.swift; sourceTree = "<group>"; };
+		BE910A5A1A30E55500CBCC7B /* Orca Care-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Orca Care-Bridging-Header.h"; sourceTree = "<group>"; };
+		BE910A5B1A30F5B300CBCC7B /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		BE910A5C1A30F5B300CBCC7B /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		BE910A5E1A30F5BE00CBCC7B /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		BE910A5F1A30F5BE00CBCC7B /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		BE910A611A31058800CBCC7B /* CheckupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckupsViewController.h; sourceTree = "<group>"; };
+		BE910A621A31058800CBCC7B /* CheckupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckupsViewController.m; sourceTree = "<group>"; };
+		BE910A641A31093500CBCC7B /* ProximaNova-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Reg.otf"; sourceTree = "<group>"; };
 		BE9C48311A2293DC00B2B3E6 /* DiagnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosisViewController.h; sourceTree = "<group>"; };
 		BE9C48321A2293DC00B2B3E6 /* DiagnosisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosisViewController.m; sourceTree = "<group>"; };
 		BE9C48341A2293E900B2B3E6 /* TreatmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreatmentViewController.h; sourceTree = "<group>"; };
@@ -164,6 +178,12 @@
 				E79823711A1D4FE8006002D0 /* AppDelegate.m */,
 				E79823731A1D4FE8006002D0 /* CardViewController.h */,
 				E79823741A1D4FE8006002D0 /* CardViewController.m */,
+				BE910A5B1A30F5B300CBCC7B /* SearchViewController.h */,
+				BE910A5C1A30F5B300CBCC7B /* SearchViewController.m */,
+				BE910A5E1A30F5BE00CBCC7B /* SettingsViewController.h */,
+				BE910A5F1A30F5BE00CBCC7B /* SettingsViewController.m */,
+				BE910A611A31058800CBCC7B /* CheckupsViewController.h */,
+				BE910A621A31058800CBCC7B /* CheckupsViewController.m */,
 				BE9C48471A23D97000B2B3E6 /* ShellViewController.h */,
 				BE9C48481A23D97000B2B3E6 /* ShellViewController.m */,
 				BE9C48311A2293DC00B2B3E6 /* DiagnosisViewController.h */,
@@ -187,6 +207,8 @@
 				BE9C484E1A251F1200B2B3E6 /* TransitionAnimator.h */,
 				BE9C484F1A251F1200B2B3E6 /* TransitionAnimator.m */,
 				E79823761A1D4FE8006002D0 /* Main.storyboard */,
+				BE910A561A30E4C900CBCC7B /* CircleTransitionAnimator.swift */,
+				BE910A5A1A30E55500CBCC7B /* Orca Care-Bridging-Header.h */,
 				BE9C48571A265C3500B2B3E6 /* EncounterTableViewCell.h */,
 				BE9C48581A265C3500B2B3E6 /* EncounterTableViewCell.m */,
 				BE9C485D1A268B6300B2B3E6 /* ConditionText.plist */,
@@ -209,6 +231,7 @@
 		E798236C1A1D4FE8006002D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BE910A641A31093500CBCC7B /* ProximaNova-Reg.otf */,
 				BE9C48401A239C5500B2B3E6 /* Proxima Nova Light.ttf */,
 				E798236D1A1D4FE8006002D0 /* Info.plist */,
 				E798236E1A1D4FE8006002D0 /* main.m */,
@@ -324,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C6E0C51A265D24000FA032 /* lumbarvideo.mp4 in Resources */,
+				BE910A651A31093500CBCC7B /* ProximaNova-Reg.otf in Resources */,
 				E79823781A1D4FE8006002D0 /* Main.storyboard in Resources */,
 				E7FA57021A1E6F5700D2DD2A /* fullbody.dae in Resources */,
 				BE9C485E1A268B6300B2B3E6 /* ConditionText.plist in Resources */,
@@ -389,6 +413,10 @@
 				BE9C48501A251F1200B2B3E6 /* PlanViewController.m in Sources */,
 				BE9C485C1A26887600B2B3E6 /* TextViewController.m in Sources */,
 				BE9C48631A26988800B2B3E6 /* RefreshView.m in Sources */,
+				BE910A581A30E4C900CBCC7B /* CircleTransitionAnimator.swift in Sources */,
+				BE910A5D1A30F5B300CBCC7B /* SearchViewController.m in Sources */,
+				BE910A631A31058800CBCC7B /* CheckupsViewController.m in Sources */,
+				BE910A601A30F5BE00CBCC7B /* SettingsViewController.m in Sources */,
 				BE9C48391A2293F400B2B3E6 /* RecoveryViewController.m in Sources */,
 				BE9C48511A251F1200B2B3E6 /* TransitionAnimator.m in Sources */,
 				BE9C483F1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m in Sources */,
@@ -523,9 +551,13 @@
 			baseConfigurationReference = 3EA16F092A7657E359D32763 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = 3D/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Orca Care";
+				SWIFT_OBJC_BRIDGING_HEADER = "3D/Orca Care-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -534,10 +566,13 @@
 			baseConfigurationReference = 2BE7AC7607824D0864C90551 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = 3D/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Orca Care";
+				SWIFT_OBJC_BRIDGING_HEADER = "3D/Orca Care-Bridging-Header.h";
 			};
 			name = Release;
 		};

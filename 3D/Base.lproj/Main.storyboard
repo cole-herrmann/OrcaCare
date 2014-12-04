@@ -10,6 +10,16 @@
             <string>ProximaNova-Light</string>
             <string>ProximaNova-Light</string>
             <string>ProximaNova-Light</string>
+            <string>ProximaNova-Light</string>
+        </mutableArray>
+        <mutableArray key="ProximaNova-Reg.otf">
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -56,6 +66,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="R35-gY-vUb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xpn-kT-NO1">
+                                        <rect key="frame" x="0.0" y="3" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="back">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="back:" destination="4KX-KH-PAA" eventType="touchUpInside" id="WP9-9w-rnP"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lumbar Disc Herniation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6xR-bM-lOr" userLabel="Title">
+                                        <rect key="frame" x="87" y="14" width="201" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="n2g-vL-Q3h">
                                 <rect key="frame" x="0.0" y="51" width="375" height="616"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,29 +115,6 @@
                                     <outlet property="delegate" destination="4KX-KH-PAA" id="LPh-C7-d4o"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" id="R35-gY-vUb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xpn-kT-NO1">
-                                        <rect key="frame" x="0.0" y="3" width="44" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="back:" destination="4KX-KH-PAA" eventType="touchUpInside" id="WP9-9w-rnP"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lumbar Disc Herniation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6xR-bM-lOr" userLabel="Title">
-                                        <rect key="frame" x="87" y="14" width="201" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -119,7 +129,160 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TF-TD-co3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="206.5" y="680.5"/>
+            <point key="canvasLocation" x="484.5" y="674.5"/>
+        </scene>
+        <!--Checkups View Controller-->
+        <scene sceneID="Wca-XB-Tta">
+            <objects>
+                <viewController id="7lZ-qd-osu" customClass="CheckupsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7aE-Nh-c2C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="Wvf-7V-MNF">
+                                <rect key="frame" x="0.0" y="-5" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VFd-AM-zcE">
+                                        <rect key="frame" x="0.0" y="3" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="back">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="back:" destination="7lZ-qd-osu" eventType="touchUpInside" id="5a2-cZ-a27"/>
+                                            <action selector="back:" destination="4KX-KH-PAA" eventType="touchUpInside" id="eN6-f5-IiA"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lumbar Disc Herniation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UxW-gh-acR" userLabel="Title">
+                                        <rect key="frame" x="87" y="14" width="201" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much has your level of pain improved since treatment?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lMN-NB-IJE">
+                                <rect key="frame" x="18" y="53" width="341" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="59E-wR-bnM">
+                                <rect key="frame" x="175" y="621" width="27" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NrI-um-2Ww">
+                                <rect key="frame" x="291" y="623" width="68" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="nextbutton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wtl-BR-JGt">
+                                <rect key="frame" x="152" y="163" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="22"/>
+                                <state key="normal" title="1" backgroundImage="whitecircle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="bluecircle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="whitecircle"/>
+                                <connections>
+                                    <action selector="buttonDown:" destination="7lZ-qd-osu" eventType="touchDown" id="7ip-uw-tK0"/>
+                                    <action selector="buttonTapped:" destination="7lZ-qd-osu" eventType="touchUpInside" id="7us-Te-ZeL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NlL-ov-xd2">
+                                <rect key="frame" x="152" y="246" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="22"/>
+                                <state key="normal" title="2" backgroundImage="whitecircle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="bluecircle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="whitecircle"/>
+                                <connections>
+                                    <action selector="buttonDown:" destination="7lZ-qd-osu" eventType="touchDown" id="qM2-KT-zd4"/>
+                                    <action selector="buttonTapped:" destination="7lZ-qd-osu" eventType="touchUpInside" id="lde-z0-KuD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xrp-Jz-ssC">
+                                <rect key="frame" x="152" y="330" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="22"/>
+                                <state key="normal" title="3" backgroundImage="whitecircle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="bluecircle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="whitecircle"/>
+                                <connections>
+                                    <action selector="buttonDown:" destination="7lZ-qd-osu" eventType="touchDown" id="xTh-1g-vSg"/>
+                                    <action selector="buttonTapped:" destination="7lZ-qd-osu" eventType="touchUpInside" id="b8a-58-105"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qVM-qi-cBO">
+                                <rect key="frame" x="153" y="415" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="22"/>
+                                <state key="normal" title="4" backgroundImage="whitecircle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="bluecircle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="whitecircle"/>
+                                <connections>
+                                    <action selector="buttonDown:" destination="7lZ-qd-osu" eventType="touchDown" id="cpC-nM-NJG"/>
+                                    <action selector="buttonTapped:" destination="7lZ-qd-osu" eventType="touchUpInside" id="bMt-Gd-665"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1ei-To-gv1">
+                                <rect key="frame" x="153" y="501" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="22"/>
+                                <state key="normal" title="5" backgroundImage="whitecircle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="bluecircle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="whitecircle"/>
+                                <connections>
+                                    <action selector="buttonDown:" destination="7lZ-qd-osu" eventType="touchDown" id="0d6-oe-rIS"/>
+                                    <action selector="buttonTapped:" destination="7lZ-qd-osu" eventType="touchUpInside" id="3B6-gk-nRi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <navigationItem key="navigationItem" id="jrh-bI-DYH"/>
+                    <connections>
+                        <outlet property="backView" destination="Wvf-7V-MNF" id="v5m-rJ-wBQ"/>
+                        <outlet property="nextButton" destination="NrI-um-2Ww" id="p4m-tP-CSw"/>
+                        <outlet property="positionLabel" destination="59E-wR-bnM" id="zIj-Nf-Axm"/>
+                        <outlet property="questionLabel" destination="lMN-NB-IJE" id="qAw-i2-jTr"/>
+                        <outlet property="titleLabel" destination="UxW-gh-acR" id="V1m-da-kZa"/>
+                        <outletCollection property="circleButtons" destination="wtl-BR-JGt" id="l17-g8-JsX"/>
+                        <outletCollection property="circleButtons" destination="NlL-ov-xd2" id="fdj-bd-IxX"/>
+                        <outletCollection property="circleButtons" destination="Xrp-Jz-ssC" id="4Jn-sf-yUH"/>
+                        <outletCollection property="circleButtons" destination="qVM-qi-cBO" id="zQ1-4o-X6E"/>
+                        <outletCollection property="circleButtons" destination="1ei-To-gv1" id="iJY-TB-46j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RcO-3U-xSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="484.5" y="-44.5"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="HC5-Fa-ruo">
@@ -173,7 +336,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8J-R9-irV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670.5" y="680.5"/>
+            <point key="canvasLocation" x="908.5" y="674.5"/>
         </scene>
         <!--Card View Controller-->
         <scene sceneID="mhC-Lo-x3r">
@@ -183,51 +346,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="iyI-oI-M8W">
-                                <rect key="frame" x="0.0" y="126" width="423" height="415"/>
+                            <view contentMode="scaleToFill" id="0LD-Qn-5yk">
+                                <rect key="frame" x="0.0" y="126" width="375" height="420"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orca-card" id="Fgm-GQ-7F0">
-                                        <rect key="frame" x="544" y="15" width="227" height="387"/>
+                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="iyI-oI-M8W">
+                                        <rect key="frame" x="74" y="2" width="235" height="415"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orca-card" id="zPK-KF-hW0">
-                                        <rect key="frame" x="309" y="15" width="227" height="386"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BsH-9j-b4n" userLabel="plan-card">
-                                        <rect key="frame" x="74" y="15" width="227" height="386"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="plan-card">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cardClicked:" destination="pO7-9R-K2k" eventType="touchUpInside" id="cwJ-p2-PT8"/>
-                                        </connections>
-                                    </button>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" id="aj6-P2-OWH" customClass="FBShimmeringView">
-                                        <rect key="frame" x="81" y="36" width="213" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </view>
+                                        <subviews>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan-card3" id="hYN-aS-HJb">
+                                                <rect key="frame" x="474" y="15" width="227" height="386"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan-card2" id="zPK-KF-hW0">
+                                                <rect key="frame" x="239" y="15" width="227" height="386"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="BsH-9j-b4n" userLabel="plan-card">
+                                                <rect key="frame" x="4" y="15" width="227" height="386"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" backgroundImage="plan-card">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cardClicked:" destination="pO7-9R-K2k" eventType="touchUpInside" id="cwJ-p2-PT8"/>
+                                                </connections>
+                                            </button>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" id="aj6-P2-OWH" customClass="FBShimmeringView">
+                                                <rect key="frame" x="11" y="31" width="213" height="29"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </view>
+                                        </subviews>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
+                                                <size key="value" width="880" height="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </scrollView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AgU-SW-JXY">
+                                <rect key="frame" x="16" y="603" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.031372549020000001" green="0.2901960784" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                <state key="normal" image="settingsicon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
-                                        <size key="value" width="880" height="1"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="28"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </scrollView>
+                                <connections>
+                                    <action selector="settingsClicked:" destination="pO7-9R-K2k" eventType="touchUpInside" id="H0t-TG-qzG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NOc-es-bmw">
+                                <rect key="frame" x="303" y="603" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.031372549019607843" green="0.29019607843137257" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                <state key="normal" image="searchicon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="28"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="searchClicked:" destination="pO7-9R-K2k" eventType="touchUpInside" id="6ji-Ve-jeY"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="JYH-QA-IVV"/>
                     <connections>
                         <outlet property="scrollView" destination="iyI-oI-M8W" id="HsV-GO-icH"/>
+                        <outlet property="searchButton" destination="NOc-es-bmw" id="oHe-ZI-DBS"/>
+                        <outlet property="settingsButton" destination="AgU-SW-JXY" id="VSC-gK-de9"/>
                         <outlet property="shimmerView" destination="aj6-P2-OWH" id="4Sn-JD-bty"/>
+                        <outlet property="touchableView" destination="0LD-Qn-5yk" id="QDz-es-AnZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w75-va-Lh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-222.5" y="-62.5"/>
+            <point key="canvasLocation" x="-128" y="-62.5"/>
         </scene>
         <!--Plan View Controller-->
         <scene sceneID="7Gy-8A-1z0">
@@ -244,10 +451,10 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfJ-zB-Kqb" id="sWy-P3-4M4">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xDT-kk-161">
-                                            <rect key="frame" x="116" y="63" width="251" height="40"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xDT-kk-161">
+                                            <rect key="frame" x="0.0" y="53" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="30"/>
+                                            <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="48"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -256,7 +463,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="titleLabel" destination="xDT-kk-161" id="U9L-dY-fpe"/>
-                                    <segue destination="4KX-KH-PAA" kind="push" id="4x9-MP-ovL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -267,10 +473,58 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="rnI-5B-gTy"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="7lZ-qd-osu" kind="push" identifier="checkupSegue" id="Bv5-hX-poI"/>
+                        <segue destination="4KX-KH-PAA" kind="push" identifier="diagnosisSegue" id="9An-bI-rSk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5CO-9C-XGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-222.5" y="680.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oXJ-bj-ThN">
+            <objects>
+                <navigationController storyboardIdentifier="settingsNav" id="6ch-dy-8tV" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5ug-wM-FGy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Sde-iE-Xnh" kind="relationship" relationship="rootViewController" id="lmD-CF-QqP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3br-G7-ZbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-646.5" y="2193.5"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="FxN-Rw-YhY">
+            <objects>
+                <viewController id="Sde-iE-Xnh" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lrE-ZT-dc1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZMg-XN-wpX">
+                                <rect key="frame" x="167" y="319" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="Sde-iE-Xnh" eventType="touchUpInside" id="Qi4-Cf-S9J"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27337547029999998" green="1" blue="0.24415162979999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HdB-YW-8od"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NmJ-ne-o2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-222.5" y="2193.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F15-af-OeX">
@@ -291,12 +545,67 @@
             </objects>
             <point key="canvasLocation" x="-646.5" y="680.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hQR-ZY-itc">
+            <objects>
+                <navigationController storyboardIdentifier="searchNav" navigationBarHidden="YES" id="tBP-CN-gFn" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gy0-Yi-Mec">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Wjo-9B-mGV" kind="relationship" relationship="rootViewController" id="2qa-z9-6mT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D61-8W-Dqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-646.5" y="1445.5"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="S5z-6z-D6y">
+            <objects>
+                <viewController id="Wjo-9B-mGV" customClass="SearchViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tpv-Ho-qCN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchscreen" id="RbI-JL-9we">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jDF-hN-Ba4">
+                                <rect key="frame" x="6" y="8" width="42" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="Wjo-9B-mGV" eventType="touchUpInside" id="nGE-lX-eDj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jRu-ht-gr6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qdp-FW-bC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-222.5" y="1445.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back" width="176" height="176"/>
-        <image name="orca-card" width="850" height="1444"/>
+        <image name="bluecircle" width="300" height="300"/>
+        <image name="nextbutton" width="212" height="72"/>
         <image name="plan-card" width="850" height="1444"/>
+        <image name="plan-card2" width="850" height="1444"/>
+        <image name="plan-card3" width="850" height="1444"/>
+        <image name="searchicon" width="88" height="88"/>
+        <image name="searchscreen" width="1280" height="2272"/>
+        <image name="settingsicon" width="100" height="98"/>
         <image name="spine" width="1102" height="1536"/>
+        <image name="whitecircle" width="300" height="300"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

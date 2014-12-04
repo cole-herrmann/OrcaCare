@@ -10,12 +10,17 @@
 #import <SceneKit/SceneKit.h>
 #import <Shimmer/FBShimmeringView.h>
 #import "PlanViewController.h"
+#import "Orca_Care-Swift.h"
 
-@interface CardViewController () <PlanVCDelegate>
+@interface CardViewController () <PlanVCDelegate, UIGestureRecognizerDelegate, UIViewControllerTransitioningDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
 @property (weak, nonatomic) IBOutlet FBShimmeringView *shimmerView;
+@property (weak, nonatomic) IBOutlet UIView *touchableView;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
+
+@property (nonatomic, weak) UIButton *clickedButton;
 
 @end
 
@@ -30,20 +35,27 @@
     loadingLabel.textAlignment = NSTextAlignmentCenter;
     loadingLabel.text = NSLocalizedString(@"New Care Plan", nil);
     self.shimmerView.contentView = loadingLabel;
-    
     // Start shimmering.
     self.shimmerView.shimmering = YES;
+    self.scrollView.contentSize = CGSizeMake(227*3 + 8*3, 1);
+    [self.touchableView addGestureRecognizer:self.scrollView.panGestureRecognizer];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-//    [self showScrollview];
 }
 
-- (void)showScrollview {
+- (void)hideScrollView:(BOOL)hide completion:(void (^)())completion {
+    CGFloat scrollAlpha = hide ? 0.0f : 1.0f;
+    CGFloat buttonAlpha = hide ? 0.0f : 0.75f;
     [UIView animateWithDuration:0.4 animations:^{
-        self.scrollView.alpha = 1.0f;
+        self.scrollView.alpha = scrollAlpha;
+        self.searchButton.alpha = buttonAlpha;
+        self.settingsButton.alpha = buttonAlpha;
+    } completion:^(BOOL finished) {
+        if(completion) {
+            completion();
+        }
     }];
 }
 
@@ -54,11 +66,28 @@
 //    self.navigationController.view.backgroundColor = [UIColor clearColor];
 //}
 
-- (IBAction)cardClicked:(id)sender {
+- (IBAction)searchClicked:(id)sender {
+    UIStoryboard *stb = self.storyboard;
+    UINavigationController *nav = [stb instantiateViewControllerWithIdentifier:@"searchNav"];
+    nav.transitioningDelegate = self;
+    nav.modalPresentationStyle = UIModalPresentationCustom;
+    self.clickedButton = sender;
     
-    [UIView animateWithDuration:0.4 animations:^{
-        self.scrollView.alpha = 0.0f;
-    } completion:^(BOOL finished) {
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (IBAction)settingsClicked:(id)sender {
+    UIStoryboard *stb = self.storyboard;
+    UINavigationController *nav = [stb instantiateViewControllerWithIdentifier:@"settingsNav"];
+    nav.transitioningDelegate = self;
+    nav.modalPresentationStyle = UIModalPresentationCustom;
+    self.clickedButton = sender;
+    
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (IBAction)cardClicked:(id)sender {
+    [self hideScrollView:YES completion:^{
         [self presentPlan];
     }];
 }
@@ -89,8 +118,24 @@
     [planVC.navigationController.view removeFromSuperview];
     [planVC.navigationController removeFromParentViewController];
     
-    [self showScrollview];
+    [self hideScrollView:NO completion:nil];
     
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    CircleTransitionAnimator *animator = [[CircleTransitionAnimator alloc] init];
+    animator.animationButton = self.clickedButton;
+//    animator.presenting = YES;
+    return animator;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+//    CircleTransitionAnimator *animator = [[CircleTransitionAnimator alloc] init];
+//    animator.animationButton = self.clickedButton;
+//    //    animator.presenting = YES;
+//    return animator;
+    
+    return nil;
 }
 
 @end

@@ -11,11 +11,12 @@
 #import "AMWaveTransition.h"
 #import "EncounterTableViewCell.h"
 #import "DiagnosisDetailsViewController.h"
+#import "CheckupsViewController.h"
 #import "RefreshView.h"
 
 @interface PlanViewController () <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
 
-@property (nonatomic, weak) UIImageView *numberedLinesView;
+//@property (nonatomic, weak) UIImageView *numberedLinesView;
 @property (nonatomic, strong) NSArray *textArray;
 @property (nonatomic, strong) NSArray *colorsArray;
 
@@ -30,14 +31,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"numberedlines"]];
-//    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.view addSubview:imageView];
-    imageView.frame = CGRectMake(20, 0, 90, self.view.bounds.size.height);
-    self.numberedLinesView = imageView;
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"numberedlines"]];
+////    imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    [self.view addSubview:imageView];
+//    imageView.frame = CGRectMake(20, 0, 90, self.view.bounds.size.height);
+//    self.numberedLinesView = imageView;
     
     self.textArray = @[@"Diagnosis", @"Treatment", @"Recovery", @"Checkup"];
-    self.colorsArray = @[[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:.9], [UIColor colorWithRed:1/255.0f green:138/255.0f blue:139/255.0f alpha:.9], [UIColor colorWithRed:0.071 green:0.145 blue:0.231 alpha:.9], [UIColor colorWithRed:0.596 green:0.282 blue:0.063 alpha:.9]];
+    self.colorsArray = @[[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:.85], [UIColor colorWithRed:1/255.0f green:138/255.0f blue:139/255.0f alpha:.85], [UIColor colorWithRed:50/255.0f green:33/255.0f blue:58/255.0f alpha:.85], [UIColor colorWithRed:70/255.0f green:172/255.0f blue:194/255.0f alpha:.85]];
     
     [[NSBundle mainBundle] loadNibNamed:@"RefreshView" owner:self options:nil];
 
@@ -64,21 +65,37 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    EncounterTableViewCell *cell = (EncounterTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    if(indexPath.row == 3) {
+        [self performSegueWithIdentifier:@"checkupSegue" sender:cell];
+    } else {
+        [self performSegueWithIdentifier:@"diagnosisSegue" sender:cell];
+    }
+}
+
 - (NSArray *)visibleCells {
     NSArray *cells = [self.tableView visibleCells];
     NSMutableArray *labels = [NSMutableArray arrayWithCapacity:cells.count];
     for(EncounterTableViewCell *cell in cells) {
         [labels addObject:cell.titleLabel];
     }
-    [labels addObject:self.numberedLinesView];
+//    [labels addObject:self.numberedLinesView];
     return labels;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(EncounterTableViewCell *)sender {
-    self.navigationController.delegate = self;
-    DiagnosisDetailsViewController *detailsVC = [segue destinationViewController];
-    detailsVC.view.backgroundColor = sender.backgroundColor;
-    detailsVC.titleLabel.text = sender.titleLabel.text;
+    if([segue.identifier isEqualToString:@"diagnosisSegue"]) {
+        self.navigationController.delegate = self;
+        DiagnosisDetailsViewController *detailsVC = [segue destinationViewController];
+        detailsVC.view.backgroundColor = sender.backgroundColor;
+        detailsVC.titleLabel.text = sender.titleLabel.text;
+    } else if ([segue.identifier isEqualToString:@"checkupSegue"]) {
+        self.navigationController.delegate = self;
+        CheckupsViewController *checkupVC = [segue destinationViewController];
+        checkupVC.view.backgroundColor = sender.backgroundColor;
+        checkupVC.titleLabel.text = sender.titleLabel.text;
+    }
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
