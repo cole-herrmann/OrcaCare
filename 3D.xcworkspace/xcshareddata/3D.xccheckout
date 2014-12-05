@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>CAA1DC91-B88E-4D72-9DA9-99F7DC0150FC</string>
+	<string>C97D5EC0-4070-41BB-B96C-E493EBA6ED39</string>
 	<key>IDESourceControlProjectName</key>
 	<string>3D</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>4E304A900B60F9FC3ED995896D214FF369123BE5</key>
-		<string>github.com:cole-herrmann/OrcaCare.git</string>
+		<string>https://github.com/cole-herrmann/OrcaCare.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>3D.xcworkspace</string>
@@ -21,7 +21,7 @@
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:cole-herrmann/OrcaCare.git</string>
+	<string>https://github.com/cole-herrmann/OrcaCare.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
