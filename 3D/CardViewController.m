@@ -125,15 +125,14 @@
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     CircleTransitionAnimator *animator = [[CircleTransitionAnimator alloc] init];
     animator.animationButton = self.clickedButton;
-//    animator.presenting = YES;
     return animator;
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-//    CircleTransitionAnimator *animator = [[CircleTransitionAnimator alloc] init];
-//    animator.animationButton = self.clickedButton;
-//    //    animator.presenting = YES;
-//    return animator;
+    CircleTransitionAnimator *animator = [[CircleTransitionAnimator alloc] init];
+    animator.animationButton = self.clickedButton;
+    animator.presenting = NO;
+    return animator;
     
     return nil;
 }

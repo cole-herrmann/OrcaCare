@@ -12,7 +12,12 @@ class CircleTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
     
     weak var transitionContext: UIViewControllerContextTransitioning?
     weak var animationButton: UIButton!
-    var presenting:Bool!
+    var presenting: Bool
+    
+    override init() {
+        presenting = true
+        super.init()
+    }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         self.transitionContext = transitionContext
@@ -22,26 +27,38 @@ class CircleTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
         var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         var button = self.animationButton
         
-        containerView.addSubview(toViewController.view)
-        var circleMaskPathInitial = UIBezierPath(ovalInRect: button.frame)
-        var extremePoint = CGPoint(x: button.center.x - 0, y: button.center.y + CGRectGetHeight(toViewController.view.bounds))
+        var vc = presenting ? toViewController : fromViewController
+        
+        containerView.addSubview(vc.view)
+        var inset = button.frame.size.width / 2
+        var circleMaskPathInitial = UIBezierPath(ovalInRect: CGRectInset(button.frame, inset, inset))
+        var extremePoint = CGPoint(x: button.center.x - 0, y: CGRectGetHeight(toViewController.view.bounds))
         var radius = sqrt((extremePoint.x*extremePoint.x) + (extremePoint.y*extremePoint.y))
         var circleMaskPathFinal = UIBezierPath(ovalInRect: CGRectInset(button.frame, -radius, -radius))
         
+        if(!presenting) {
+            var temp = circleMaskPathInitial
+            circleMaskPathInitial = circleMaskPathFinal
+            circleMaskPathFinal = temp
+        }
+        
         var maskLayer = CAShapeLayer()
         maskLayer.path = circleMaskPathFinal.CGPath
-        toViewController.view.layer.mask = maskLayer
+        vc.view.layer.mask = maskLayer
         
         var maskLayerAnimation = CABasicAnimation(keyPath: "path")
         maskLayerAnimation.fromValue = circleMaskPathInitial.CGPath
         maskLayerAnimation.toValue = circleMaskPathFinal.CGPath
         maskLayerAnimation.duration = self.transitionDuration(transitionContext)
         maskLayerAnimation.delegate = self
+        
+        var easing = presenting ? kCAMediaTimingFunctionEaseIn : kCAMediaTimingFunctionEaseOut
+        maskLayerAnimation.timingFunction = CAMediaTimingFunction(name: easing)
         maskLayer.addAnimation(maskLayerAnimation, forKey: "path")
     }
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        return 0.8
+        return 0.5
     }
     
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
