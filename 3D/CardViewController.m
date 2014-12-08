@@ -11,20 +11,36 @@
 #import <Shimmer/FBShimmeringView.h>
 #import "PlanViewController.h"
 #import "Orca_Care-Swift.h"
+#import "LoginViewModel.h"
+#import "EncounterViewModel.h"
 
-@interface CardViewController () <PlanVCDelegate, UIGestureRecognizerDelegate, UIViewControllerTransitioningDelegate>
+@interface CardViewController () <LoginVMDelegate, PlanVCDelegate, UIGestureRecognizerDelegate, UIViewControllerTransitioningDelegate>
+
+@property (nonatomic, strong) LoginViewModel *loginVM;
+@property (nonatomic, strong) EncounterViewModel *encounterVM;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet FBShimmeringView *shimmerView;
 @property (weak, nonatomic) IBOutlet UIView *touchableView;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
-
 @property (nonatomic, weak) UIButton *clickedButton;
 
 @end
 
 @implementation CardViewController
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if(!self) return nil;
+    
+    self.loginVM = [[LoginViewModel alloc] init];
+    self.loginVM.delegate = self;
+    
+    self.encounterVM = [[EncounterViewModel alloc] init];
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +55,8 @@
     self.shimmerView.shimmering = YES;
     self.scrollView.contentSize = CGSizeMake(227*3 + 8*3, 1);
     [self.touchableView addGestureRecognizer:self.scrollView.panGestureRecognizer];
+    
+    [self.loginVM loginWithEmail:@"zeluff@orcahealth.com" password:@"password"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -135,6 +153,10 @@
     return animator;
     
     return nil;
+}
+
+- (void)loginSucceeded {
+    [self.encounterVM all];
 }
 
 @end

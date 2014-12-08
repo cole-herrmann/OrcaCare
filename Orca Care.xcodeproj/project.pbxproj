@@ -13,6 +13,10 @@
 		BE910A601A30F5BE00CBCC7B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE910A5F1A30F5BE00CBCC7B /* SettingsViewController.m */; };
 		BE910A631A31058800CBCC7B /* CheckupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE910A621A31058800CBCC7B /* CheckupsViewController.m */; };
 		BE910A651A31093500CBCC7B /* ProximaNova-Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE910A641A31093500CBCC7B /* ProximaNova-Reg.otf */; };
+		BE910A681A32293600CBCC7B /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE910A671A32293600CBCC7B /* LoginViewModel.m */; };
+		BE910A6D1A322E2100CBCC7B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BE910A6C1A322E2100CBCC7B /* User.m */; };
+		BE910A701A3232DA00CBCC7B /* OrcaObjectRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE910A6F1A3232DA00CBCC7B /* OrcaObjectRequestOperation.m */; };
+		BE910A731A3240B600CBCC7B /* OrcaObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE910A721A3240B600CBCC7B /* OrcaObjectManager.m */; };
 		BE9C48331A2293DC00B2B3E6 /* DiagnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48321A2293DC00B2B3E6 /* DiagnosisViewController.m */; };
 		BE9C48361A2293E900B2B3E6 /* TreatmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48351A2293E900B2B3E6 /* TreatmentViewController.m */; };
 		BE9C48391A2293F400B2B3E6 /* RecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48381A2293F400B2B3E6 /* RecoveryViewController.m */; };
@@ -32,6 +36,8 @@
 		BE9C485E1A268B6300B2B3E6 /* ConditionText.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE9C485D1A268B6300B2B3E6 /* ConditionText.plist */; };
 		BE9C48601A26966800B2B3E6 /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9C485F1A26966800B2B3E6 /* RefreshView.xib */; };
 		BE9C48631A26988800B2B3E6 /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48621A26988800B2B3E6 /* RefreshView.m */; };
+		BEEBE31A1A32644600057AE2 /* EncounterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEBE3191A32644600057AE2 /* EncounterViewModel.m */; };
+		BEEBE31D1A32653200057AE2 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEBE31C1A32653200057AE2 /* Encounter.m */; };
 		E798236F1A1D4FE8006002D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E798236E1A1D4FE8006002D0 /* main.m */; };
 		E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823711A1D4FE8006002D0 /* AppDelegate.m */; };
 		E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823741A1D4FE8006002D0 /* CardViewController.m */; };
@@ -39,10 +45,8 @@
 		E798237A1A1D4FE8006002D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E79823791A1D4FE8006002D0 /* Images.xcassets */; };
 		E798237D1A1D4FE8006002D0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E798237B1A1D4FE8006002D0 /* LaunchScreen.xib */; };
 		E79823891A1D4FE8006002D0 /* _DTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823881A1D4FE8006002D0 /* _DTests.m */; };
-		E79823931A1D505D006002D0 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79823921A1D505D006002D0 /* SceneKit.framework */; };
 		E798239F1A1E6419006002D0 /* ManView.m in Sources */ = {isa = PBXBuildFile; fileRef = E798239E1A1E6419006002D0 /* ManView.m */; };
 		E7C6E0C51A265D24000FA032 /* lumbarvideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E7C6E0C41A265D24000FA032 /* lumbarvideo.mp4 */; };
-		E7FA57021A1E6F5700D2DD2A /* fullbody.dae in Resources */ = {isa = PBXBuildFile; fileRef = E7FA57011A1E6F5700D2DD2A /* fullbody.dae */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,14 @@
 		BE910A611A31058800CBCC7B /* CheckupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckupsViewController.h; sourceTree = "<group>"; };
 		BE910A621A31058800CBCC7B /* CheckupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckupsViewController.m; sourceTree = "<group>"; };
 		BE910A641A31093500CBCC7B /* ProximaNova-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Reg.otf"; sourceTree = "<group>"; };
+		BE910A661A32293600CBCC7B /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
+		BE910A671A32293600CBCC7B /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+		BE910A6B1A322E2100CBCC7B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		BE910A6C1A322E2100CBCC7B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		BE910A6E1A3232DA00CBCC7B /* OrcaObjectRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrcaObjectRequestOperation.h; sourceTree = "<group>"; };
+		BE910A6F1A3232DA00CBCC7B /* OrcaObjectRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrcaObjectRequestOperation.m; sourceTree = "<group>"; };
+		BE910A711A3240B600CBCC7B /* OrcaObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrcaObjectManager.h; sourceTree = "<group>"; };
+		BE910A721A3240B600CBCC7B /* OrcaObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrcaObjectManager.m; sourceTree = "<group>"; };
 		BE9C48311A2293DC00B2B3E6 /* DiagnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosisViewController.h; sourceTree = "<group>"; };
 		BE9C48321A2293DC00B2B3E6 /* DiagnosisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosisViewController.m; sourceTree = "<group>"; };
 		BE9C48341A2293E900B2B3E6 /* TreatmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreatmentViewController.h; sourceTree = "<group>"; };
@@ -100,6 +112,10 @@
 		BE9C485F1A26966800B2B3E6 /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		BE9C48611A26988800B2B3E6 /* RefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshView.h; sourceTree = "<group>"; };
 		BE9C48621A26988800B2B3E6 /* RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshView.m; sourceTree = "<group>"; };
+		BEEBE3181A32644600057AE2 /* EncounterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncounterViewModel.h; sourceTree = "<group>"; };
+		BEEBE3191A32644600057AE2 /* EncounterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncounterViewModel.m; sourceTree = "<group>"; };
+		BEEBE31B1A32653200057AE2 /* Encounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encounter.h; sourceTree = "<group>"; };
+		BEEBE31C1A32653200057AE2 /* Encounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encounter.m; sourceTree = "<group>"; };
 		E79823691A1D4FE8006002D0 /* Orca Care.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orca Care.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E798236D1A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E798236E1A1D4FE8006002D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,11 +129,9 @@
 		E79823821A1D4FE8006002D0 /* Orca CareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orca CareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79823871A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E79823881A1D4FE8006002D0 /* _DTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _DTests.m; sourceTree = "<group>"; };
-		E79823921A1D505D006002D0 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		E798239D1A1E6419006002D0 /* ManView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManView.h; sourceTree = "<group>"; };
 		E798239E1A1E6419006002D0 /* ManView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManView.m; sourceTree = "<group>"; };
 		E7C6E0C41A265D24000FA032 /* lumbarvideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lumbarvideo.mp4; sourceTree = "<group>"; };
-		E7FA57011A1E6F5700D2DD2A /* fullbody.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = fullbody.dae; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +139,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E79823931A1D505D006002D0 /* SceneKit.framework in Frameworks */,
 				061C2E1EE620F59EA660CA7A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +153,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE910A691A322DB000CBCC7B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE910A6B1A322E2100CBCC7B /* User.h */,
+				BE910A6C1A322E2100CBCC7B /* User.m */,
+				BEEBE31B1A32653200057AE2 /* Encounter.h */,
+				BEEBE31C1A32653200057AE2 /* Encounter.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		BE910A6A1A322DBD00CBCC7B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BE910A661A32293600CBCC7B /* LoginViewModel.h */,
+				BE910A671A32293600CBCC7B /* LoginViewModel.m */,
+				BEEBE3181A32644600057AE2 /* EncounterViewModel.h */,
+				BEEBE3191A32644600057AE2 /* EncounterViewModel.m */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
 		E28BCC86B186B625432930F2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +187,6 @@
 		E79823601A1D4FE8006002D0 = {
 			isa = PBXGroup;
 			children = (
-				E79823921A1D505D006002D0 /* SceneKit.framework */,
 				E798236B1A1D4FE8006002D0 /* 3D */,
 				E79823851A1D4FE8006002D0 /* 3DTests */,
 				E798236A1A1D4FE8006002D0 /* Products */,
@@ -173,7 +207,6 @@
 		E798236B1A1D4FE8006002D0 /* 3D */ = {
 			isa = PBXGroup;
 			children = (
-				E7FA57011A1E6F5700D2DD2A /* fullbody.dae */,
 				E79823701A1D4FE8006002D0 /* AppDelegate.h */,
 				E79823711A1D4FE8006002D0 /* AppDelegate.m */,
 				E79823731A1D4FE8006002D0 /* CardViewController.h */,
@@ -212,6 +245,12 @@
 				BE9C48571A265C3500B2B3E6 /* EncounterTableViewCell.h */,
 				BE9C48581A265C3500B2B3E6 /* EncounterTableViewCell.m */,
 				BE9C485D1A268B6300B2B3E6 /* ConditionText.plist */,
+				BE910A6E1A3232DA00CBCC7B /* OrcaObjectRequestOperation.h */,
+				BE910A6F1A3232DA00CBCC7B /* OrcaObjectRequestOperation.m */,
+				BE910A711A3240B600CBCC7B /* OrcaObjectManager.h */,
+				BE910A721A3240B600CBCC7B /* OrcaObjectManager.m */,
+				BE910A6A1A322DBD00CBCC7B /* ViewModels */,
+				BE910A691A322DB000CBCC7B /* Models */,
 				BE9C48611A26988800B2B3E6 /* RefreshView.h */,
 				BE9C48621A26988800B2B3E6 /* RefreshView.m */,
 				BE9C485F1A26966800B2B3E6 /* RefreshView.xib */,
@@ -349,7 +388,6 @@
 				E7C6E0C51A265D24000FA032 /* lumbarvideo.mp4 in Resources */,
 				BE910A651A31093500CBCC7B /* ProximaNova-Reg.otf in Resources */,
 				E79823781A1D4FE8006002D0 /* Main.storyboard in Resources */,
-				E7FA57021A1E6F5700D2DD2A /* fullbody.dae in Resources */,
 				BE9C485E1A268B6300B2B3E6 /* ConditionText.plist in Resources */,
 				E798237D1A1D4FE8006002D0 /* LaunchScreen.xib in Resources */,
 				BE9C484B1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 in Resources */,
@@ -409,7 +447,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE9C48331A2293DC00B2B3E6 /* DiagnosisViewController.m in Sources */,
+				BEEBE31D1A32653200057AE2 /* Encounter.m in Sources */,
 				BE9C48591A265C3500B2B3E6 /* EncounterTableViewCell.m in Sources */,
+				BE910A681A32293600CBCC7B /* LoginViewModel.m in Sources */,
 				BE9C48501A251F1200B2B3E6 /* PlanViewController.m in Sources */,
 				BE9C485C1A26887600B2B3E6 /* TextViewController.m in Sources */,
 				BE9C48631A26988800B2B3E6 /* RefreshView.m in Sources */,
@@ -419,14 +459,18 @@
 				BE910A601A30F5BE00CBCC7B /* SettingsViewController.m in Sources */,
 				BE9C48391A2293F400B2B3E6 /* RecoveryViewController.m in Sources */,
 				BE9C48511A251F1200B2B3E6 /* TransitionAnimator.m in Sources */,
+				BE910A731A3240B600CBCC7B /* OrcaObjectManager.m in Sources */,
+				BE910A6D1A322E2100CBCC7B /* User.m in Sources */,
 				BE9C483F1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m in Sources */,
 				BE9C48361A2293E900B2B3E6 /* TreatmentViewController.m in Sources */,
+				BEEBE31A1A32644600057AE2 /* EncounterViewModel.m in Sources */,
 				E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */,
 				BE9C48541A25509100B2B3E6 /* AMWaveTransition.m in Sources */,
 				BE9C483C1A22940A00B2B3E6 /* MyContentViewController.m in Sources */,
 				BE9C48461A23A03600B2B3E6 /* TableHeaderView.m in Sources */,
 				E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */,
 				E798236F1A1D4FE8006002D0 /* main.m in Sources */,
+				BE910A701A3232DA00CBCC7B /* OrcaObjectRequestOperation.m in Sources */,
 				E798239F1A1E6419006002D0 /* ManView.m in Sources */,
 				BE9C48491A23D97000B2B3E6 /* ShellViewController.m in Sources */,
 			);

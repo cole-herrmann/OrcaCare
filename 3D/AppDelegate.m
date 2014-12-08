@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <RestKit/RestKit.h>
+#import "OrcaObjectRequestOperation.h"
+#import "OrcaObjectManager.h"
 
 @interface AppDelegate ()
 
@@ -16,11 +19,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
+    [self setupRestKit];
     
     
     return YES;
+}
+
+- (void)setupRestKit {
+    OrcaObjectManager *manager = [OrcaObjectManager managerWithBaseURL:[NSURL URLWithString:@"https://api.orcahealth.com/"]];
+    [RKObjectManager setSharedManager:manager];
+    
+    [[RKObjectManager sharedManager] registerRequestOperationClass:[OrcaObjectRequestOperation class]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
