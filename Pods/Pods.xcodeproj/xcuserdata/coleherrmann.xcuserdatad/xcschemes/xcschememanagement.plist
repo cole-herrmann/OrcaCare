@@ -4,41 +4,105 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ISO8601DateFormatterValueTransformer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-LUKeychainAccess.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RKValueTransformers.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RestKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SOCKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Shimmer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
+		</dict>
+		<key>Pods-TransitionKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>910A8ABB47D4317C0753EF47</key>
+		<key>16E50BB284BDD385584BF9E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A446545B325B19E4D2648441</key>
+		<key>2AB3F46C8F87B9A6463DCB1B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE7B307A3D71D3BA339432C9</key>
+		<key>31623DC2406F09254B74ED9D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3AC44ACC42EF03377D1369D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47DA2F9A0A5E3C36186AE48F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E4578F1F2FB42C024326003</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>795A1C75E5A808FC1258B4EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5B5145F5E19BD15E53DD364</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBBE4DFF754C2AB7A4745189</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EFBD14D80A4DD8499524A9ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>

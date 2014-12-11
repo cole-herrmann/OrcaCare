@@ -38,6 +38,9 @@
 		BE9C48631A26988800B2B3E6 /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48621A26988800B2B3E6 /* RefreshView.m */; };
 		BEEBE31A1A32644600057AE2 /* EncounterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEBE3191A32644600057AE2 /* EncounterViewModel.m */; };
 		BEEBE31D1A32653200057AE2 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEBE31C1A32653200057AE2 /* Encounter.m */; };
+		E7067EFF1A36473500094DBE /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7067EFE1A36473500094DBE /* CardView.xib */; };
+		E7067F021A36477C00094DBE /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7067F011A36477C00094DBE /* CardView.m */; };
+		E73988171A3792E0005DFC87 /* CardShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73988161A3792E0005DFC87 /* CardShellViewController.m */; };
 		E798236F1A1D4FE8006002D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E798236E1A1D4FE8006002D0 /* main.m */; };
 		E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823711A1D4FE8006002D0 /* AppDelegate.m */; };
 		E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823741A1D4FE8006002D0 /* CardViewController.m */; };
@@ -116,6 +119,11 @@
 		BEEBE3191A32644600057AE2 /* EncounterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncounterViewModel.m; sourceTree = "<group>"; };
 		BEEBE31B1A32653200057AE2 /* Encounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encounter.h; sourceTree = "<group>"; };
 		BEEBE31C1A32653200057AE2 /* Encounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encounter.m; sourceTree = "<group>"; };
+		E7067EFE1A36473500094DBE /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = ../CardView.xib; sourceTree = "<group>"; };
+		E7067F001A36477C00094DBE /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		E7067F011A36477C00094DBE /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		E73988151A3792E0005DFC87 /* CardShellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardShellViewController.h; path = ../CardShellViewController.h; sourceTree = "<group>"; };
+		E73988161A3792E0005DFC87 /* CardShellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardShellViewController.m; path = ../CardShellViewController.m; sourceTree = "<group>"; };
 		E79823691A1D4FE8006002D0 /* Orca Care.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orca Care.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E798236D1A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E798236E1A1D4FE8006002D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -207,6 +215,8 @@
 		E798236B1A1D4FE8006002D0 /* 3D */ = {
 			isa = PBXGroup;
 			children = (
+				E73988151A3792E0005DFC87 /* CardShellViewController.h */,
+				E73988161A3792E0005DFC87 /* CardShellViewController.m */,
 				E79823701A1D4FE8006002D0 /* AppDelegate.h */,
 				E79823711A1D4FE8006002D0 /* AppDelegate.m */,
 				E79823731A1D4FE8006002D0 /* CardViewController.h */,
@@ -263,6 +273,9 @@
 				E798236C1A1D4FE8006002D0 /* Supporting Files */,
 				E798239D1A1E6419006002D0 /* ManView.h */,
 				E798239E1A1E6419006002D0 /* ManView.m */,
+				E7067EFE1A36473500094DBE /* CardView.xib */,
+				E7067F001A36477C00094DBE /* CardView.h */,
+				E7067F011A36477C00094DBE /* CardView.m */,
 			);
 			path = 3D;
 			sourceTree = "<group>";
@@ -387,6 +400,7 @@
 			files = (
 				E7C6E0C51A265D24000FA032 /* lumbarvideo.mp4 in Resources */,
 				BE910A651A31093500CBCC7B /* ProximaNova-Reg.otf in Resources */,
+				E7067EFF1A36473500094DBE /* CardView.xib in Resources */,
 				E79823781A1D4FE8006002D0 /* Main.storyboard in Resources */,
 				BE9C485E1A268B6300B2B3E6 /* ConditionText.plist in Resources */,
 				E798237D1A1D4FE8006002D0 /* LaunchScreen.xib in Resources */,
@@ -452,10 +466,12 @@
 				BE910A681A32293600CBCC7B /* LoginViewModel.m in Sources */,
 				BE9C48501A251F1200B2B3E6 /* PlanViewController.m in Sources */,
 				BE9C485C1A26887600B2B3E6 /* TextViewController.m in Sources */,
+				E7067F021A36477C00094DBE /* CardView.m in Sources */,
 				BE9C48631A26988800B2B3E6 /* RefreshView.m in Sources */,
 				BE910A581A30E4C900CBCC7B /* CircleTransitionAnimator.swift in Sources */,
 				BE910A5D1A30F5B300CBCC7B /* SearchViewController.m in Sources */,
 				BE910A631A31058800CBCC7B /* CheckupsViewController.m in Sources */,
+				E73988171A3792E0005DFC87 /* CardShellViewController.m in Sources */,
 				BE910A601A30F5BE00CBCC7B /* SettingsViewController.m in Sources */,
 				BE9C48391A2293F400B2B3E6 /* RecoveryViewController.m in Sources */,
 				BE9C48511A251F1200B2B3E6 /* TransitionAnimator.m in Sources */,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Proxima Nova Light.ttf">
@@ -51,7 +51,6 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="5hx-7I-GpL" id="fOO-bg-3iE"/>
                         <outlet property="containerView" destination="Kj0-wq-uNO" id="gIf-Zt-UeO"/>
-                        <outlet property="scrollView" destination="iyI-oI-M8W" id="ytg-44-NP0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -350,39 +349,13 @@
                                 <rect key="frame" x="0.0" y="126" width="375" height="420"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="iyI-oI-M8W">
-                                        <rect key="frame" x="74" y="2" width="235" height="415"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan-card3" id="hYN-aS-HJb">
-                                                <rect key="frame" x="474" y="15" width="227" height="386"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan-card2" id="zPK-KF-hW0">
-                                                <rect key="frame" x="239" y="15" width="227" height="386"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="BsH-9j-b4n" userLabel="plan-card">
-                                                <rect key="frame" x="4" y="15" width="227" height="386"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" backgroundImage="plan-card">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="cardClicked:" destination="pO7-9R-K2k" eventType="touchUpInside" id="cwJ-p2-PT8"/>
-                                                </connections>
-                                            </button>
-                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" id="aj6-P2-OWH" customClass="FBShimmeringView">
-                                                <rect key="frame" x="11" y="31" width="213" height="29"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </view>
-                                        </subviews>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
-                                                <size key="value" width="880" height="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </scrollView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" id="Uup-a9-JFI">
+                                        <rect key="frame" x="70" y="17" width="235" height="386"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <connections>
+                                            <segue destination="Ge5-8e-lAl" kind="embed" id="ljJ-Qo-hKw"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -425,10 +398,9 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="JYH-QA-IVV"/>
                     <connections>
-                        <outlet property="scrollView" destination="iyI-oI-M8W" id="HsV-GO-icH"/>
+                        <outlet property="containerView" destination="Uup-a9-JFI" id="UsH-kU-gbA"/>
                         <outlet property="searchButton" destination="NOc-es-bmw" id="oHe-ZI-DBS"/>
                         <outlet property="settingsButton" destination="AgU-SW-JXY" id="VSC-gK-de9"/>
-                        <outlet property="shimmerView" destination="aj6-P2-OWH" id="4Sn-JD-bty"/>
                         <outlet property="touchableView" destination="0LD-Qn-5yk" id="QDz-es-AnZ"/>
                     </connections>
                 </viewController>
@@ -480,7 +452,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5CO-9C-XGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-222.5" y="680.5"/>
+            <point key="canvasLocation" x="-113.5" y="674.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oXJ-bj-ThN">
@@ -593,14 +565,26 @@
             </objects>
             <point key="canvasLocation" x="-222.5" y="1445.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="HSj-40-IIX">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ge5-8e-lAl" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4UT-lS-qhj">
+                        <rect key="frame" x="0.0" y="0.0" width="235" height="386"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SpV-An-Ggs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="309.5" y="-724"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back" width="176" height="176"/>
         <image name="bluecircle" width="300" height="300"/>
         <image name="nextbutton" width="212" height="72"/>
-        <image name="plan-card" width="850" height="1444"/>
-        <image name="plan-card2" width="850" height="1444"/>
-        <image name="plan-card3" width="850" height="1444"/>
         <image name="searchicon" width="88" height="88"/>
         <image name="searchscreen" width="1280" height="2272"/>
         <image name="settingsicon" width="100" height="98"/>
