@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Proxima Nova Light.ttf">
+            <string>ProximaNova-Light</string>
             <string>ProximaNova-Light</string>
             <string>ProximaNova-Light</string>
             <string>ProximaNova-Light</string>
@@ -58,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-646.5" y="-62.5"/>
+            <point key="canvasLocation" x="-634.5" y="-630.5"/>
         </scene>
         <!--Diagnosis Details View Controller-->
         <scene sceneID="WhR-Yo-HOc">
@@ -131,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TF-TD-co3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484.5" y="674.5"/>
+            <point key="canvasLocation" x="404.5" y="674.5"/>
         </scene>
         <!--Checkups View Controller-->
         <scene sceneID="Wca-XB-Tta">
@@ -277,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RcO-3U-xSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484.5" y="-44.5"/>
+            <point key="canvasLocation" x="412.5" y="1471.5"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="HC5-Fa-ruo">
@@ -331,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8J-R9-irV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908.5" y="674.5"/>
+            <point key="canvasLocation" x="840.5" y="680.5"/>
         </scene>
         <!--Card View Controller-->
         <scene sceneID="mhC-Lo-x3r">
@@ -403,79 +404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w75-va-Lh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-128" y="-62.5"/>
-        </scene>
-        <!--Plan View Controller-->
-        <scene sceneID="7Gy-8A-1z0">
-            <objects>
-                <tableViewController id="ljQ-az-ZUV" customClass="PlanViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="166.75" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wnd-NE-Pui">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EncounterCellIdentifier" rowHeight="166" id="cfJ-zB-Kqb" customClass="EncounterTableViewCell">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfJ-zB-Kqb" id="sWy-P3-4M4">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vh4-Dd-NKq" userLabel="cardView">
-                                            <rect key="frame" x="8" y="8" width="359" height="150"/>
-                                            <subviews>
-                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i1-Yr-OME">
-                                                    <rect key="frame" x="312" y="5" width="44" height="44"/>
-                                                    <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
-                                                    <state key="normal" image="cancel">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="close:" destination="cfJ-zB-Kqb" eventType="touchUpInside" id="Vbj-D7-BZp"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDT-kk-161">
-                                                    <rect key="frame" x="86" y="51" width="186.5" height="48"/>
-                                                    <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="48"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="xDT-kk-161" secondAttribute="centerY" id="5aJ-yR-x52"/>
-                                                <constraint firstAttribute="centerX" secondItem="xDT-kk-161" secondAttribute="centerX" id="KjM-Rd-WBY"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstItem="Vh4-Dd-NKq" firstAttribute="trailing" secondItem="sWy-P3-4M4" secondAttribute="trailingMargin" id="3dA-4F-RrL"/>
-                                        <constraint firstItem="Vh4-Dd-NKq" firstAttribute="leading" secondItem="sWy-P3-4M4" secondAttribute="leadingMargin" id="Wky-nf-Xwl"/>
-                                        <constraint firstItem="Vh4-Dd-NKq" firstAttribute="top" secondItem="sWy-P3-4M4" secondAttribute="topMargin" id="etO-eo-YIx"/>
-                                        <constraint firstItem="Vh4-Dd-NKq" firstAttribute="bottom" secondItem="sWy-P3-4M4" secondAttribute="bottomMargin" id="jCu-FX-T9M"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="cardView" destination="Vh4-Dd-NKq" id="70O-36-V2D"/>
-                                    <outlet property="closeButton" destination="3i1-Yr-OME" id="CIj-aF-bQD"/>
-                                    <outlet property="titleLabel" destination="xDT-kk-161" id="U9L-dY-fpe"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ljQ-az-ZUV" id="t2l-IY-u7G"/>
-                            <outlet property="delegate" destination="ljQ-az-ZUV" id="KHm-6J-RMB"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="rnI-5B-gTy"/>
-                    <connections>
-                        <segue destination="7lZ-qd-osu" kind="push" identifier="checkupSegue" id="Bv5-hX-poI"/>
-                        <segue destination="4KX-KH-PAA" kind="push" identifier="diagnosisSegue" id="9An-bI-rSk"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5CO-9C-XGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-222.5" y="680.5"/>
+            <point key="canvasLocation" x="-116.5" y="-630.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oXJ-bj-ThN">
@@ -492,7 +421,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3br-G7-ZbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-646.5" y="2193.5"/>
+            <point key="canvasLocation" x="-646.5" y="2761.5"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="FxN-Rw-YhY">
@@ -522,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NmJ-ne-o2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-222.5" y="2193.5"/>
+            <point key="canvasLocation" x="-222.5" y="2761.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F15-af-OeX">
@@ -536,7 +465,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ljQ-az-ZUV" kind="relationship" relationship="rootViewController" id="xqA-t0-gpU"/>
+                        <segue destination="Hcm-P1-x9A" kind="relationship" relationship="rootViewController" id="rt7-zW-HXe"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xf-Y6-0Bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -558,7 +487,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D61-8W-Dqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-646.5" y="1445.5"/>
+            <point key="canvasLocation" x="-646.5" y="2005.5"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="S5z-6z-D6y">
@@ -591,7 +520,113 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdp-FW-bC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-222.5" y="1445.5"/>
+            <point key="canvasLocation" x="-222.5" y="2005.5"/>
+        </scene>
+        <!--Plan View Controller-->
+        <scene sceneID="C7v-c5-fkt">
+            <objects>
+                <viewController id="Hcm-P1-x9A" customClass="PlanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ScW-SO-1dB"/>
+                        <viewControllerLayoutGuide type="bottom" id="WwJ-vH-kVe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2bh-Q2-8iI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5NJ-Ah-QGv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CarePlan 11•15•2014" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJi-Mk-yPz" userLabel="Title">
+                                        <rect key="frame" x="87" y="14" width="201" height="21"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
+                                        <color key="textColor" red="0.031372549020000001" green="0.2901960784" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGw-H6-pyD">
+                                        <rect key="frame" x="0.0" y="5" width="70" height="40"/>
+                                        <color key="tintColor" red="0.031372549020000001" green="0.2901960784" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="imageEdgeInsets" minX="24" minY="14" maxX="24" maxY="14"/>
+                                        <state key="normal" image="backModal"/>
+                                        <connections>
+                                            <action selector="back:" destination="4KX-KH-PAA" eventType="touchUpInside" id="oGd-PC-eWQ"/>
+                                            <action selector="dismiss:" destination="Hcm-P1-x9A" eventType="touchUpInside" id="Bdh-C1-8uR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="166.75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zwX-GJ-bYx">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EncounterCellIdentifier" rowHeight="166" id="8ea-7q-bvP" customClass="EncounterTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ea-7q-bvP" id="blk-Nj-qqk">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SiK-zX-QmU" userLabel="cardView">
+                                                    <rect key="frame" x="8" y="8" width="359" height="150"/>
+                                                    <subviews>
+                                                        <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qx-P9-hC2">
+                                                            <rect key="frame" x="312" y="5" width="44" height="44"/>
+                                                            <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                                            <state key="normal" image="cancel">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="close:" destination="8ea-7q-bvP" eventType="touchUpInside" id="3Mu-9x-05A"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Checkup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foO-cQ-YNl">
+                                                            <rect key="frame" x="83" y="47" width="193" height="56"/>
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="48"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="centerY" secondItem="foO-cQ-YNl" secondAttribute="centerY" id="a8o-FP-DFv"/>
+                                                        <constraint firstAttribute="centerX" secondItem="foO-cQ-YNl" secondAttribute="centerX" id="lZ1-v9-1nH"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="SiK-zX-QmU" firstAttribute="top" secondItem="blk-Nj-qqk" secondAttribute="topMargin" id="0ga-aG-9lY"/>
+                                                <constraint firstItem="SiK-zX-QmU" firstAttribute="trailing" secondItem="blk-Nj-qqk" secondAttribute="trailingMargin" id="7cM-OB-4Nu"/>
+                                                <constraint firstItem="SiK-zX-QmU" firstAttribute="leading" secondItem="blk-Nj-qqk" secondAttribute="leadingMargin" id="Z0L-Pb-LPb"/>
+                                                <constraint firstItem="SiK-zX-QmU" firstAttribute="bottom" secondItem="blk-Nj-qqk" secondAttribute="bottomMargin" id="jAn-75-I2J"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cardView" destination="SiK-zX-QmU" id="Rwg-Cb-69U"/>
+                                            <outlet property="closeButton" destination="9qx-P9-hC2" id="5wE-tF-Rk2"/>
+                                            <outlet property="titleLabel" destination="foO-cQ-YNl" id="guH-vw-W3P"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hcm-P1-x9A" id="e3P-eo-HXB"/>
+                                    <outlet property="delegate" destination="Hcm-P1-x9A" id="aV2-QF-WwO"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JF9-Yb-M3j"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="zwX-GJ-bYx" id="fao-mo-tzG"/>
+                        <outlet property="titleLabel" destination="pJi-Mk-yPz" id="e9l-D9-1Br"/>
+                        <segue destination="4KX-KH-PAA" kind="push" identifier="diagnosisSegue" id="OGf-fF-OaT"/>
+                        <segue destination="7lZ-qd-osu" kind="push" identifier="checkupSegue" id="DXJ-eS-tCB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JW6-AB-6iL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-116.5" y="680.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wg6-Cb-xNq">
@@ -610,10 +645,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1n-9x-tyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-116.5" y="-66"/>
         </scene>
     </scenes>
     <resources>
         <image name="back" width="176" height="176"/>
+        <image name="backModal" width="36" height="21"/>
         <image name="bluecircle" width="300" height="300"/>
         <image name="cancel" width="64" height="64"/>
         <image name="nextbutton" width="212" height="72"/>

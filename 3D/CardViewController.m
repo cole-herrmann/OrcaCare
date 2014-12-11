@@ -96,8 +96,9 @@
 {
     CardView *cardView = (CardView* )[[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
     cardView.doctorLabel.text = @"Dr. Chad Zeluff";
-    cardView.dateLabel.text = @"12 • 8 • 2013";
+    cardView.dateLabel.text = @"11 • 15 • 2014";
     cardView.doctorImageView.image = [UIImage imageNamed:@"docpic"];
+    cardView.newPlan = YES;
     [cardView addTarget:self action:@selector(cardClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     CardView *cardView2 = (CardView* )[[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
