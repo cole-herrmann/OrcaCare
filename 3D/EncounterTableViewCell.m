@@ -44,6 +44,8 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    self.cardView.layer.cornerRadius = 15.0f;
+    
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(10, 50)];
     [path addLineToPoint:CGPointMake(CGRectGetWidth(self.cardView.bounds) - 10, 50)];

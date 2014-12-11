@@ -49,7 +49,7 @@
     frame.origin = CGPointMake(0, -self.refreshView.bounds.size.height);
     self.refreshView.frame = frame;
     [self.view addSubview:self.refreshView];
-    self.view.backgroundColor = [UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:.85];
+    self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:.5];
     [self.refreshView.progressLayer addAnimation:[self pullDownAnimation] forKey:@"fill circle as you drag"];
     self.refreshView.progressLayer.speed = 0.0f;
 }
