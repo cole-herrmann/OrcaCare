@@ -54,7 +54,6 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="5hx-7I-GpL" id="fOO-bg-3iE"/>
                         <outlet property="containerView" destination="Kj0-wq-uNO" id="gIf-Zt-UeO"/>
-                        <outlet property="scrollView" destination="iyI-oI-M8W" id="ytg-44-NP0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -349,34 +348,13 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0LD-Qn-5yk">
                                 <rect key="frame" x="0.0" y="126" width="375" height="420"/>
                                 <subviews>
-                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyI-oI-M8W">
-                                        <rect key="frame" x="74" y="2" width="235" height="415"/>
-                                        <subviews>
-                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plan-card3" translatesAutoresizingMaskIntoConstraints="NO" id="hYN-aS-HJb">
-                                                <rect key="frame" x="474" y="15" width="227" height="386"/>
-                                            </imageView>
-                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plan-card2" translatesAutoresizingMaskIntoConstraints="NO" id="zPK-KF-hW0">
-                                                <rect key="frame" x="239" y="15" width="227" height="386"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsH-9j-b4n" userLabel="plan-card">
-                                                <rect key="frame" x="4" y="15" width="227" height="386"/>
-                                                <state key="normal" backgroundImage="plan-card">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="cardClicked:" destination="pO7-9R-K2k" eventType="touchUpInside" id="cwJ-p2-PT8"/>
-                                                </connections>
-                                            </button>
-                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aj6-P2-OWH" customClass="FBShimmeringView">
-                                                <rect key="frame" x="11" y="31" width="213" height="29"/>
-                                            </view>
-                                        </subviews>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
-                                                <size key="value" width="880" height="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </scrollView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hh1-Bg-d0t">
+                                        <rect key="frame" x="70" y="17" width="235" height="386"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="lQs-c8-9ix" kind="embed" id="FG1-Ds-Meq"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -417,10 +395,9 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="JYH-QA-IVV"/>
                     <connections>
-                        <outlet property="scrollView" destination="iyI-oI-M8W" id="HsV-GO-icH"/>
+                        <outlet property="containerView" destination="hh1-Bg-d0t" id="J7P-V8-dk8"/>
                         <outlet property="searchButton" destination="NOc-es-bmw" id="oHe-ZI-DBS"/>
                         <outlet property="settingsButton" destination="AgU-SW-JXY" id="VSC-gK-de9"/>
-                        <outlet property="shimmerView" destination="aj6-P2-OWH" id="4Sn-JD-bty"/>
                         <outlet property="touchableView" destination="0LD-Qn-5yk" id="QDz-es-AnZ"/>
                     </connections>
                 </viewController>
@@ -616,15 +593,30 @@
             </objects>
             <point key="canvasLocation" x="-222.5" y="1445.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="wg6-Cb-xNq">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="lQs-c8-9ix" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yXL-vb-SRH"/>
+                        <viewControllerLayoutGuide type="bottom" id="TJR-mJ-l90"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YVn-jm-XTx">
+                        <rect key="frame" x="0.0" y="0.0" width="235" height="386"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E1n-9x-tyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="back" width="176" height="176"/>
         <image name="bluecircle" width="300" height="300"/>
         <image name="cancel" width="64" height="64"/>
         <image name="nextbutton" width="212" height="72"/>
-        <image name="plan-card" width="850" height="1444"/>
-        <image name="plan-card2" width="850" height="1444"/>
-        <image name="plan-card3" width="850" height="1444"/>
         <image name="searchicon" width="88" height="88"/>
         <image name="searchscreen" width="1280" height="2272"/>
         <image name="settingsicon" width="100" height="98"/>
