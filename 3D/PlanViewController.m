@@ -14,7 +14,7 @@
 #import "CheckupsViewController.h"
 #import "RefreshView.h"
 
-@interface PlanViewController () <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
+@interface PlanViewController () <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, EncounterCellDelegate>
 
 //@property (nonatomic, weak) UIImageView *numberedLinesView;
 @property (nonatomic, strong) NSArray *textArray;
@@ -23,6 +23,9 @@
 @property (nonatomic, weak) IBOutlet RefreshView *refreshView;
 
 @property (nonatomic) BOOL animationBegan;
+
+@property (nonatomic, retain) NSIndexPath *expandedCellIndexPath;
+@property (nonatomic) CGFloat expandedCellHeight;
 
 @end
 
@@ -38,7 +41,7 @@
 //    self.numberedLinesView = imageView;
     
     self.textArray = @[@"Diagnosis", @"Treatment", @"Recovery", @"Checkup"];
-    self.colorsArray = @[[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:.85], [UIColor colorWithRed:1/255.0f green:138/255.0f blue:139/255.0f alpha:.85], [UIColor colorWithRed:50/255.0f green:33/255.0f blue:58/255.0f alpha:.85], [UIColor colorWithRed:70/255.0f green:172/255.0f blue:194/255.0f alpha:.85]];
+    self.colorsArray = @[[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:1.0], [UIColor colorWithRed:61/255.0f green:130/255.0f blue:192/255.0f alpha:1], [UIColor colorWithRed:17/255.0f green:37/255.0f blue:60/255.0f alpha:1], [UIColor colorWithRed:31/255.0f green:68/255.0f blue:99/255.0f alpha:1]];
     
     [[NSBundle mainBundle] loadNibNamed:@"RefreshView" owner:self options:nil];
 
@@ -46,7 +49,7 @@
     frame.origin = CGPointMake(0, -self.refreshView.bounds.size.height);
     self.refreshView.frame = frame;
     [self.view addSubview:self.refreshView];
-    self.refreshView.backgroundColor = [self.colorsArray firstObject];
+    self.view.backgroundColor = [UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:.85];
     [self.refreshView.progressLayer addAnimation:[self pullDownAnimation] forKey:@"fill circle as you drag"];
     self.refreshView.progressLayer.speed = 0.0f;
 }
@@ -58,42 +61,67 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *encounterCellIdentifier = @"EncounterCellIdentifier";
     EncounterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:encounterCellIdentifier];
-    
-    cell.backgroundColor = self.colorsArray[indexPath.row];
+    cell.delegate = self;
+    cell.backgroundColor = [UIColor clearColor];    
+    cell.cardView.backgroundColor = self.colorsArray[indexPath.row];
     cell.titleLabel.text = self.textArray[indexPath.row];
     
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat cellHeight = self.view.bounds.size.height / 4;
+    if ([self.expandedCellIndexPath isEqual:indexPath]) {
+        cellHeight = self.expandedCellHeight;
+    }
+    return cellHeight;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     EncounterTableViewCell *cell = (EncounterTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    if(indexPath.row == 1) {
+        [cell openWithButtonTitles:@[@"Treatment A", @"Treatment B"]];
+        self.expandedCellIndexPath = indexPath;
+        self.expandedCellHeight = 200; //hard-coded size for now, we should query this size from the cell itself!
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+    }
+    
     if(indexPath.row == 3) {
         [self performSegueWithIdentifier:@"checkupSegue" sender:cell];
-    } else {
+    } else if(indexPath.row == 0 || indexPath.row == 2) {
         [self performSegueWithIdentifier:@"diagnosisSegue" sender:cell];
     }
 }
 
-- (NSArray *)visibleCells {
-    NSArray *cells = [self.tableView visibleCells];
-    NSMutableArray *labels = [NSMutableArray arrayWithCapacity:cells.count];
-    for(EncounterTableViewCell *cell in cells) {
-        [labels addObject:cell.titleLabel];
-    }
-//    [labels addObject:self.numberedLinesView];
-    return labels;
+- (void)clickedRow:(NSInteger)row forCell:(EncounterTableViewCell *)cell {
+    NSInteger cellRow = [self.tableView indexPathForCell:cell].row;
+}
+
+- (void)closeCell:(EncounterTableViewCell *)sender {
+    self.expandedCellIndexPath = nil;
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+}
+
+- (NSArray *)visibleCells {    
+    return [self.tableView visibleCells];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(EncounterTableViewCell *)sender {
+    UIColor *color = sender.cardView.backgroundColor;
+    color = [color colorWithAlphaComponent:.85];
     if([segue.identifier isEqualToString:@"diagnosisSegue"]) {
         self.navigationController.delegate = self;
         DiagnosisDetailsViewController *detailsVC = [segue destinationViewController];
-        detailsVC.view.backgroundColor = sender.backgroundColor;
+        detailsVC.view.backgroundColor = color;
         detailsVC.titleLabel.text = sender.titleLabel.text;
     } else if ([segue.identifier isEqualToString:@"checkupSegue"]) {
         self.navigationController.delegate = self;
         CheckupsViewController *checkupVC = [segue destinationViewController];
-        checkupVC.view.backgroundColor = sender.backgroundColor;
+        checkupVC.view.backgroundColor = color;
         checkupVC.titleLabel.text = sender.titleLabel.text;
     }
 }
