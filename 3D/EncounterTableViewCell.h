@@ -8,9 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@class EncounterTableViewCell;
+
+@protocol EncounterCellDelegate <NSObject>
+
+- (void)closeCell:(EncounterTableViewCell *)cell;
+- (void)clickedRow:(NSInteger)row forCell:(EncounterTableViewCell *)cell;
+
+@end
+
 @interface EncounterTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *numberImageView;
+@property (nonatomic, weak) id<EncounterCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIView *cardView;
+
+- (void)openWithButtonTitles:(NSArray *)titles;
 
 @end
