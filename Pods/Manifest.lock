@@ -5,7 +5,7 @@ PODS:
   - LUKeychainAccess (1.2.3)
   - pop (1.0.7)
   - RestKit (0.24.0):
-    - RestKit/Core
+    - RestKit/Core (= 0.24.0)
   - RestKit/Core (0.24.0):
     - RestKit/CoreData
     - RestKit/Network
@@ -45,4 +45,4 @@ SPEC CHECKSUMS:
   SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
   TransitionKit: 6a6f3ddda38ae758778aa889dcb930e4f8d64edc
 
-COCOAPODS: 0.35.0.rc2
+COCOAPODS: 0.35.0

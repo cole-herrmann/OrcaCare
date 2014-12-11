@@ -13,6 +13,8 @@
 #import "Orca_Care-Swift.h"
 #import "LoginViewModel.h"
 #import "EncounterViewModel.h"
+#import "CardView.h"
+#import "CardShellViewController.h"
 
 @interface CardViewController () <LoginVMDelegate, PlanVCDelegate, UIGestureRecognizerDelegate, UIViewControllerTransitioningDelegate>
 
@@ -25,6 +27,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (nonatomic, weak) UIButton *clickedButton;
+
+@property (nonatomic, weak) IBOutlet UIView *containerView;
+@property (nonatomic, strong) CardShellViewController *cardShellVC;
 
 @end
 
@@ -54,9 +59,18 @@
     // Start shimmering.
     self.shimmerView.shimmering = YES;
     self.scrollView.contentSize = CGSizeMake(227*3 + 8*3, 1);
-    [self.touchableView addGestureRecognizer:self.scrollView.panGestureRecognizer];
     
     [self.loginVM loginWithEmail:@"zeluff@orcahealth.com" password:@"password"];
+    
+    self.cardShellVC = [[CardShellViewController alloc]init];
+    
+    [self addChildViewController:self.cardShellVC];
+    self.cardShellVC.view.frame = self.containerView.bounds;
+    [self.containerView addSubview:self.cardShellVC.view];
+    
+    [self.touchableView addGestureRecognizer:self.cardShellVC.scrollView.panGestureRecognizer];
+
+    [self displayPlans];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -67,7 +81,7 @@
     CGFloat scrollAlpha = hide ? 0.0f : 1.0f;
     CGFloat buttonAlpha = hide ? 0.0f : 0.75f;
     [UIView animateWithDuration:0.4 animations:^{
-        self.scrollView.alpha = scrollAlpha;
+        self.containerView.alpha = scrollAlpha;
         self.searchButton.alpha = buttonAlpha;
         self.settingsButton.alpha = buttonAlpha;
     } completion:^(BOOL finished) {
@@ -75,6 +89,50 @@
             completion();
         }
     }];
+}
+
+
+-(void)displayPlans
+{
+    CardView *cardView = (CardView* )[[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
+    cardView.doctorLabel.text = @"Dr. Chad Zeluff";
+    cardView.dateLabel.text = @"12 • 8 • 2013";
+    cardView.doctorImageView.image = [UIImage imageNamed:@"docpic"];
+    [cardView addTarget:self action:@selector(cardClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    CardView *cardView2 = (CardView* )[[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
+    cardView2.doctorLabel.text = @"Dr. Chad Zeluff";
+    cardView2.dateLabel.text = @"12 • 8 • 2013";
+    cardView2.doctorImageView.image = [UIImage imageNamed:@"docpic"];
+    [cardView2 addTarget:self action:@selector(cardClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    CardView *cardView3 = (CardView* )[[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
+    cardView3.doctorLabel.text = @"Dr. Chad Zeluff";
+    cardView3.dateLabel.text = @"12 • 8 • 2013";
+    cardView3.doctorImageView.image = [UIImage imageNamed:@"docpic"];
+    [cardView3 addTarget:self action:@selector(cardClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+    CardView *cardView4 = (CardView* )[[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
+    cardView4.doctorLabel.text = @"Dr. Chad Zeluff";
+    cardView4.dateLabel.text = @"12 • 8 • 2013";
+    cardView4.doctorImageView.image = [UIImage imageNamed:@"docpic"];
+    [cardView4 addTarget:self action:@selector(cardClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+    CardView *cardView5 = (CardView* )[[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
+    cardView5.doctorLabel.text = @"Dr. Chad Zeluff";
+    cardView5.dateLabel.text = @"12 • 8 • 2013";
+    cardView5.doctorImageView.image = [UIImage imageNamed:@"docpic"];
+    [cardView5 addTarget:self action:@selector(cardClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+
+    [self.cardShellVC addView:cardView];
+    [self.cardShellVC addView:cardView2];
+    [self.cardShellVC addView:cardView3];
+    [self.cardShellVC addView:cardView4];
+    [self.cardShellVC addView:cardView5];
+
+    
+//    [self.scrollView addSubview:cardView];
 }
 
 //- (void)setupNavBar {
