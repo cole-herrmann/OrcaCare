@@ -40,7 +40,7 @@
     self.cellLabels = [[NSArray alloc]initWithObjects:@"Spine Anatomy", @"Abnormal Disk", @"Normal Disk", @"Lumbar Disc Herniation Video", @"Diagnosis Overview", nil];
     
     self.imageNamesTreatment = [[NSArray alloc]initWithObjects:@"spine", @"texticon", nil];
-    self.cellLabelsTreatment = [[NSArray alloc]initWithObjects:@"Spine Anatomy", @"Abnormal Disk", @"Normal Disk", @"Lumbar Disc Herniation Video", @"Diagnosis Overview", nil];
+    self.cellLabelsTreatment = [[NSArray alloc]initWithObjects:@"Lumbar Microdiscectomy", @"Treatment Overview", nil];
 
 
     // Do any additional setup after loading the view.
@@ -69,15 +69,15 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.imageNames count];
+    return (self.isTreatment) ? [self.imageNamesTreatment count] : [self.imageNames count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 
     ContentCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
-    cell.thumbnailImageView.image = [UIImage imageNamed:self.imageNames[indexPath.row]];
-    cell.contentLabel.text = self.cellLabels[indexPath.row];
+    cell.thumbnailImageView.image = (!self.isTreatment) ? [UIImage imageNamed:self.imageNames[indexPath.row]] : [UIImage imageNamed:self.imageNamesTreatment[indexPath.row]];
+    cell.contentLabel.text = (!self.isTreatment) ? self.cellLabels[indexPath.row] : self.cellLabelsTreatment[indexPath.row];
 
 
     return cell;
@@ -88,27 +88,52 @@
 {
     self.mediaVC = [[URBMediaFocusViewController alloc] init];
     
-    if(indexPath.row == 3){
+    if(self.isTreatment){
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"changeBackground" object:nil userInfo:@{ @"video" : @"lumbarvideo" }];
-
-    }else if(indexPath.row == 4){
-
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        TextViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"TextVC"];
-        vc.view.backgroundColor = self.view.backgroundColor;
-        NSArray *titles = [self.plistDictionary objectForKey:@"titles"];
-        NSArray *texts = [self.plistDictionary objectForKey:@"texts"];
-        vc.titleLabel.text = titles[0];
-        vc.textView.text = texts[0];
+        if(indexPath.row == 0){
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"changeBackground" object:nil userInfo:@{ @"video" : @"treatmentVid" }];
         
-        [self.navigationController pushViewController:vc animated:YES];
-    
+        }else{
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+            TextViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"TextVC"];
+            vc.view.backgroundColor = self.view.backgroundColor;
+            NSArray *titles = [self.plistDictionary objectForKey:@"titles"];
+            NSArray *texts = [self.plistDictionary objectForKey:@"texts"];
+            vc.titleLabel.text = titles[0];
+            vc.textView.text = texts[0];
+            
+            [self.navigationController pushViewController:vc animated:YES];
+        
+        }
     }else{
         
-        [self.mediaVC showImage:[UIImage imageNamed:self.imageNames[indexPath.row]] fromView:[self.contentCollectionView cellForItemAtIndexPath:indexPath]];
-    
+        if(indexPath.row == 3){
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"changeBackground" object:nil userInfo:@{ @"video" : @"lumbarvideo" }];
+            
+        }else if(indexPath.row == 4){
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+            TextViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"TextVC"];
+            vc.view.backgroundColor = self.view.backgroundColor;
+            NSArray *titles = [self.plistDictionary objectForKey:@"titles"];
+            NSArray *texts = [self.plistDictionary objectForKey:@"texts"];
+            vc.titleLabel.text = titles[0];
+            vc.textView.text = texts[0];
+            
+            [self.navigationController pushViewController:vc animated:YES];
+            
+        }else{
+            
+            [self.mediaVC showImage:[UIImage imageNamed:self.imageNames[indexPath.row]] fromView:[self.contentCollectionView cellForItemAtIndexPath:indexPath]];
+            
+        }
+
+        
     }
+    
 }
 
 - (IBAction)backPressed:(id)sender {
