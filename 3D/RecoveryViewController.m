@@ -61,6 +61,12 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeBackground" object:nil userInfo:@{ @"video" : @"recoveryVideo" }];
+
+}
+
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }

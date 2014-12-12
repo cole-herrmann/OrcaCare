@@ -18,6 +18,9 @@
 @property (nonatomic, strong) URBMediaFocusViewController *mediaVC;
 @property (nonatomic, strong) NSDictionary *plistDictionary;
 
+@property (nonatomic, strong) NSArray *imageNamesTreatment;
+@property (nonatomic, strong) NSArray *cellLabelsTreatment;
+
 
 @end
 
@@ -35,6 +38,9 @@
     
     self.imageNames = [[NSArray alloc]initWithObjects:@"spine", @"abnormal", @"normal", @"lumbarvidthumb", @"texticon", nil];
     self.cellLabels = [[NSArray alloc]initWithObjects:@"Spine Anatomy", @"Abnormal Disk", @"Normal Disk", @"Lumbar Disc Herniation Video", @"Diagnosis Overview", nil];
+    
+    self.imageNamesTreatment = [[NSArray alloc]initWithObjects:@"spine", @"texticon", nil];
+    self.cellLabelsTreatment = [[NSArray alloc]initWithObjects:@"Spine Anatomy", @"Abnormal Disk", @"Normal Disk", @"Lumbar Disc Herniation Video", @"Diagnosis Overview", nil];
 
 
     // Do any additional setup after loading the view.
