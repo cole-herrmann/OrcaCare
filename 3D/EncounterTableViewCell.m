@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSArray *titleButtons;
 @property (nonatomic, strong) CAShapeLayer *line;
 
+@property (nonatomic) BOOL opened;
+
 @end
 
 @implementation EncounterTableViewCell
@@ -50,6 +52,10 @@
 }
 
 - (void)openWithButtonTitles:(NSArray *)titles {
+    if(self.opened) {
+        return;
+    }
+    
     NSMutableArray *buttons = [NSMutableArray array];
     
     for(int i = 0; i < titles.count; i++) {
@@ -138,6 +144,7 @@
     [self.titleLabel.layer pop_addAnimation:titlePosition forKey:y];
     [self.titleLabel.layer pop_addAnimation:titleScale forKey:scale];
     [self.line pop_addAnimation:lineVisible forKey:visible];
+    self.opened = YES;
 }
 
 - (IBAction)close:(id)sender {
@@ -191,6 +198,15 @@
     if([self.delegate respondsToSelector:@selector(closeCell:)]) {
         [self.delegate closeCell:self];
     }
+    self.opened = NOg;
+}
+
+- (void)setTitleButtons:(NSArray *)titleButtons {
+    for(UIButton *btn in _titleButtons) {
+        [btn removeFromSuperview];
+    }
+    
+    _titleButtons = titleButtons;
 }
 
 - (POPSpringAnimation *)titlePositionAnimation {
