@@ -340,6 +340,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5G-Mw-aWf">
+                                                    <rect key="frame" x="59" y="13" width="308" height="45"/>
+                                                    <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="34"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veX-vE-526">
                                                     <rect key="frame" x="74" y="61" width="293" height="21"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="17"/>
@@ -358,14 +363,14 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5G-Mw-aWf">
-                                                    <rect key="frame" x="59" y="13" width="308" height="45"/>
-                                                    <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="34"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="forwardarrow" translatesAutoresizingMaskIntoConstraints="NO" id="BB6-td-wuP">
+                                                    <rect key="frame" x="357" y="68" width="10" height="18"/>
+                                                    <color key="tintColor" red="0.085726157280000007" green="0.2379754989" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="arrow" destination="BB6-td-wuP" id="7RF-ae-48K"/>
                                             <outlet property="label1" destination="veX-vE-526" id="jSL-Bo-cVK"/>
                                             <outlet property="label2" destination="uHo-Et-4ZQ" id="DAF-0Y-gAS"/>
                                             <outlet property="label3" destination="ODM-eN-LzH" id="WwI-H9-9dN"/>
@@ -835,6 +840,7 @@
         <image name="backModal" width="36" height="21"/>
         <image name="bluecircle" width="300" height="300"/>
         <image name="cancel" width="64" height="64"/>
+        <image name="forwardarrow" width="21" height="36"/>
         <image name="nextbutton" width="212" height="72"/>
         <image name="searchicon" width="88" height="88"/>
         <image name="searchscreen" width="1280" height="2272"/>

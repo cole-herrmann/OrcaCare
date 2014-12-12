@@ -47,6 +47,7 @@
     
     cell.numberLabel.textColor = textColor;
     cell.recoveryTitle.textColor = textColor;
+    cell.arrow.tintColor = textColor;
     cell.label1.textColor = textColor;
     cell.label2.textColor = textColor;
     cell.label3.textColor = textColor;

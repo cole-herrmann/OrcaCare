@@ -11,7 +11,7 @@
 @implementation RecoveryTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    self.arrow.image = [self.arrow.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
