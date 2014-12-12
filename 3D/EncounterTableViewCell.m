@@ -115,6 +115,7 @@
     POPSpringAnimation *titlePosition = [self titlePositionAnimation];
     POPSpringAnimation *titleScale = [self titleScaleAnimation];
     POPBasicAnimation *buttonVisible = [self buttonVisibleAnimation];
+    POPBasicAnimation *buttonsVisible = [self buttonVisibleAnimation];
     POPBasicAnimation *lineVisible = [self lineVisibleAnimation];
     POPBasicAnimation *lineStart = [self lineStartAnimation];
     POPBasicAnimation *lineEnd = [self lineEndAnimation];
@@ -122,6 +123,7 @@
     titlePosition.toValue = @30;
     titleScale.toValue = [NSValue valueWithCGSize:CGSizeMake(0.5, 0.5)];
     buttonVisible.toValue = @1;
+    buttonsVisible.toValue = @1;
     lineVisible.toValue = @1;
     lineStart.toValue = @0;
     lineEnd.toValue = @1;
@@ -130,7 +132,7 @@
         [self.line pop_addAnimation:lineStart forKey:start];
         [self.line pop_addAnimation:lineEnd forKey:end];
         for(UIButton *btn in self.titleButtons) {
-            [btn pop_addAnimation:buttonVisible forKey:visible];
+            [btn pop_addAnimation:buttonsVisible forKey:visible];
         }
     }];
     [self.titleLabel.layer pop_addAnimation:titlePosition forKey:y];
@@ -181,6 +183,12 @@
     [self.titleLabel.layer pop_addAnimation:titleScale forKey:scale];
     [self.line pop_addAnimation:lineStart forKey:start];
     [self.line pop_addAnimation:lineEnd forKey:end];
+    [lineEnd setCompletionBlock:^(POPAnimation *animation, BOOL completed) {
+        for(UIButton *btn in self.titleButtons) {
+            [btn removeFromSuperview];
+        }
+        self.titleButtons = nil;
+    }];
     if([self.delegate respondsToSelector:@selector(closeCell:)]) {
         [self.delegate closeCell:self];
     }
