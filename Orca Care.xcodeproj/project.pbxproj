@@ -40,6 +40,7 @@
 		BEBB53E21A3B93C800ABF9A5 /* recoveryVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BEBB53E11A3B93C800ABF9A5 /* recoveryVideo.mp4 */; };
 		BEEBE31A1A32644600057AE2 /* EncounterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEBE3191A32644600057AE2 /* EncounterViewModel.m */; };
 		BEEBE31D1A32653200057AE2 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEBE31C1A32653200057AE2 /* Encounter.m */; };
+		E70073DF1A3BA0440027921F /* treatmentVid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E70073DE1A3BA0440027921F /* treatmentVid.mp4 */; };
 		E7067EFF1A36473500094DBE /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7067EFE1A36473500094DBE /* CardView.xib */; };
 		E7067F021A36477C00094DBE /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7067F011A36477C00094DBE /* CardView.m */; };
 		E73988171A3792E0005DFC87 /* CardShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73988161A3792E0005DFC87 /* CardShellViewController.m */; };
@@ -127,6 +128,7 @@
 		BEEBE3191A32644600057AE2 /* EncounterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncounterViewModel.m; sourceTree = "<group>"; };
 		BEEBE31B1A32653200057AE2 /* Encounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encounter.h; sourceTree = "<group>"; };
 		BEEBE31C1A32653200057AE2 /* Encounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encounter.m; sourceTree = "<group>"; };
+		E70073DE1A3BA0440027921F /* treatmentVid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = treatmentVid.mp4; sourceTree = "<group>"; };
 		E7067EFE1A36473500094DBE /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = ../CardView.xib; sourceTree = "<group>"; };
 		E7067F001A36477C00094DBE /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		E7067F011A36477C00094DBE /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				E79823791A1D4FE8006002D0 /* Images.xcassets */,
 				E7C6E0C41A265D24000FA032 /* lumbarvideo.mp4 */,
 				BE9C484A1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 */,
+				E70073DE1A3BA0440027921F /* treatmentVid.mp4 */,
 				E798237B1A1D4FE8006002D0 /* LaunchScreen.xib */,
 				E798236C1A1D4FE8006002D0 /* Supporting Files */,
 				E798239D1A1E6419006002D0 /* ManView.h */,
@@ -424,6 +427,7 @@
 				E7067EFF1A36473500094DBE /* CardView.xib in Resources */,
 				E79823781A1D4FE8006002D0 /* Main.storyboard in Resources */,
 				E7822D371A3A4CB4001B8F6A /* ContentCollectionViewCell.xib in Resources */,
+				E70073DF1A3BA0440027921F /* treatmentVid.mp4 in Resources */,
 				BE9C485E1A268B6300B2B3E6 /* ConditionText.plist in Resources */,
 				E798237D1A1D4FE8006002D0 /* LaunchScreen.xib in Resources */,
 				BE9C484B1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 in Resources */,
