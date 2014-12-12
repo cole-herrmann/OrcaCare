@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <URBMediaFocusViewController/URBMediaFocusViewController.h>
 
 @interface ContentViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

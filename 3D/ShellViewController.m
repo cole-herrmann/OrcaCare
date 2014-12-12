@@ -32,7 +32,7 @@
 - (void)changeBackground:(NSNotification *)notification {
     NSDictionary *userInfo = [notification userInfo];
     
-    [self fadeContainer:NO];
+//    [self fadeContainer:NO];
     
     NSString *imageName = userInfo[@"image"];
     NSString *videoName = userInfo[@"video"];
@@ -63,9 +63,13 @@
         playerVC.view.alpha = 0.0;
         [self addChildViewController:playerVC];
         [self.view insertSubview:playerVC.view aboveSubview:self.backgroundImageView];
-        [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            self.containerView.alpha = 0.0;
             playerVC.view.alpha = 1.0;
-        } completion:nil];
+        } completion:^(BOOL finished) {
+            
+        }];
         self.playerVC = playerVC;
         
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -86,10 +90,11 @@
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
 
-    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+    [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        self.containerView.alpha = 1.0;
         self.playerVC.view.alpha = 0.0;
     } completion:^(BOOL finished) {
-        [self fadeContainer:YES];
+//        [self fadeContainer:YES];
     }];
 
     

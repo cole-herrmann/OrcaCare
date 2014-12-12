@@ -27,12 +27,14 @@ PODS:
   - Shimmer (1.0.2)
   - SOCKit (1.1)
   - TransitionKit (2.1.0)
+  - URBMediaFocusViewController (0.5.5)
 
 DEPENDENCIES:
   - LUKeychainAccess (~> 1.2)
   - pop (~> 1.0)
   - RestKit (~> 0.24)
   - Shimmer (~> 1.0)
+  - URBMediaFocusViewController (~> 0.5)
 
 SPEC CHECKSUMS:
   AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
@@ -44,5 +46,6 @@ SPEC CHECKSUMS:
   Shimmer: 057fcfe9c1c978d69d50b64fce93a61080cd08ec
   SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
   TransitionKit: 6a6f3ddda38ae758778aa889dcb930e4f8d64edc
+  URBMediaFocusViewController: 4dff9de3767e60b96ba325c897d4ffa7131a122e
 
 COCOAPODS: 0.35.0

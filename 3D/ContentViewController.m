@@ -8,12 +8,16 @@
 
 #import "ContentViewController.h"
 #import "ContentCollectionViewCell.h"
+#import "TextViewController.h"
 
-@interface ContentViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ContentViewController () <UICollectionViewDelegate, UICollectionViewDataSource, URBMediaFocusViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *contentCollectionView;
 @property (nonatomic, strong) NSArray *imageNames;
 @property (nonatomic, strong) NSArray *cellLabels;
+@property (nonatomic, strong) URBMediaFocusViewController *mediaVC;
+@property (nonatomic, strong) NSDictionary *plistDictionary;
+
 
 @end
 
@@ -22,12 +26,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"ConditionText" ofType:@"plist"];
+    self.plistDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    
     UINib *cellNib = [UINib nibWithNibName:@"ContentCollectionViewCell" bundle:nil];
     [self.contentCollectionView registerNib:cellNib forCellWithReuseIdentifier:@"CollectionCell"];
     self.contentCollectionView.alwaysBounceVertical = YES;
     
-    self.imageNames = [[NSArray alloc]initWithObjects:@"spine", @"abnormal", @"normal", @"spinearthritis", @"spineside", @"texticon", nil];
-    self.cellLabels = [[NSArray alloc]initWithObjects:@"Spine Anatomy", @"Abnormal Disk", @"Normal Disk", @"Arthritic Spine", @"Spine Cross Section", @"Diagnosis Description", nil];
+    self.imageNames = [[NSArray alloc]initWithObjects:@"spine", @"abnormal", @"normal", @"lumbarvidthumb", @"texticon", nil];
+    self.cellLabels = [[NSArray alloc]initWithObjects:@"Spine Anatomy", @"Abnormal Disk", @"Normal Disk", @"Lumbar Disc Herniation Video", @"Diagnosis Overview", nil];
 
 
     // Do any additional setup after loading the view.
@@ -51,7 +58,7 @@
         }
     }
     
-    return array;
+    return [self.contentCollectionView visibleCells];//array;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -61,14 +68,41 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor redColor];
+
     ContentCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
     cell.thumbnailImageView.image = [UIImage imageNamed:self.imageNames[indexPath.row]];
     cell.contentLabel.text = self.cellLabels[indexPath.row];
 
 
     return cell;
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.mediaVC = [[URBMediaFocusViewController alloc] init];
+    
+    if(indexPath.row == 3){
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"changeBackground" object:nil userInfo:@{ @"video" : @"lumbarvideo" }];
+
+    }else if(indexPath.row == 4){
+
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        TextViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"TextVC"];
+        vc.view.backgroundColor = self.view.backgroundColor;
+        NSArray *titles = [self.plistDictionary objectForKey:@"titles"];
+        NSArray *texts = [self.plistDictionary objectForKey:@"texts"];
+        vc.titleLabel.text = titles[0];
+        vc.textView.text = texts[0];
+        
+        [self.navigationController pushViewController:vc animated:YES];
+    
+    }else{
+        
+        [self.mediaVC showImage:[UIImage imageNamed:self.imageNames[indexPath.row]] fromView:[self.contentCollectionView cellForItemAtIndexPath:indexPath]];
+    
+    }
 }
 
 - (IBAction)backPressed:(id)sender {
