@@ -37,7 +37,7 @@
     self.contentCollectionView.alwaysBounceVertical = YES;
     
     self.imageNames = [[NSArray alloc]initWithObjects:@"spine", @"abnormal", @"normal", @"lumbarvidthumb", @"texticon", nil];
-    self.cellLabels = [[NSArray alloc]initWithObjects:@"Spine Anatomy", @"Abnormal Disk", @"Normal Disk", @"Lumbar Disc Herniation Video", @"Diagnosis Overview", nil];
+    self.cellLabels = [[NSArray alloc]initWithObjects:@"Spine Anatomy", @"Abnormal Disk", @"Normal Disk", @"Lumbar Disc Herniation Video", @"Diagnosis Description", nil];
     
     self.imageNamesTreatment = [[NSArray alloc]initWithObjects:@"spine", @"texticon", nil];
     self.cellLabelsTreatment = [[NSArray alloc]initWithObjects:@"Lumbar Microdiscectomy", @"Treatment Overview", nil];
