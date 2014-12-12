@@ -198,7 +198,7 @@
     if([self.delegate respondsToSelector:@selector(closeCell:)]) {
         [self.delegate closeCell:self];
     }
-    self.opened = NOg;
+    self.opened = NO;
 }
 
 - (void)setTitleButtons:(NSArray *)titleButtons {
