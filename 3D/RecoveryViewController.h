@@ -10,4 +10,6 @@
 
 @interface RecoveryViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
 @end

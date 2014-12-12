@@ -36,6 +36,7 @@
 		BE9C485E1A268B6300B2B3E6 /* ConditionText.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE9C485D1A268B6300B2B3E6 /* ConditionText.plist */; };
 		BE9C48601A26966800B2B3E6 /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9C485F1A26966800B2B3E6 /* RefreshView.xib */; };
 		BE9C48631A26988800B2B3E6 /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48621A26988800B2B3E6 /* RefreshView.m */; };
+		BEBB53E01A3B783200ABF9A5 /* RecoveryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBB53DF1A3B783200ABF9A5 /* RecoveryTableViewCell.m */; };
 		BEEBE31A1A32644600057AE2 /* EncounterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEBE3191A32644600057AE2 /* EncounterViewModel.m */; };
 		BEEBE31D1A32653200057AE2 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEBE31C1A32653200057AE2 /* Encounter.m */; };
 		E7067EFF1A36473500094DBE /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7067EFE1A36473500094DBE /* CardView.xib */; };
@@ -118,6 +119,8 @@
 		BE9C485F1A26966800B2B3E6 /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		BE9C48611A26988800B2B3E6 /* RefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshView.h; sourceTree = "<group>"; };
 		BE9C48621A26988800B2B3E6 /* RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshView.m; sourceTree = "<group>"; };
+		BEBB53DE1A3B783200ABF9A5 /* RecoveryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecoveryTableViewCell.h; sourceTree = "<group>"; };
+		BEBB53DF1A3B783200ABF9A5 /* RecoveryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecoveryTableViewCell.m; sourceTree = "<group>"; };
 		BEEBE3181A32644600057AE2 /* EncounterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncounterViewModel.h; sourceTree = "<group>"; };
 		BEEBE3191A32644600057AE2 /* EncounterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncounterViewModel.m; sourceTree = "<group>"; };
 		BEEBE31B1A32653200057AE2 /* Encounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encounter.h; sourceTree = "<group>"; };
@@ -262,6 +265,8 @@
 				BE910A5A1A30E55500CBCC7B /* Orca Care-Bridging-Header.h */,
 				BE9C48571A265C3500B2B3E6 /* EncounterTableViewCell.h */,
 				BE9C48581A265C3500B2B3E6 /* EncounterTableViewCell.m */,
+				BEBB53DE1A3B783200ABF9A5 /* RecoveryTableViewCell.h */,
+				BEBB53DF1A3B783200ABF9A5 /* RecoveryTableViewCell.m */,
 				BE9C485D1A268B6300B2B3E6 /* ConditionText.plist */,
 				BE910A6E1A3232DA00CBCC7B /* OrcaObjectRequestOperation.h */,
 				BE910A6F1A3232DA00CBCC7B /* OrcaObjectRequestOperation.m */,
@@ -478,6 +483,7 @@
 				BEEBE31D1A32653200057AE2 /* Encounter.m in Sources */,
 				BE9C48591A265C3500B2B3E6 /* EncounterTableViewCell.m in Sources */,
 				BE910A681A32293600CBCC7B /* LoginViewModel.m in Sources */,
+				BEBB53E01A3B783200ABF9A5 /* RecoveryTableViewCell.m in Sources */,
 				BE9C48501A251F1200B2B3E6 /* PlanViewController.m in Sources */,
 				BE9C485C1A26887600B2B3E6 /* TextViewController.m in Sources */,
 				E7067F021A36477C00094DBE /* CardView.m in Sources */,

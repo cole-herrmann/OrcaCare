@@ -14,6 +14,7 @@
 #import "CheckupsViewController.h"
 #import "RefreshView.h"
 #import "ContentViewController.h"
+#import "RecoveryViewController.h"
 
 @interface PlanViewController () <UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, EncounterCellDelegate>
 
@@ -41,9 +42,10 @@
 //    imageView.frame = CGRectMake(20, 0, 90, self.view.bounds.size.height);
 //    self.numberedLinesView = imageView;
     
-    self.textArray = @[@"Diagnosis", @"Treatment", @"Recovery", @"Handouts"];
+    self.textArray = @[@"Diagnosis", @"Treatments", @"Recovery", @"Handouts"];
 
-    self.colorsArray = @[[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:1.0], [UIColor colorWithRed:61/255.0f green:130/255.0f blue:192/255.0f alpha:1], [UIColor colorWithRed:17/255.0f green:37/255.0f blue:60/255.0f alpha:1], [UIColor colorWithRed:31/255.0f green:68/255.0f blue:99/255.0f alpha:1]];
+    self.colorsArray = @[[UIColor whiteColor], [UIColor colorWithRed:17/255.0f green:37/255.0f blue:60/255.0f alpha:1], [UIColor colorWithRed:70/255.0f green:172/255.0f blue:194/255.0f alpha:1], [UIColor colorWithRed:209/255.0f green:122/255.0f blue:34/255.0f alpha:1]];
+    self.view.backgroundColor = [UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:.85];
     
 //    [self.titleLabel setTextColor:self.colorsArray[0]];
 
@@ -78,6 +80,12 @@
     cell.cardView.backgroundColor = self.colorsArray[indexPath.row];
     cell.titleLabel.text = self.textArray[indexPath.row];
     
+    if(indexPath.row == 0) {
+        [cell.titleLabel setTextColor:[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:1]];
+    } else {
+        [cell.titleLabel setTextColor:[UIColor whiteColor]];
+    }
+    
     return cell;
 }
 
@@ -99,12 +107,24 @@
         self.expandedCellHeight = 270; //hard-coded size for now, we should query this size from the cell itself!
         [self.tableView beginUpdates];
         [self.tableView endUpdates];
-    }else{
-//    
-//    if(indexPath.row == 3) {
-//        [self performSegueWithIdentifier:@"checkupSegue" sender:cell];
-//    } else if(indexPath.row == 0 || indexPath.row == 2) {
-        [self performSegueWithIdentifier:@"diagnosisSegue" sender:cell];
+    } else {
+        NSString *segue;
+        switch (indexPath.row) {
+            case 0:
+                segue = @"diagnosisSegue";
+                break;
+            case 2:
+                segue = @"recoverySegue";
+                break;
+            case 3:
+                segue = @"checkupSegue";
+                break;
+            default:
+                break;
+                
+            
+        }
+        [self performSegueWithIdentifier:segue sender:cell];
     }
 }
 
@@ -123,13 +143,22 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(EncounterTableViewCell *)sender {
-    UIColor *color = sender.cardView.backgroundColor;
-    color = [color colorWithAlphaComponent:.85];
-//    if([segue.identifier isEqualToString:@"diagnosisSegue"]) {
+    UIColor *color = self.view.backgroundColor;
+    
+    if([segue.identifier isEqualToString:@"recoverySegue"]) {
+        self.navigationController.delegate = self;
+        RecoveryViewController *recoveryVC = [segue destinationViewController];
+        recoveryVC.view.backgroundColor = color;
+        recoveryVC.titleLabel.text = sender.titleLabel.text;
+    } else {
         self.navigationController.delegate = self;
         ContentViewController *detailsVC = [segue destinationViewController];
         detailsVC.view.backgroundColor = color;
         detailsVC.titleLabel.text = sender.titleLabel.text;
+    }
+    
+//    if([segue.identifier isEqualToString:@"diagnosisSegue"]) {
+
 //    } else if ([segue.identifier isEqualToString:@"checkupSegue"]) {
 //        self.navigationController.delegate = self;
 //        CheckupsViewController *checkupVC = [segue destinationViewController];
