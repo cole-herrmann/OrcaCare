@@ -13,6 +13,7 @@
             <string>ProximaNova-Light</string>
             <string>ProximaNova-Light</string>
             <string>ProximaNova-Light</string>
+            <string>ProximaNova-Light</string>
         </mutableArray>
         <mutableArray key="ProximaNova-Reg.otf">
             <string>ProximaNova-Regular</string>
@@ -131,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TF-TD-co3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927.5" y="1436.5"/>
+            <point key="canvasLocation" x="913.5" y="1442.5"/>
         </scene>
         <!--Checkups View Controller-->
         <scene sceneID="Wca-XB-Tta">
@@ -475,78 +476,6 @@
             </objects>
             <point key="canvasLocation" x="-128" y="-62.5"/>
         </scene>
-        <!--Plan View Controller-->
-        <scene sceneID="7Gy-8A-1z0">
-            <objects>
-                <tableViewController id="ljQ-az-ZUV" customClass="PlanViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="166.75" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wnd-NE-Pui">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EncounterCellIdentifier" rowHeight="166" id="cfJ-zB-Kqb" customClass="EncounterTableViewCell">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfJ-zB-Kqb" id="sWy-P3-4M4">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vh4-Dd-NKq" userLabel="cardView">
-                                            <rect key="frame" x="8" y="8" width="359" height="150"/>
-                                            <subviews>
-                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i1-Yr-OME">
-                                                    <rect key="frame" x="312" y="5" width="44" height="44"/>
-                                                    <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
-                                                    <state key="normal" image="cancel">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="close:" destination="cfJ-zB-Kqb" eventType="touchUpInside" id="Vbj-D7-BZp"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDT-kk-161">
-                                                    <rect key="frame" x="86" y="51" width="186.5" height="48"/>
-                                                    <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="48"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="xDT-kk-161" secondAttribute="centerY" id="5aJ-yR-x52"/>
-                                                <constraint firstAttribute="centerX" secondItem="xDT-kk-161" secondAttribute="centerX" id="KjM-Rd-WBY"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstItem="Vh4-Dd-NKq" firstAttribute="trailing" secondItem="sWy-P3-4M4" secondAttribute="trailingMargin" id="3dA-4F-RrL"/>
-                                        <constraint firstItem="Vh4-Dd-NKq" firstAttribute="leading" secondItem="sWy-P3-4M4" secondAttribute="leadingMargin" id="Wky-nf-Xwl"/>
-                                        <constraint firstItem="Vh4-Dd-NKq" firstAttribute="top" secondItem="sWy-P3-4M4" secondAttribute="topMargin" id="etO-eo-YIx"/>
-                                        <constraint firstItem="Vh4-Dd-NKq" firstAttribute="bottom" secondItem="sWy-P3-4M4" secondAttribute="bottomMargin" id="jCu-FX-T9M"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="cardView" destination="Vh4-Dd-NKq" id="70O-36-V2D"/>
-                                    <outlet property="closeButton" destination="3i1-Yr-OME" id="CIj-aF-bQD"/>
-                                    <outlet property="titleLabel" destination="xDT-kk-161" id="U9L-dY-fpe"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ljQ-az-ZUV" id="t2l-IY-u7G"/>
-                            <outlet property="delegate" destination="ljQ-az-ZUV" id="KHm-6J-RMB"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="rnI-5B-gTy"/>
-                    <connections>
-                        <segue destination="7lZ-qd-osu" kind="push" identifier="checkupSegue" id="Bv5-hX-poI"/>
-                        <segue destination="7Sq-eY-W4x" kind="push" identifier="diagnosisSegue" id="JHG-5g-ea8"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5CO-9C-XGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-162.5" y="680.5"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="oXJ-bj-ThN">
             <objects>
@@ -606,7 +535,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ljQ-az-ZUV" kind="relationship" relationship="rootViewController" id="xqA-t0-gpU"/>
+                        <segue destination="pGc-5v-aLr" kind="relationship" relationship="rootViewController" id="dOE-np-Ds8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xf-Y6-0Bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -682,9 +611,116 @@
             </objects>
             <point key="canvasLocation" x="433.5" y="-62"/>
         </scene>
+        <!--Plan View Controller-->
+        <scene sceneID="VNa-30-vXY">
+            <objects>
+                <viewController id="pGc-5v-aLr" customClass="PlanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ofI-na-Tjp"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gra-8D-dzP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GgV-nD-tSX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jZe-cI-fpn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tF-VJ-caz">
+                                        <rect key="frame" x="0.0" y="5" width="70" height="40"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="imageEdgeInsets" minX="24" minY="14" maxX="24" maxY="14"/>
+                                        <state key="normal" image="backModal"/>
+                                        <connections>
+                                            <action selector="dismiss:" destination="pGc-5v-aLr" eventType="touchUpInside" id="Aj6-WW-f1V"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Care Plan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWY-bv-Bab" userLabel="Title">
+                                        <rect key="frame" x="87" y="9" width="201" height="32"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="166.75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Akf-oH-kqe">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EncounterCellIdentifier" rowHeight="166" id="oLG-Tj-BUH" customClass="EncounterTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oLG-Tj-BUH" id="4TF-eG-4V3">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8H-bf-gGz" userLabel="cardView">
+                                                    <rect key="frame" x="8" y="8" width="359" height="150"/>
+                                                    <subviews>
+                                                        <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWr-81-mwC">
+                                                            <rect key="frame" x="312" y="5" width="44" height="44"/>
+                                                            <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                                            <state key="normal" image="cancel">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="close:" destination="oLG-Tj-BUH" eventType="touchUpInside" id="7uN-rg-tCt"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Checkup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqA-Hv-mwC">
+                                                            <rect key="frame" x="83" y="47" width="193" height="56"/>
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="48"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="centerY" secondItem="RqA-Hv-mwC" secondAttribute="centerY" id="E2G-y6-LmH"/>
+                                                        <constraint firstAttribute="centerX" secondItem="RqA-Hv-mwC" secondAttribute="centerX" id="zRe-3b-ogV"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="n8H-bf-gGz" firstAttribute="bottom" secondItem="4TF-eG-4V3" secondAttribute="bottomMargin" id="21r-JF-KN3"/>
+                                                <constraint firstItem="n8H-bf-gGz" firstAttribute="top" secondItem="4TF-eG-4V3" secondAttribute="topMargin" id="3eV-aS-hkp"/>
+                                                <constraint firstItem="n8H-bf-gGz" firstAttribute="leading" secondItem="4TF-eG-4V3" secondAttribute="leadingMargin" id="5IY-Dt-SCu"/>
+                                                <constraint firstItem="n8H-bf-gGz" firstAttribute="trailing" secondItem="4TF-eG-4V3" secondAttribute="trailingMargin" id="Ep3-Gb-LYT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cardView" destination="n8H-bf-gGz" id="ltU-PR-2fH"/>
+                                            <outlet property="closeButton" destination="sWr-81-mwC" id="OLe-4p-5ae"/>
+                                            <outlet property="titleLabel" destination="RqA-Hv-mwC" id="mph-G3-cs8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pGc-5v-aLr" id="Gqs-gV-GRu"/>
+                                    <outlet property="delegate" destination="pGc-5v-aLr" id="EPy-o2-8sy"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.031372549020000001" green="0.2901960784" blue="0.52156862749999999" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fej-Pe-7n6"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="Akf-oH-kqe" id="Yra-qH-jnS"/>
+                        <outlet property="titleLabel" destination="hWY-bv-Bab" id="Cib-Iv-HXo"/>
+                        <segue destination="7Sq-eY-W4x" kind="push" identifier="diagnosisSegue" id="q3q-qP-Tur"/>
+                        <segue destination="7lZ-qd-osu" kind="push" identifier="checkupSegue" id="96m-V3-myW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MtB-NC-jlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-138.5" y="680.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back" width="176" height="176"/>
+        <image name="backModal" width="36" height="21"/>
         <image name="bluecircle" width="300" height="300"/>
         <image name="cancel" width="64" height="64"/>
         <image name="nextbutton" width="212" height="72"/>
