@@ -187,7 +187,6 @@
         for(UIButton *btn in self.titleButtons) {
             [btn removeFromSuperview];
         }
-        self.titleButtons = nil;
     }];
     if([self.delegate respondsToSelector:@selector(closeCell:)]) {
         [self.delegate closeCell:self];
