@@ -40,11 +40,11 @@
 //    imageView.frame = CGRectMake(20, 0, 90, self.view.bounds.size.height);
 //    self.numberedLinesView = imageView;
     
-    self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.7];
-    self.textArray = @[@"Diagnosis", @"Treatment", @"Recovery", @"Checkup"];
+//    self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.7];
+    self.textArray = @[@"Diagnosis", @"Treatments", @"Recovery", @"Checkup"];
     self.colorsArray = @[[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:1.0], [UIColor colorWithRed:61/255.0f green:130/255.0f blue:192/255.0f alpha:1], [UIColor colorWithRed:17/255.0f green:37/255.0f blue:60/255.0f alpha:1], [UIColor colorWithRed:31/255.0f green:68/255.0f blue:99/255.0f alpha:1]];
     
-    [self.titleLabel setTextColor:self.colorsArray[0]];
+//    [self.titleLabel setTextColor:self.colorsArray[0]];
 
 //    UIImage *downArrow = [[UIImage imageNamed:@"backModal"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 //    downArrow
@@ -128,7 +128,7 @@
         self.navigationController.delegate = self;
         DiagnosisDetailsViewController *detailsVC = [segue destinationViewController];
         detailsVC.view.backgroundColor = color;
-        detailsVC.titleLabel.text = sender.titleLabel.text;
+        detailsVC.titleLabel.text = @"Lumbar Disc Herniation";
     } else if ([segue.identifier isEqualToString:@"checkupSegue"]) {
         self.navigationController.delegate = self;
         CheckupsViewController *checkupVC = [segue destinationViewController];
