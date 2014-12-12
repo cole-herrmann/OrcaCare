@@ -102,37 +102,23 @@
     [cardView addTarget:self action:@selector(cardClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     CardView *cardView2 = (CardView* )[[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
-    cardView2.doctorLabel.text = @"Dr. Chad Zeluff";
+    cardView2.doctorLabel.text = @"Dr. Li Hashimoto";
     cardView2.dateLabel.text = @"12 • 8 • 2013";
-    cardView2.doctorImageView.image = [UIImage imageNamed:@"docpic"];
+    cardView2.doctorImageView.image = [UIImage imageNamed:@"drli"];
     [cardView2 addTarget:self action:@selector(cardClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     CardView *cardView3 = (CardView* )[[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
-    cardView3.doctorLabel.text = @"Dr. Chad Zeluff";
-    cardView3.dateLabel.text = @"12 • 8 • 2013";
-    cardView3.doctorImageView.image = [UIImage imageNamed:@"docpic"];
+    cardView3.doctorLabel.text = @"Dr. Mark Johnson";
+    cardView3.dateLabel.text = @"4 • 5 • 2012";
+    cardView3.doctorImageView.image = [UIImage imageNamed:@"mark"];
     [cardView3 addTarget:self action:@selector(cardClicked:) forControlEvents:UIControlEventTouchUpInside];
-
-    CardView *cardView4 = (CardView* )[[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
-    cardView4.doctorLabel.text = @"Dr. Chad Zeluff";
-    cardView4.dateLabel.text = @"12 • 8 • 2013";
-    cardView4.doctorImageView.image = [UIImage imageNamed:@"docpic"];
-    [cardView4 addTarget:self action:@selector(cardClicked:) forControlEvents:UIControlEventTouchUpInside];
-
-    CardView *cardView5 = (CardView* )[[[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil] firstObject];
-    cardView5.doctorLabel.text = @"Dr. Chad Zeluff";
-    cardView5.dateLabel.text = @"12 • 8 • 2013";
-    cardView5.doctorImageView.image = [UIImage imageNamed:@"docpic"];
-    [cardView5 addTarget:self action:@selector(cardClicked:) forControlEvents:UIControlEventTouchUpInside];
 
 
     [self.cardShellVC addView:cardView];
     [self.cardShellVC addView:cardView2];
     [self.cardShellVC addView:cardView3];
-    [self.cardShellVC addView:cardView4];
-    [self.cardShellVC addView:cardView5];
+   
 
-    
 //    [self.scrollView addSubview:cardView];
 }
 
