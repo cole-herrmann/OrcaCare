@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -828,6 +828,7 @@
                         <segue destination="7Sq-eY-W4x" kind="push" identifier="diagnosisSegue" id="q3q-qP-Tur"/>
                         <segue destination="7lZ-qd-osu" kind="push" identifier="checkupSegue" id="96m-V3-myW"/>
                         <segue destination="GGO-u6-NE3" kind="push" identifier="recoverySegue" id="yD0-D6-DEO"/>
+                        <segue destination="7Sq-eY-W4x" kind="push" identifier="treatmentSegue" id="QKW-0V-Vmd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtB-NC-jlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -853,4 +854,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="QKW-0V-Vmd"/>
+    </inferredMetricsTieBreakers>
 </document>

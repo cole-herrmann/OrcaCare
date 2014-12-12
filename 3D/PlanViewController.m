@@ -130,6 +130,7 @@
 
 - (void)clickedRow:(NSInteger)row forCell:(EncounterTableViewCell *)cell {
     NSInteger cellRow = [self.tableView indexPathForCell:cell].row;
+    [self performSegueWithIdentifier:@"treatmentSegue" sender:cell];
 }
 
 - (void)closeCell:(EncounterTableViewCell *)sender {
@@ -153,6 +154,9 @@
     } else {
         self.navigationController.delegate = self;
         ContentViewController *detailsVC = [segue destinationViewController];
+        if([segue.identifier isEqualToString:@"treatmentSegue"]) {
+            detailsVC.isTreatment = YES;
+        }
         detailsVC.view.backgroundColor = color;
         detailsVC.titleLabel.text = sender.titleLabel.text;
     }

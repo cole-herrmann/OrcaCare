@@ -12,4 +12,6 @@
 @interface ContentViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
+@property (nonatomic) BOOL isTreatment;
+
 @end
