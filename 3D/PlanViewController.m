@@ -13,6 +13,7 @@
 #import "DiagnosisDetailsViewController.h"
 #import "CheckupsViewController.h"
 #import "RefreshView.h"
+#import "ContentViewController.h"
 
 @interface PlanViewController () <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, EncounterCellDelegate>
 
@@ -40,7 +41,7 @@
 //    imageView.frame = CGRectMake(20, 0, 90, self.view.bounds.size.height);
 //    self.numberedLinesView = imageView;
     
-    self.textArray = @[@"Diagnosis", @"Treatment", @"Recovery", @"Checkup"];
+    self.textArray = @[@"Diagnosis", @"Treatment", @"Recovery", @"Handouts"];
     self.colorsArray = @[[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:1.0], [UIColor colorWithRed:61/255.0f green:130/255.0f blue:192/255.0f alpha:1], [UIColor colorWithRed:17/255.0f green:37/255.0f blue:60/255.0f alpha:1], [UIColor colorWithRed:31/255.0f green:68/255.0f blue:99/255.0f alpha:1]];
     
     [[NSBundle mainBundle] loadNibNamed:@"RefreshView" owner:self options:nil];
@@ -87,11 +88,11 @@
         self.expandedCellHeight = 200; //hard-coded size for now, we should query this size from the cell itself!
         [self.tableView beginUpdates];
         [self.tableView endUpdates];
-    }
-    
-    if(indexPath.row == 3) {
-        [self performSegueWithIdentifier:@"checkupSegue" sender:cell];
-    } else if(indexPath.row == 0 || indexPath.row == 2) {
+    }else{
+//    
+//    if(indexPath.row == 3) {
+//        [self performSegueWithIdentifier:@"checkupSegue" sender:cell];
+//    } else if(indexPath.row == 0 || indexPath.row == 2) {
         [self performSegueWithIdentifier:@"diagnosisSegue" sender:cell];
     }
 }
@@ -113,17 +114,17 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(EncounterTableViewCell *)sender {
     UIColor *color = sender.cardView.backgroundColor;
     color = [color colorWithAlphaComponent:.85];
-    if([segue.identifier isEqualToString:@"diagnosisSegue"]) {
+//    if([segue.identifier isEqualToString:@"diagnosisSegue"]) {
         self.navigationController.delegate = self;
-        DiagnosisDetailsViewController *detailsVC = [segue destinationViewController];
+        ContentViewController *detailsVC = [segue destinationViewController];
         detailsVC.view.backgroundColor = color;
         detailsVC.titleLabel.text = sender.titleLabel.text;
-    } else if ([segue.identifier isEqualToString:@"checkupSegue"]) {
-        self.navigationController.delegate = self;
-        CheckupsViewController *checkupVC = [segue destinationViewController];
-        checkupVC.view.backgroundColor = color;
-        checkupVC.titleLabel.text = sender.titleLabel.text;
-    }
+//    } else if ([segue.identifier isEqualToString:@"checkupSegue"]) {
+//        self.navigationController.delegate = self;
+//        CheckupsViewController *checkupVC = [segue destinationViewController];
+//        checkupVC.view.backgroundColor = color;
+//        checkupVC.titleLabel.text = sender.titleLabel.text;
+//    }
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController

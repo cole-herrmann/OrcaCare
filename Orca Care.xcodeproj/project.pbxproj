@@ -41,6 +41,8 @@
 		E7067EFF1A36473500094DBE /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7067EFE1A36473500094DBE /* CardView.xib */; };
 		E7067F021A36477C00094DBE /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7067F011A36477C00094DBE /* CardView.m */; };
 		E73988171A3792E0005DFC87 /* CardShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73988161A3792E0005DFC87 /* CardShellViewController.m */; };
+		E7822D371A3A4CB4001B8F6A /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7822D361A3A4CB4001B8F6A /* ContentCollectionViewCell.xib */; };
+		E7822D3A1A3A4D84001B8F6A /* ContentCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7822D391A3A4D84001B8F6A /* ContentCollectionViewCell.m */; };
 		E798236F1A1D4FE8006002D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E798236E1A1D4FE8006002D0 /* main.m */; };
 		E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823711A1D4FE8006002D0 /* AppDelegate.m */; };
 		E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823741A1D4FE8006002D0 /* CardViewController.m */; };
@@ -50,6 +52,7 @@
 		E79823891A1D4FE8006002D0 /* _DTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823881A1D4FE8006002D0 /* _DTests.m */; };
 		E798239F1A1E6419006002D0 /* ManView.m in Sources */ = {isa = PBXBuildFile; fileRef = E798239E1A1E6419006002D0 /* ManView.m */; };
 		E7C6E0C51A265D24000FA032 /* lumbarvideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E7C6E0C41A265D24000FA032 /* lumbarvideo.mp4 */; };
+		E7FFFED81A3A1C6A00588D9F /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FFFED71A3A1C6A00588D9F /* ContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +127,9 @@
 		E7067F011A36477C00094DBE /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 		E73988151A3792E0005DFC87 /* CardShellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardShellViewController.h; path = ../CardShellViewController.h; sourceTree = "<group>"; };
 		E73988161A3792E0005DFC87 /* CardShellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardShellViewController.m; path = ../CardShellViewController.m; sourceTree = "<group>"; };
+		E7822D361A3A4CB4001B8F6A /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
+		E7822D381A3A4D84001B8F6A /* ContentCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCollectionViewCell.h; sourceTree = "<group>"; };
+		E7822D391A3A4D84001B8F6A /* ContentCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCollectionViewCell.m; sourceTree = "<group>"; };
 		E79823691A1D4FE8006002D0 /* Orca Care.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orca Care.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E798236D1A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E798236E1A1D4FE8006002D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -140,6 +146,8 @@
 		E798239D1A1E6419006002D0 /* ManView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManView.h; sourceTree = "<group>"; };
 		E798239E1A1E6419006002D0 /* ManView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManView.m; sourceTree = "<group>"; };
 		E7C6E0C41A265D24000FA032 /* lumbarvideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lumbarvideo.mp4; sourceTree = "<group>"; };
+		E7FFFED61A3A1C6A00588D9F /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		E7FFFED71A3A1C6A00588D9F /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +284,11 @@
 				E7067EFE1A36473500094DBE /* CardView.xib */,
 				E7067F001A36477C00094DBE /* CardView.h */,
 				E7067F011A36477C00094DBE /* CardView.m */,
+				E7FFFED61A3A1C6A00588D9F /* ContentViewController.h */,
+				E7FFFED71A3A1C6A00588D9F /* ContentViewController.m */,
+				E7822D361A3A4CB4001B8F6A /* ContentCollectionViewCell.xib */,
+				E7822D381A3A4D84001B8F6A /* ContentCollectionViewCell.h */,
+				E7822D391A3A4D84001B8F6A /* ContentCollectionViewCell.m */,
 			);
 			path = 3D;
 			sourceTree = "<group>";
@@ -402,6 +415,7 @@
 				BE910A651A31093500CBCC7B /* ProximaNova-Reg.otf in Resources */,
 				E7067EFF1A36473500094DBE /* CardView.xib in Resources */,
 				E79823781A1D4FE8006002D0 /* Main.storyboard in Resources */,
+				E7822D371A3A4CB4001B8F6A /* ContentCollectionViewCell.xib in Resources */,
 				BE9C485E1A268B6300B2B3E6 /* ConditionText.plist in Resources */,
 				E798237D1A1D4FE8006002D0 /* LaunchScreen.xib in Resources */,
 				BE9C484B1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 in Resources */,
@@ -474,6 +488,7 @@
 				E73988171A3792E0005DFC87 /* CardShellViewController.m in Sources */,
 				BE910A601A30F5BE00CBCC7B /* SettingsViewController.m in Sources */,
 				BE9C48391A2293F400B2B3E6 /* RecoveryViewController.m in Sources */,
+				E7822D3A1A3A4D84001B8F6A /* ContentCollectionViewCell.m in Sources */,
 				BE9C48511A251F1200B2B3E6 /* TransitionAnimator.m in Sources */,
 				BE910A731A3240B600CBCC7B /* OrcaObjectManager.m in Sources */,
 				BE910A6D1A322E2100CBCC7B /* User.m in Sources */,
@@ -486,6 +501,7 @@
 				BE9C48461A23A03600B2B3E6 /* TableHeaderView.m in Sources */,
 				E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */,
 				E798236F1A1D4FE8006002D0 /* main.m in Sources */,
+				E7FFFED81A3A1C6A00588D9F /* ContentViewController.m in Sources */,
 				BE910A701A3232DA00CBCC7B /* OrcaObjectRequestOperation.m in Sources */,
 				E798239F1A1E6419006002D0 /* ManView.m in Sources */,
 				BE9C48491A23D97000B2B3E6 /* ShellViewController.m in Sources */,

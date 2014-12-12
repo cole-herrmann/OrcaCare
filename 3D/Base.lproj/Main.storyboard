@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Proxima Nova Light.ttf">
+            <string>ProximaNova-Light</string>
             <string>ProximaNova-Light</string>
             <string>ProximaNova-Light</string>
             <string>ProximaNova-Light</string>
@@ -126,12 +127,11 @@
                         <outlet property="backView" destination="R35-gY-vUb" id="Ujd-cR-VyX"/>
                         <outlet property="tableView" destination="n2g-vL-Q3h" id="rwx-TA-m02"/>
                         <outlet property="titleLabel" destination="6xR-bM-lOr" id="Ewf-S3-6vE"/>
-                        <segue destination="hPt-AG-VsZ" kind="push" identifier="textSegue" id="i0E-ma-QwD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TF-TD-co3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484.5" y="674.5"/>
+            <point key="canvasLocation" x="927.5" y="1436.5"/>
         </scene>
         <!--Checkups View Controller-->
         <scene sceneID="Wca-XB-Tta">
@@ -277,7 +277,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RcO-3U-xSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484.5" y="-44.5"/>
+            <point key="canvasLocation" x="477.5" y="1492.5"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="SQF-rc-1Nf">
+            <objects>
+                <viewController id="7Sq-eY-W4x" customClass="ContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HpK-wD-mlx"/>
+                        <viewControllerLayoutGuide type="bottom" id="5E8-P4-ioD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yJz-xp-rjD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Wq-lW-3e9">
+                                <rect key="frame" x="0.0" y="51" width="375" height="616"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="15F-wT-7aZ">
+                                    <size key="itemSize" width="155" height="190"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="Tza-L5-F5N">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="155" height="190"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="7Sq-eY-W4x" id="Sqf-B9-joM"/>
+                                    <outlet property="delegate" destination="7Sq-eY-W4x" id="tTj-Rr-4Ha"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YZE-0x-l4D">
+                                <rect key="frame" x="0.0" y="6" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Diagnosis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9YY-fw-jbU" userLabel="Title">
+                                        <rect key="frame" x="52" y="14" width="271" height="21"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuf-Il-f0a">
+                                        <rect key="frame" x="0.0" y="3" width="44" height="44"/>
+                                        <state key="normal" backgroundImage="back">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="back:" destination="4KX-KH-PAA" eventType="touchUpInside" id="ZGa-Yo-Wlg"/>
+                                            <action selector="backPressed:" destination="hPt-AG-VsZ" eventType="touchUpInside" id="xTz-L7-2gV"/>
+                                            <action selector="backPressed:" destination="7Sq-eY-W4x" eventType="touchUpInside" id="zlj-Ce-mRs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aNu-GA-8y0"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="contentCollectionView" destination="3Wq-lW-3e9" id="Qyd-Jo-Lio"/>
+                        <outlet property="titleLabel" destination="9YY-fw-jbU" id="xvy-cI-TXF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X5O-xJ-tbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="413.5" y="680.5"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="HC5-Fa-ruo">
@@ -288,7 +361,7 @@
                         <viewControllerLayoutGuide type="bottom" id="0EF-D6-CKc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PRj-di-RDp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9R-br-HZB">
@@ -331,7 +404,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8J-R9-irV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908.5" y="674.5"/>
+            <point key="canvasLocation" x="921.5" y="680.5"/>
         </scene>
         <!--Card View Controller-->
         <scene sceneID="mhC-Lo-x3r">
@@ -370,9 +443,6 @@
                                         <integer key="value" value="28"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="settingsClicked:" destination="pO7-9R-K2k" eventType="touchUpInside" id="H0t-TG-qzG"/>
-                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOc-es-bmw">
                                 <rect key="frame" x="303" y="603" width="56" height="56"/>
@@ -433,7 +503,7 @@
                                                         <action selector="close:" destination="cfJ-zB-Kqb" eventType="touchUpInside" id="Vbj-D7-BZp"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDT-kk-161">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Checkup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDT-kk-161">
                                                     <rect key="frame" x="86" y="51" width="186.5" height="48"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="48"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -470,12 +540,12 @@
                     <navigationItem key="navigationItem" id="rnI-5B-gTy"/>
                     <connections>
                         <segue destination="7lZ-qd-osu" kind="push" identifier="checkupSegue" id="Bv5-hX-poI"/>
-                        <segue destination="4KX-KH-PAA" kind="push" identifier="diagnosisSegue" id="9An-bI-rSk"/>
+                        <segue destination="7Sq-eY-W4x" kind="push" identifier="diagnosisSegue" id="JHG-5g-ea8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5CO-9C-XGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-222.5" y="680.5"/>
+            <point key="canvasLocation" x="-162.5" y="680.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oXJ-bj-ThN">
@@ -492,7 +562,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3br-G7-ZbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-646.5" y="2193.5"/>
+            <point key="canvasLocation" x="-694.5" y="2338.5"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="FxN-Rw-YhY">
@@ -522,7 +592,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NmJ-ne-o2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-222.5" y="2193.5"/>
+            <point key="canvasLocation" x="-122.5" y="2338.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F15-af-OeX">
@@ -558,7 +628,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D61-8W-Dqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-646.5" y="1445.5"/>
+            <point key="canvasLocation" x="-646.5" y="1523.5"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="S5z-6z-D6y">
@@ -591,7 +661,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdp-FW-bC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-222.5" y="1445.5"/>
+            <point key="canvasLocation" x="-87.5" y="1523.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wg6-Cb-xNq">
@@ -610,6 +680,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1n-9x-tyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="433.5" y="-62"/>
         </scene>
     </scenes>
     <resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="ProximaNova-Reg.otf">
@@ -16,26 +16,14 @@
             <rect key="frame" x="0.0" y="0.0" width="227" height="386"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iRR-qo-aSR" userLabel="dr profile picture">
-                    <rect key="frame" x="63" y="76" width="100" height="100"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="100" id="0Fl-hw-EeF"/>
-                        <constraint firstAttribute="height" constant="100" id="8H8-X3-lhR"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="50"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHw-VT-qIo" userLabel="dr label">
-                    <rect key="frame" x="83" y="221" width="60" height="30.5"/>
+                    <rect key="frame" x="83" y="228" width="60" height="30.5"/>
                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="25"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-i3-I3r" userLabel="date label">
-                    <rect key="frame" x="87" y="284" width="52.5" height="27"/>
+                    <rect key="frame" x="87" y="274" width="52.5" height="27"/>
                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="22"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -47,6 +35,18 @@
                         <constraint firstAttribute="height" constant="20" id="cCB-Y7-vIa"/>
                     </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iRR-qo-aSR" userLabel="dr profile picture">
+                    <rect key="frame" x="48" y="75" width="130" height="130"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="130" id="0Fl-hw-EeF"/>
+                        <constraint firstAttribute="height" constant="130" id="8H8-X3-lhR"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.0020174726378172636" green="0.28421682119369507" blue="0.52923250198364258" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -55,10 +55,10 @@
                 <constraint firstAttribute="trailing" secondItem="8ml-bM-WdY" secondAttribute="trailing" id="7j9-rS-iu2"/>
                 <constraint firstItem="8ml-bM-WdY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="QDO-4T-1CP"/>
                 <constraint firstAttribute="centerX" secondItem="iRR-qo-aSR" secondAttribute="centerX" id="R5w-Tz-OSH"/>
-                <constraint firstItem="iRR-qo-aSR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="76" id="fF0-al-wNQ"/>
+                <constraint firstItem="iRR-qo-aSR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="75" id="fF0-al-wNQ"/>
                 <constraint firstAttribute="centerX" secondItem="sHw-VT-qIo" secondAttribute="centerX" id="i5a-MF-j62"/>
-                <constraint firstItem="sHw-VT-qIo" firstAttribute="top" secondItem="iRR-qo-aSR" secondAttribute="bottom" constant="45" id="iXL-Fr-F7c"/>
-                <constraint firstItem="5cm-i3-I3r" firstAttribute="top" secondItem="sHw-VT-qIo" secondAttribute="bottom" constant="33" id="rPT-yH-fYa"/>
+                <constraint firstItem="sHw-VT-qIo" firstAttribute="top" secondItem="iRR-qo-aSR" secondAttribute="bottom" constant="23" id="iXL-Fr-F7c"/>
+                <constraint firstItem="5cm-i3-I3r" firstAttribute="top" secondItem="sHw-VT-qIo" secondAttribute="bottom" constant="15.5" id="rPT-yH-fYa"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
