@@ -102,9 +102,9 @@
     EncounterTableViewCell *cell = (EncounterTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     
     if(indexPath.row == 1) {
-        [cell openWithButtonTitles:@[@"Treatment A", @"Treatment B"]];
+        [cell openWithButtonTitles:@[@"Lumbar Microdiscectomy", @"Physical Therapy", @"Epidural Steroid Injections", @"Medications"]];
         self.expandedCellIndexPath = indexPath;
-        self.expandedCellHeight = 270; //hard-coded size for now, we should query this size from the cell itself!
+        self.expandedCellHeight = 250; //hard-coded size for now, we should query this size from the cell itself!
         [self.tableView beginUpdates];
         [self.tableView endUpdates];
     } else {
@@ -117,7 +117,7 @@
                 segue = @"recoverySegue";
                 break;
             case 3:
-                segue = @"checkupSegue";
+                segue = @"diagnosisSegue";
                 break;
             default:
                 break;

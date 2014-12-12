@@ -37,6 +37,7 @@
 		BE9C48601A26966800B2B3E6 /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9C485F1A26966800B2B3E6 /* RefreshView.xib */; };
 		BE9C48631A26988800B2B3E6 /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48621A26988800B2B3E6 /* RefreshView.m */; };
 		BEBB53E01A3B783200ABF9A5 /* RecoveryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBB53DF1A3B783200ABF9A5 /* RecoveryTableViewCell.m */; };
+		BEBB53E21A3B93C800ABF9A5 /* recoveryVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BEBB53E11A3B93C800ABF9A5 /* recoveryVideo.mp4 */; };
 		BEEBE31A1A32644600057AE2 /* EncounterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEBE3191A32644600057AE2 /* EncounterViewModel.m */; };
 		BEEBE31D1A32653200057AE2 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEBE31C1A32653200057AE2 /* Encounter.m */; };
 		E7067EFF1A36473500094DBE /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7067EFE1A36473500094DBE /* CardView.xib */; };
@@ -121,6 +122,7 @@
 		BE9C48621A26988800B2B3E6 /* RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshView.m; sourceTree = "<group>"; };
 		BEBB53DE1A3B783200ABF9A5 /* RecoveryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecoveryTableViewCell.h; sourceTree = "<group>"; };
 		BEBB53DF1A3B783200ABF9A5 /* RecoveryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecoveryTableViewCell.m; sourceTree = "<group>"; };
+		BEBB53E11A3B93C800ABF9A5 /* recoveryVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = recoveryVideo.mp4; sourceTree = "<group>"; };
 		BEEBE3181A32644600057AE2 /* EncounterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncounterViewModel.h; sourceTree = "<group>"; };
 		BEEBE3191A32644600057AE2 /* EncounterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncounterViewModel.m; sourceTree = "<group>"; };
 		BEEBE31B1A32653200057AE2 /* Encounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encounter.h; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				BE910A6F1A3232DA00CBCC7B /* OrcaObjectRequestOperation.m */,
 				BE910A711A3240B600CBCC7B /* OrcaObjectManager.h */,
 				BE910A721A3240B600CBCC7B /* OrcaObjectManager.m */,
+				BEBB53E11A3B93C800ABF9A5 /* recoveryVideo.mp4 */,
 				BE910A6A1A322DBD00CBCC7B /* ViewModels */,
 				BE910A691A322DB000CBCC7B /* Models */,
 				BE9C48611A26988800B2B3E6 /* RefreshView.h */,
@@ -426,6 +429,7 @@
 				BE9C484B1A23DF4200B2B3E6 /* rotatorCuffTear.mp4 in Resources */,
 				BE9C48561A26593300B2B3E6 /* View.xib in Resources */,
 				BE9C48411A239C5500B2B3E6 /* Proxima Nova Light.ttf in Resources */,
+				BEBB53E21A3B93C800ABF9A5 /* recoveryVideo.mp4 in Resources */,
 				BE9C48601A26966800B2B3E6 /* RefreshView.xib in Resources */,
 				E798237A1A1D4FE8006002D0 /* Images.xcassets in Resources */,
 				BE9C48431A239CDE00B2B3E6 /* TableHeader.xib in Resources */,

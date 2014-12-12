@@ -54,26 +54,47 @@
     
     for(int i = 0; i < titles.count; i++) {
         NSString *title = [titles objectAtIndex:i];
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.alpha = 0;
+        btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//        [btn.titleLabel setTextAlignment:NSTextAlignmentLeft];
+//        btn.backgroundColor = [UIColor redColor];
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btn setTitle:title forState:UIControlStateNormal];
-//        [self.contentView addSubview:btn];
+        [btn.titleLabel setFont:[UIFont fontWithName:@"ProximaNova-Light" size:20]];
+        [btn addTarget:self action:@selector(titleButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self.cardView addSubview:btn];
         [buttons addObject:btn];
+        btn.tag = i;
         
-        NSDictionary *viewsDictionary = @{@"btn" : btn, @"cV" : self.contentView};
+//        NSDictionary *viewsDictionary = @{@"btn" : btn, @"cV" : self.contentView};
 
 //        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:<#(NSString *)#> options:<#(NSLayoutFormatOptions)#> metrics:<#(NSDictionary *)#> views:<#(NSDictionary *)#>]]
         
         if(i == 0) {
-            
+            btn.frame = CGRectMake(20, 60, CGRectGetWidth(self.cardView.bounds) - 10, 30);
         } else if (i == titles.count-1) {
-            
+            UIButton *prevBtn = [buttons objectAtIndex:i-1];
+            CGRect prevFrame = prevBtn.frame;
+            prevFrame.origin.y = CGRectGetMaxY(prevFrame) + 10;
+            btn.frame = prevFrame;
         } else {
-            
+            UIButton *prevBtn = [buttons objectAtIndex:i-1];
+            CGRect prevFrame = prevBtn.frame;
+            prevFrame.origin.y = CGRectGetMaxY(prevFrame) + 10;
+            btn.frame = prevFrame;
         }
     }
     
+    self.titleButtons = [NSArray arrayWithArray:buttons];
+    
     [self open];
+}
+
+- (void)titleButtonClicked:(UIButton *)sender {
+    if([self.delegate respondsToSelector:@selector(clickedRow:forCell:)]) {
+        [self.delegate clickedRow:sender.tag forCell:self];
+    }
 }
 
 - (void)open {
@@ -86,6 +107,9 @@
     [self.titleLabel.layer pop_removeAllAnimations];
     [self.closeButton pop_removeAllAnimations];
     [self.line pop_removeAllAnimations];
+    for(UIButton *btn in self.titleButtons) {
+        [btn pop_removeAllAnimations];
+    }
     
     POPSpringAnimation *titlePosition = [self titlePositionAnimation];
     POPSpringAnimation *titleScale = [self titleScaleAnimation];
@@ -104,6 +128,9 @@
         [self.closeButton pop_addAnimation:buttonVisible forKey:visible];
         [self.line pop_addAnimation:lineStart forKey:start];
         [self.line pop_addAnimation:lineEnd forKey:end];
+        for(UIButton *btn in self.titleButtons) {
+            [btn pop_addAnimation:buttonVisible forKey:visible];
+        }
     }];
     [self.titleLabel.layer pop_addAnimation:titlePosition forKey:y];
     [self.titleLabel.layer pop_addAnimation:titleScale forKey:scale];
@@ -120,6 +147,9 @@
     [self.titleLabel.layer pop_removeAllAnimations];
     [self.closeButton pop_removeAllAnimations];
     [self.line pop_removeAllAnimations];
+    for(UIButton *btn in self.titleButtons) {
+        [btn pop_removeAllAnimations];
+    }
     
     POPSpringAnimation *titlePosition = [self titlePositionAnimation2];
     POPSpringAnimation *titleScale = [self titleScaleAnimation];
@@ -138,6 +168,9 @@
     lineEnd.duration = 0.1;
     lineEnd.toValue = @0.5;
 
+    for(UIButton *btn in self.titleButtons) {
+        [btn pop_addAnimation:buttonVisible forKey:visible];
+    }
     [self.line pop_addAnimation:lineVisible forKey:visible];
     [self.closeButton pop_addAnimation:buttonVisible forKey:visible];
     [self.titleLabel.layer pop_addAnimation:titlePosition forKey:y];
