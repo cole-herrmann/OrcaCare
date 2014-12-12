@@ -54,7 +54,7 @@
     
     for(int i = 0; i < titles.count; i++) {
         NSString *title = [titles objectAtIndex:i];
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
         btn.alpha = 0;
         btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 //        [btn.titleLabel setTextAlignment:NSTextAlignmentLeft];
@@ -62,7 +62,7 @@
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [btn setTitle:title forState:UIControlStateNormal];
         [btn.titleLabel setFont:[UIFont fontWithName:@"ProximaNova-Light" size:20]];
-        [btn addTarget:self action:@selector(titleButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+
         [self.cardView addSubview:btn];
         [buttons addObject:btn];
         btn.tag = i;
@@ -73,6 +73,7 @@
         
         if(i == 0) {
             btn.frame = CGRectMake(20, 60, CGRectGetWidth(self.cardView.bounds) - 10, 30);
+            [btn addTarget:self action:@selector(titleButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         } else if (i == titles.count-1) {
             UIButton *prevBtn = [buttons objectAtIndex:i-1];
             CGRect prevFrame = prevBtn.frame;
@@ -154,6 +155,7 @@
     POPSpringAnimation *titlePosition = [self titlePositionAnimation2];
     POPSpringAnimation *titleScale = [self titleScaleAnimation];
     POPBasicAnimation *buttonVisible = [self buttonVisibleAnimation];
+    POPBasicAnimation *buttonsVisible = [self buttonVisibleAnimation];
     POPBasicAnimation *lineVisible = [self lineVisibleAnimation];
     POPBasicAnimation *lineStart = [self lineStartAnimation];
     POPBasicAnimation *lineEnd = [self lineEndAnimation];
@@ -161,6 +163,8 @@
     titlePosition.toValue = @0;
     titleScale.toValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 1.0)];
     buttonVisible.toValue = @0;
+    buttonsVisible.toValue = @0;
+    buttonsVisible.duration = 0.1;
     lineVisible.toValue = @0;
     lineVisible.duration = 0.1;
     lineStart.toValue = @0.5;
@@ -169,7 +173,7 @@
     lineEnd.toValue = @0.5;
 
     for(UIButton *btn in self.titleButtons) {
-        [btn pop_addAnimation:buttonVisible forKey:visible];
+        [btn pop_addAnimation:buttonsVisible forKey:visible];
     }
     [self.line pop_addAnimation:lineVisible forKey:visible];
     [self.closeButton pop_addAnimation:buttonVisible forKey:visible];
