@@ -15,13 +15,13 @@
 #import "RefreshView.h"
 #import "ContentViewController.h"
 
-@interface PlanViewController () <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, EncounterCellDelegate>
+@interface PlanViewController () <UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, EncounterCellDelegate>
 
 //@property (nonatomic, weak) UIImageView *numberedLinesView;
 @property (nonatomic, strong) NSArray *textArray;
 @property (nonatomic, strong) NSArray *colorsArray;
-
-@property (nonatomic, weak) IBOutlet RefreshView *refreshView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (nonatomic) BOOL animationBegan;
 
@@ -42,17 +42,28 @@
 //    self.numberedLinesView = imageView;
     
     self.textArray = @[@"Diagnosis", @"Treatment", @"Recovery", @"Handouts"];
+
     self.colorsArray = @[[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:1.0], [UIColor colorWithRed:61/255.0f green:130/255.0f blue:192/255.0f alpha:1], [UIColor colorWithRed:17/255.0f green:37/255.0f blue:60/255.0f alpha:1], [UIColor colorWithRed:31/255.0f green:68/255.0f blue:99/255.0f alpha:1]];
     
-    [[NSBundle mainBundle] loadNibNamed:@"RefreshView" owner:self options:nil];
+//    [self.titleLabel setTextColor:self.colorsArray[0]];
 
-    CGRect frame = self.refreshView.frame;
-    frame.origin = CGPointMake(0, -self.refreshView.bounds.size.height);
-    self.refreshView.frame = frame;
-    [self.view addSubview:self.refreshView];
-    self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:.5];
-    [self.refreshView.progressLayer addAnimation:[self pullDownAnimation] forKey:@"fill circle as you drag"];
-    self.refreshView.progressLayer.speed = 0.0f;
+//    UIImage *downArrow = [[UIImage imageNamed:@"backModal"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//    downArrow
+//    [self.downArrowButton setImage:[[UIImage imageNamed:@"backModal"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+}
+
+- (IBAction)dismiss:(id)sender {
+    if(!self.animationBegan) {
+        self.animationBegan = YES;
+        [UIView animateWithDuration:0.4 animations:^{
+            self.view.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+        } completion:^(BOOL finished) {
+            if([self.delegate respondsToSelector:@selector(planVCShouldDismiss:)]) {
+                [self.delegate planVCShouldDismiss:self];
+            }
+            self.animationBegan = NO;
+        }];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -63,7 +74,7 @@
     static NSString *encounterCellIdentifier = @"EncounterCellIdentifier";
     EncounterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:encounterCellIdentifier];
     cell.delegate = self;
-    cell.backgroundColor = [UIColor clearColor];    
+    cell.backgroundColor = [UIColor clearColor];
     cell.cardView.backgroundColor = self.colorsArray[indexPath.row];
     cell.titleLabel.text = self.textArray[indexPath.row];
     
@@ -71,7 +82,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat cellHeight = self.view.bounds.size.height / 4;
+    CGFloat cellHeight = tableView.bounds.size.height / 4;
     if ([self.expandedCellIndexPath isEqual:indexPath]) {
         cellHeight = self.expandedCellHeight;
     }
@@ -85,7 +96,7 @@
     if(indexPath.row == 1) {
         [cell openWithButtonTitles:@[@"Treatment A", @"Treatment B"]];
         self.expandedCellIndexPath = indexPath;
-        self.expandedCellHeight = 200; //hard-coded size for now, we should query this size from the cell itself!
+        self.expandedCellHeight = 270; //hard-coded size for now, we should query this size from the cell itself!
         [self.tableView beginUpdates];
         [self.tableView endUpdates];
     }else{
@@ -125,6 +136,7 @@
 //        checkupVC.view.backgroundColor = color;
 //        checkupVC.titleLabel.text = sender.titleLabel.text;
 //    }
+
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
@@ -135,35 +147,35 @@
     return [AMWaveTransition transitionWithOperation:operation andTransitionType:AMWaveTransitionTypeBounce];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    self.refreshView.progressLayer.timeOffset = (-(scrollView.contentOffset.y / 120));
-   
-    if(scrollView.contentOffset.y <= -120){
-        
-        if(!self.animationBegan) {
-            self.animationBegan = YES;
-            [UIView animateWithDuration:0.4 animations:^{
-                self.view.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
-            } completion:^(BOOL finished) {
-                if([self.delegate respondsToSelector:@selector(planVCShouldDismiss:)]) {
-                    [self.delegate planVCShouldDismiss:self];
-                }
-                self.animationBegan = NO;
-            }];
-        }
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    
+//    self.refreshView.progressLayer.timeOffset = (-(scrollView.contentOffset.y / 120));
+//   
+//    if(scrollView.contentOffset.y <= -120){
+//        
+//        if(!self.animationBegan) {
+//            self.animationBegan = YES;
+//            [UIView animateWithDuration:0.4 animations:^{
+//                self.view.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+//            } completion:^(BOOL finished) {
+//                if([self.delegate respondsToSelector:@selector(planVCShouldDismiss:)]) {
+//                    [self.delegate planVCShouldDismiss:self];
+//                }
+//                self.animationBegan = NO;
+//            }];
+//        }
+//    }
+//}
 
-- (CABasicAnimation *)pullDownAnimation
-{
-    // Text is drawn by stroking the path from 0% to 100%
-    CABasicAnimation *fillCircle = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    fillCircle.fromValue = @0;
-    fillCircle.toValue = @1;
-    fillCircle.duration = 1.0f;
-    
-    return fillCircle;
-}
+//- (CABasicAnimation *)pullDownAnimation
+//{
+//    // Text is drawn by stroking the path from 0% to 100%
+//    CABasicAnimation *fillCircle = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+//    fillCircle.fromValue = @0;
+//    fillCircle.toValue = @1;
+//    fillCircle.duration = 1.0f;
+//    
+//    return fillCircle;
+//}
 
 @end

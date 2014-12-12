@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBShimmeringView.h>
 
 @interface CardView : UIButton
 
 @property (weak, readonly, nonatomic) UIImageView *doctorImageView;
 @property (weak, readonly, nonatomic) UILabel *doctorLabel;
 @property (weak, readonly, nonatomic) UILabel *dateLabel;
-@property (weak, readonly, nonatomic) UIView *shimmerView;
+@property (weak, readonly, nonatomic) FBShimmeringView *shimmerView;
+
+@property (nonatomic) BOOL newPlan;
 
 @end

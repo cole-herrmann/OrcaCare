@@ -15,16 +15,13 @@
 @property (nonatomic, strong) NSArray *titleButtons;
 @property (nonatomic, strong) CAShapeLayer *line;
 
-@property (nonatomic) NSInteger yPos;
-
 @end
 
 @implementation EncounterTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.yPos = self.titleLabel.center.y;
-
+    
     [self.cardView.layer addSublayer:self.line];
 }
 
@@ -124,14 +121,14 @@
     [self.closeButton pop_removeAllAnimations];
     [self.line pop_removeAllAnimations];
     
-    POPSpringAnimation *titlePosition = [self titlePositionAnimation];
+    POPSpringAnimation *titlePosition = [self titlePositionAnimation2];
     POPSpringAnimation *titleScale = [self titleScaleAnimation];
     POPBasicAnimation *buttonVisible = [self buttonVisibleAnimation];
     POPBasicAnimation *lineVisible = [self lineVisibleAnimation];
     POPBasicAnimation *lineStart = [self lineStartAnimation];
     POPBasicAnimation *lineEnd = [self lineEndAnimation];
     
-    titlePosition.toValue = @(self.yPos);
+    titlePosition.toValue = @0;
     titleScale.toValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 1.0)];
     buttonVisible.toValue = @0;
     lineVisible.toValue = @0;
@@ -155,6 +152,14 @@
 - (POPSpringAnimation *)titlePositionAnimation {
     POPSpringAnimation *titlePosition = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
 //    titlePosition.velocity = @.2;
+    titlePosition.springBounciness = 1;
+    titlePosition.springSpeed = 5;
+    return titlePosition;
+}
+
+- (POPSpringAnimation *)titlePositionAnimation2 {
+    POPSpringAnimation *titlePosition = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerTranslationY];
+    //    titlePosition.velocity = @.2;
     titlePosition.springBounciness = 1;
     titlePosition.springSpeed = 5;
     return titlePosition;
