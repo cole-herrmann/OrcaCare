@@ -27,6 +27,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeBackground:) name:@"changeBackground" object:nil];
 
+    self.backgroundImageView.layer.masksToBounds = YES;
 }
 
 - (void)changeBackground:(NSNotification *)notification {
