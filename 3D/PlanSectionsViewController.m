@@ -20,7 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.contentInset = UIEdgeInsetsMake(80, 0, 0, 0);
-    // Do any additional setup after loading the view.
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

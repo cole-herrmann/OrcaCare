@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIView *topLine;
 @property (nonatomic, strong) UIView *bottomLine;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 
 @end
 
@@ -23,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-   
+    self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.frame.size.height, 0, 0, 0);
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -80,4 +81,10 @@
     
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 @end

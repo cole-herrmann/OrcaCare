@@ -25,28 +25,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hN-7e-taY">
-                                <rect key="frame" x="58" y="49" width="2" height="618"/>
+                                <rect key="frame" x="58" y="70" width="2" height="597"/>
                                 <color key="backgroundColor" red="0.0020174726378172636" green="0.28421682119369507" blue="0.52923250198364258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57E-e9-4Oq">
-                                <rect key="frame" x="0.0" y="49" width="375" height="576"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="8gi-NF-Gmp" kind="embed" id="Rr4-Wc-For"/>
+                                    <segue destination="L1w-Pi-c8Q" kind="embed" id="Tmq-4D-c1W"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S9E-SH-jP5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O R C A   C A R E" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwB-bM-jqt">
-                                        <rect key="frame" x="20" y="14" width="182" height="21"/>
-                                        <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="24"/>
-                                        <color key="textColor" red="0.0020174726378172636" green="0.28421682119369507" blue="0.52923250198364258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -58,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGk-rT-hWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720.5" y="954.5"/>
+            <point key="canvasLocation" x="718.5" y="965.5"/>
         </scene>
         <!--Timeline View Controller-->
         <scene sceneID="5cB-LY-aS7">
@@ -72,7 +60,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="146" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Try-jT-cd5">
+                            <tableView contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="146" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Try-jT-cd5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -84,21 +72,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="szk-Ob-yTS">
-                                                    <rect key="frame" x="8" y="23" width="100" height="100"/>
+                                                    <rect key="frame" x="9" y="23" width="100" height="100"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="50"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvn-9E-Fby">
-                                                    <rect key="frame" x="57" y="123" width="2" height="24"/>
-                                                    <color key="backgroundColor" red="0.0020174726378172636" green="0.28421682119369507" blue="0.52923250198364258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </view>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WeI-ey-wwS">
-                                                    <rect key="frame" x="57" y="0.0" width="2" height="22"/>
-                                                    <color key="backgroundColor" red="0.0020174726378172636" green="0.28421682119369507" blue="0.52923250198364258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkQ-gF-ztS">
                                                     <rect key="frame" x="116" y="45" width="251" height="21"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
@@ -127,12 +107,25 @@
                                     <outlet property="delegate" destination="L1w-Pi-c8Q" id="Vor-jL-O1d"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qwb-eg-mzk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O R C A   C A R E" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuR-ca-sMZ">
+                                        <rect key="frame" x="27" y="24" width="340" height="21"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="25"/>
+                                        <color key="textColor" red="0.0020174726378172636" green="0.28421682119369507" blue="0.52923250198364258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.95000000000000007" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="headerView" destination="qwb-eg-mzk" id="etJ-4T-XJy"/>
                         <outlet property="tableView" destination="Try-jT-cd5" id="Hc6-CI-I1a"/>
                     </connections>
                 </viewController>
@@ -143,7 +136,7 @@
         <!--Plan Sections View Controller-->
         <scene sceneID="tUe-uP-NL0">
             <objects>
-                <viewController id="8gi-NF-Gmp" customClass="PlanSectionsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlanSectionsViewController" id="8gi-NF-Gmp" customClass="PlanSectionsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XFL-8G-WV2"/>
                         <viewControllerLayoutGuide type="bottom" id="eYA-A8-7Yd"/>
@@ -152,7 +145,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1AM-DS-u9U">
+                            <tableView contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1AM-DS-u9U">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -186,14 +179,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXu-hX-znO">
-                                                    <rect key="frame" x="58" y="62" width="2" height="28"/>
-                                                    <color key="backgroundColor" red="0.0020174726378172636" green="0.28421682119369507" blue="0.52923250198364258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </view>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MzP-31-vAS">
-                                                    <rect key="frame" x="58" y="0.0" width="2" height="28"/>
-                                                    <color key="backgroundColor" red="0.0020174726378172636" green="0.28421682119369507" blue="0.52923250198364258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
@@ -219,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMN-2l-8j7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1110.5" y="1782.5"/>
+            <point key="canvasLocation" x="1225.5" y="1766.5"/>
         </scene>
     </scenes>
     <resources>
