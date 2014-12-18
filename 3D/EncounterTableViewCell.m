@@ -30,8 +30,8 @@
 - (CAShapeLayer *)line {
     if(_line == nil) {
         _line = [CAShapeLayer layer];
-        _line.strokeColor =[[UIColor whiteColor]CGColor];
-        _line.fillColor = [[UIColor clearColor]CGColor];
+        _line.strokeColor =[[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:1]CGColor];
+        _line.fillColor = [[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:1]CGColor];
         [_line setLineWidth:1.0];
         _line.opacity = 0.0;
         _line.strokeStart = 0.5;
@@ -65,7 +65,7 @@
         btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 //        [btn.titleLabel setTextAlignment:NSTextAlignmentLeft];
 //        btn.backgroundColor = [UIColor redColor];
-        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:1] forState:UIControlStateNormal];
         [btn setTitle:title forState:UIControlStateNormal];
         [btn.titleLabel setFont:[UIFont fontWithName:@"ProximaNova-Light" size:20]];
 

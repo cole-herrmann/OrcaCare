@@ -44,7 +44,7 @@
     
     self.textArray = @[@"Diagnosis", @"Treatments", @"Recovery", @"Handouts"];
 
-    self.colorsArray = @[[UIColor whiteColor], [UIColor colorWithRed:17/255.0f green:37/255.0f blue:60/255.0f alpha:1], [UIColor colorWithRed:70/255.0f green:172/255.0f blue:194/255.0f alpha:1], [UIColor colorWithRed:209/255.0f green:122/255.0f blue:34/255.0f alpha:1]];
+    self.colorsArray = @[[UIColor colorWithRed:17/255.0f green:37/255.0f blue:60/255.0f alpha:1], [UIColor whiteColor], [UIColor colorWithRed:70/255.0f green:172/255.0f blue:194/255.0f alpha:1], [UIColor colorWithRed:209/255.0f green:122/255.0f blue:34/255.0f alpha:1]];
     self.view.backgroundColor = [UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:.85];
     
 //    [self.titleLabel setTextColor:self.colorsArray[0]];
@@ -80,7 +80,7 @@
     cell.cardView.backgroundColor = self.colorsArray[indexPath.row];
     cell.titleLabel.text = self.textArray[indexPath.row];
     
-    if(indexPath.row == 0) {
+    if([cell.cardView.backgroundColor isEqual:[UIColor whiteColor]]) {
         [cell.titleLabel setTextColor:[UIColor colorWithRed:8/255.0f green:74/255.0f blue:133/255.0f alpha:1]];
     } else {
         [cell.titleLabel setTextColor:[UIColor whiteColor]];

@@ -47,6 +47,13 @@
 		E70073DF1A3BA0440027921F /* treatmentVid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E70073DE1A3BA0440027921F /* treatmentVid.mp4 */; };
 		E7067EFF1A36473500094DBE /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7067EFE1A36473500094DBE /* CardView.xib */; };
 		E7067F021A36477C00094DBE /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7067F011A36477C00094DBE /* CardView.m */; };
+		E733A3A51A41EE7500707F76 /* SecondDesign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E733A3A41A41EE7500707F76 /* SecondDesign.storyboard */; };
+		E733A3A81A41F12000707F76 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E733A3A71A41F12000707F76 /* TimelineViewController.m */; };
+		E733A3AB1A41F83800707F76 /* TimelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E733A3AA1A41F83800707F76 /* TimelineTableViewCell.m */; };
+		E733A3AD1A41FFD400707F76 /* HeaderAndFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E733A3AC1A41FFD400707F76 /* HeaderAndFooterView.xib */; };
+		E733A3B01A42289400707F76 /* TimelineShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E733A3AF1A42289400707F76 /* TimelineShellViewController.m */; };
+		E733A3B31A42302200707F76 /* PlanSectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E733A3B21A42302200707F76 /* PlanSectionsViewController.m */; };
+		E733A3B61A42329300707F76 /* PlanSectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E733A3B51A42329300707F76 /* PlanSectionTableViewCell.m */; };
 		E73988171A3792E0005DFC87 /* CardShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73988161A3792E0005DFC87 /* CardShellViewController.m */; };
 		E7822D371A3A4CB4001B8F6A /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7822D361A3A4CB4001B8F6A /* ContentCollectionViewCell.xib */; };
 		E7822D3A1A3A4D84001B8F6A /* ContentCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7822D391A3A4D84001B8F6A /* ContentCollectionViewCell.m */; };
@@ -144,6 +151,18 @@
 		E7067EFE1A36473500094DBE /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = ../CardView.xib; sourceTree = "<group>"; };
 		E7067F001A36477C00094DBE /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		E7067F011A36477C00094DBE /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		E733A3A41A41EE7500707F76 /* SecondDesign.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondDesign.storyboard; sourceTree = "<group>"; };
+		E733A3A61A41F12000707F76 /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
+		E733A3A71A41F12000707F76 /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		E733A3A91A41F83800707F76 /* TimelineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineTableViewCell.h; sourceTree = "<group>"; };
+		E733A3AA1A41F83800707F76 /* TimelineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineTableViewCell.m; sourceTree = "<group>"; };
+		E733A3AC1A41FFD400707F76 /* HeaderAndFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderAndFooterView.xib; sourceTree = "<group>"; };
+		E733A3AE1A42289400707F76 /* TimelineShellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineShellViewController.h; sourceTree = "<group>"; };
+		E733A3AF1A42289400707F76 /* TimelineShellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineShellViewController.m; sourceTree = "<group>"; };
+		E733A3B11A42302200707F76 /* PlanSectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanSectionsViewController.h; sourceTree = "<group>"; };
+		E733A3B21A42302200707F76 /* PlanSectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanSectionsViewController.m; sourceTree = "<group>"; };
+		E733A3B41A42329300707F76 /* PlanSectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanSectionTableViewCell.h; sourceTree = "<group>"; };
+		E733A3B51A42329300707F76 /* PlanSectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanSectionTableViewCell.m; sourceTree = "<group>"; };
 		E73988151A3792E0005DFC87 /* CardShellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardShellViewController.h; path = ../CardShellViewController.h; sourceTree = "<group>"; };
 		E73988161A3792E0005DFC87 /* CardShellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardShellViewController.m; path = ../CardShellViewController.m; sourceTree = "<group>"; };
 		E7822D361A3A4CB4001B8F6A /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -283,6 +302,7 @@
 				BE9C484E1A251F1200B2B3E6 /* TransitionAnimator.h */,
 				BE9C484F1A251F1200B2B3E6 /* TransitionAnimator.m */,
 				E79823761A1D4FE8006002D0 /* Main.storyboard */,
+				E733A3A41A41EE7500707F76 /* SecondDesign.storyboard */,
 				BE910A561A30E4C900CBCC7B /* CircleTransitionAnimator.swift */,
 				BE910A5A1A30E55500CBCC7B /* Orca Care-Bridging-Header.h */,
 				BE9C48571A265C3500B2B3E6 /* EncounterTableViewCell.h */,
@@ -320,6 +340,17 @@
 				E7822D361A3A4CB4001B8F6A /* ContentCollectionViewCell.xib */,
 				E7822D381A3A4D84001B8F6A /* ContentCollectionViewCell.h */,
 				E7822D391A3A4D84001B8F6A /* ContentCollectionViewCell.m */,
+				E733A3A61A41F12000707F76 /* TimelineViewController.h */,
+				E733A3A71A41F12000707F76 /* TimelineViewController.m */,
+				E733A3A91A41F83800707F76 /* TimelineTableViewCell.h */,
+				E733A3AA1A41F83800707F76 /* TimelineTableViewCell.m */,
+				E733A3AC1A41FFD400707F76 /* HeaderAndFooterView.xib */,
+				E733A3AE1A42289400707F76 /* TimelineShellViewController.h */,
+				E733A3AF1A42289400707F76 /* TimelineShellViewController.m */,
+				E733A3B11A42302200707F76 /* PlanSectionsViewController.h */,
+				E733A3B21A42302200707F76 /* PlanSectionsViewController.m */,
+				E733A3B41A42329300707F76 /* PlanSectionTableViewCell.h */,
+				E733A3B51A42329300707F76 /* PlanSectionTableViewCell.m */,
 			);
 			path = 3D;
 			sourceTree = "<group>";
@@ -445,8 +476,10 @@
 			files = (
 				E7C6E0C51A265D24000FA032 /* lumbarvideo.mp4 in Resources */,
 				BE910A651A31093500CBCC7B /* ProximaNova-Reg.otf in Resources */,
+				E733A3AD1A41FFD400707F76 /* HeaderAndFooterView.xib in Resources */,
 				E7067EFF1A36473500094DBE /* CardView.xib in Resources */,
 				E79823781A1D4FE8006002D0 /* Main.storyboard in Resources */,
+				E733A3A51A41EE7500707F76 /* SecondDesign.storyboard in Resources */,
 				E7822D371A3A4CB4001B8F6A /* ContentCollectionViewCell.xib in Resources */,
 				E70073DF1A3BA0440027921F /* treatmentVid.mp4 in Resources */,
 				BE9C485E1A268B6300B2B3E6 /* ConditionText.plist in Resources */,
@@ -517,6 +550,7 @@
 				BE9C48501A251F1200B2B3E6 /* PlanViewController.m in Sources */,
 				BE9C485C1A26887600B2B3E6 /* TextViewController.m in Sources */,
 				E7067F021A36477C00094DBE /* CardView.m in Sources */,
+				E733A3B61A42329300707F76 /* PlanSectionTableViewCell.m in Sources */,
 				BE9C48631A26988800B2B3E6 /* RefreshView.m in Sources */,
 				BE910A581A30E4C900CBCC7B /* CircleTransitionAnimator.swift in Sources */,
 				BE910A5D1A30F5B300CBCC7B /* SearchViewController.m in Sources */,
@@ -525,10 +559,12 @@
 				BE910A601A30F5BE00CBCC7B /* SettingsViewController.m in Sources */,
 				BE9C48391A2293F400B2B3E6 /* RecoveryViewController.m in Sources */,
 				E7822D3A1A3A4D84001B8F6A /* ContentCollectionViewCell.m in Sources */,
+				E733A3AB1A41F83800707F76 /* TimelineTableViewCell.m in Sources */,
 				BE9C48511A251F1200B2B3E6 /* TransitionAnimator.m in Sources */,
 				BE910A731A3240B600CBCC7B /* OrcaObjectManager.m in Sources */,
 				BE910A6D1A322E2100CBCC7B /* User.m in Sources */,
 				BE9C483F1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m in Sources */,
+				E733A3B31A42302200707F76 /* PlanSectionsViewController.m in Sources */,
 				BE9C48361A2293E900B2B3E6 /* TreatmentViewController.m in Sources */,
 				BEEBE31A1A32644600057AE2 /* EncounterViewModel.m in Sources */,
 				E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */,
@@ -543,7 +579,9 @@
 				BE910A701A3232DA00CBCC7B /* OrcaObjectRequestOperation.m in Sources */,
 				BED0BC591A41F978005F23EC /* Diagnosis.m in Sources */,
 				E798239F1A1E6419006002D0 /* ManView.m in Sources */,
+				E733A3B01A42289400707F76 /* TimelineShellViewController.m in Sources */,
 				BE9C48491A23D97000B2B3E6 /* ShellViewController.m in Sources */,
+				E733A3A81A41F12000707F76 /* TimelineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
