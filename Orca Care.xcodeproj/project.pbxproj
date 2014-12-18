@@ -38,6 +38,10 @@
 		BE9C48631A26988800B2B3E6 /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48621A26988800B2B3E6 /* RefreshView.m */; };
 		BEBB53E01A3B783200ABF9A5 /* RecoveryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBB53DF1A3B783200ABF9A5 /* RecoveryTableViewCell.m */; };
 		BEBB53E21A3B93C800ABF9A5 /* recoveryVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BEBB53E11A3B93C800ABF9A5 /* recoveryVideo.mp4 */; };
+		BED0BC531A3F6C55005F23EC /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = BED0BC521A3F6C55005F23EC /* Provider.m */; };
+		BED0BC591A41F978005F23EC /* Diagnosis.m in Sources */ = {isa = PBXBuildFile; fileRef = BED0BC581A41F978005F23EC /* Diagnosis.m */; };
+		BED0BC5F1A4200E2005F23EC /* CustomMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = BED0BC5E1A4200E2005F23EC /* CustomMedia.m */; };
+		BED0BC651A42033D005F23EC /* OrcaMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = BED0BC641A42033D005F23EC /* OrcaMapping.m */; };
 		BEEBE31A1A32644600057AE2 /* EncounterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEBE3191A32644600057AE2 /* EncounterViewModel.m */; };
 		BEEBE31D1A32653200057AE2 /* Encounter.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEBE31C1A32653200057AE2 /* Encounter.m */; };
 		E70073DF1A3BA0440027921F /* treatmentVid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E70073DE1A3BA0440027921F /* treatmentVid.mp4 */; };
@@ -124,6 +128,14 @@
 		BEBB53DE1A3B783200ABF9A5 /* RecoveryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecoveryTableViewCell.h; sourceTree = "<group>"; };
 		BEBB53DF1A3B783200ABF9A5 /* RecoveryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecoveryTableViewCell.m; sourceTree = "<group>"; };
 		BEBB53E11A3B93C800ABF9A5 /* recoveryVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = recoveryVideo.mp4; sourceTree = "<group>"; };
+		BED0BC511A3F6C55005F23EC /* Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
+		BED0BC521A3F6C55005F23EC /* Provider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Provider.m; sourceTree = "<group>"; };
+		BED0BC571A41F978005F23EC /* Diagnosis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Diagnosis.h; sourceTree = "<group>"; };
+		BED0BC581A41F978005F23EC /* Diagnosis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Diagnosis.m; sourceTree = "<group>"; };
+		BED0BC5D1A4200E2005F23EC /* CustomMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMedia.h; sourceTree = "<group>"; };
+		BED0BC5E1A4200E2005F23EC /* CustomMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMedia.m; sourceTree = "<group>"; };
+		BED0BC631A42033D005F23EC /* OrcaMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrcaMapping.h; sourceTree = "<group>"; };
+		BED0BC641A42033D005F23EC /* OrcaMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrcaMapping.m; sourceTree = "<group>"; };
 		BEEBE3181A32644600057AE2 /* EncounterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncounterViewModel.h; sourceTree = "<group>"; };
 		BEEBE3191A32644600057AE2 /* EncounterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncounterViewModel.m; sourceTree = "<group>"; };
 		BEEBE31B1A32653200057AE2 /* Encounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encounter.h; sourceTree = "<group>"; };
@@ -183,6 +195,12 @@
 				BE910A6C1A322E2100CBCC7B /* User.m */,
 				BEEBE31B1A32653200057AE2 /* Encounter.h */,
 				BEEBE31C1A32653200057AE2 /* Encounter.m */,
+				BED0BC511A3F6C55005F23EC /* Provider.h */,
+				BED0BC521A3F6C55005F23EC /* Provider.m */,
+				BED0BC571A41F978005F23EC /* Diagnosis.h */,
+				BED0BC581A41F978005F23EC /* Diagnosis.m */,
+				BED0BC5D1A4200E2005F23EC /* CustomMedia.h */,
+				BED0BC5E1A4200E2005F23EC /* CustomMedia.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -277,6 +295,8 @@
 				BE910A711A3240B600CBCC7B /* OrcaObjectManager.h */,
 				BE910A721A3240B600CBCC7B /* OrcaObjectManager.m */,
 				BEBB53E11A3B93C800ABF9A5 /* recoveryVideo.mp4 */,
+				BED0BC631A42033D005F23EC /* OrcaMapping.h */,
+				BED0BC641A42033D005F23EC /* OrcaMapping.m */,
 				BE910A6A1A322DBD00CBCC7B /* ViewModels */,
 				BE910A691A322DB000CBCC7B /* Models */,
 				BE9C48611A26988800B2B3E6 /* RefreshView.h */,
@@ -391,6 +411,7 @@
 				TargetAttributes = {
 					E79823681A1D4FE8006002D0 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 6X686U3XW9;
 					};
 					E79823811A1D4FE8006002D0 = {
 						CreatedOnToolsVersion = 6.1;
@@ -487,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED0BC651A42033D005F23EC /* OrcaMapping.m in Sources */,
 				BE9C48331A2293DC00B2B3E6 /* DiagnosisViewController.m in Sources */,
 				BEEBE31D1A32653200057AE2 /* Encounter.m in Sources */,
 				BE9C48591A265C3500B2B3E6 /* EncounterTableViewCell.m in Sources */,
@@ -511,12 +533,15 @@
 				BEEBE31A1A32644600057AE2 /* EncounterViewModel.m in Sources */,
 				E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */,
 				BE9C48541A25509100B2B3E6 /* AMWaveTransition.m in Sources */,
+				BED0BC531A3F6C55005F23EC /* Provider.m in Sources */,
 				BE9C483C1A22940A00B2B3E6 /* MyContentViewController.m in Sources */,
 				BE9C48461A23A03600B2B3E6 /* TableHeaderView.m in Sources */,
 				E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */,
 				E798236F1A1D4FE8006002D0 /* main.m in Sources */,
 				E7FFFED81A3A1C6A00588D9F /* ContentViewController.m in Sources */,
+				BED0BC5F1A4200E2005F23EC /* CustomMedia.m in Sources */,
 				BE910A701A3232DA00CBCC7B /* OrcaObjectRequestOperation.m in Sources */,
+				BED0BC591A41F978005F23EC /* Diagnosis.m in Sources */,
 				E798239F1A1E6419006002D0 /* ManView.m in Sources */,
 				BE9C48491A23D97000B2B3E6 /* ShellViewController.m in Sources */,
 			);
@@ -642,10 +667,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = 3D/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Orca Care";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "3D/Orca Care-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -657,11 +686,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = 3D/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Orca Care";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "3D/Orca Care-Bridging-Header.h";
 			};
 			name = Release;

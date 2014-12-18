@@ -8,18 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+@class Provider;
+
 @interface Encounter : NSObject
 
 @property (nonatomic, copy) NSNumber *encounterId;
+@property (nonatomic, copy) NSDate *createdDate;
 
-@property (nonatomic, copy) NSArray *diagnosisIds;
-@property (nonatomic, copy) NSArray *treatmentIds;
-@property (nonatomic, copy) NSArray *customMediaIds;
-@property (nonatomic, copy) NSArray *noteIds;
-@property (nonatomic, copy) NSArray *handoutIds;
-@property (nonatomic, copy) NSArray *mediaIds;
+//nested data
+@property (nonatomic, copy) NSArray *diagnoses;
+@property (nonatomic, copy) NSArray *treatments;
+@property (nonatomic, copy) NSArray *customMedia;
+@property (nonatomic, copy) NSArray *notes;
+@property (nonatomic, copy) NSArray *handouts;
+@property (nonatomic, copy) NSArray *media;
+@property (nonatomic, strong) Provider *provider;
 
-@property (nonatomic, copy) NSDate *date;
-@property (nonatomic, copy) NSNumber *providerId;
 
 @end

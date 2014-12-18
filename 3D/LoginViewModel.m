@@ -8,22 +8,15 @@
 
 #import "LoginViewModel.h"
 #import <RestKit/RestKit.h>
-#import "User.h"
 #import <LUKeychainAccess/LUKeychainAccess.h>
+#import "User.h"
+#import "OrcaMapping.h"
 
 @implementation LoginViewModel
 
 - (void)loginWithEmail:(NSString *)email password:(NSString *)password {
     
-    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[User class]];
-    [mapping addAttributeMappingsFromDictionary:@{
-                                                  @"id": @"userId",
-                                                  @"first_name": @"firstName",
-                                                  @"last_name": @"lastName",
-                                                  @"email": @"email",
-                                                  @"auth_header_value": @"authHeader"
-                                                  }];
-
+    RKObjectMapping *mapping = [OrcaMapping userMapping];
     RKObjectManager *manager = [RKObjectManager sharedManager];
     [manager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodPOST pathPattern:nil keyPath:@"patient" statusCodes:nil]];
     
