@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Proxima Nova Light.ttf">
+            <string>ProximaNova-Light</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="ContentTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spine" translatesAutoresizingMaskIntoConstraints="NO" id="F6t-Ip-6h8">
+                    <rect key="frame" x="0.0" y="6" width="300" height="68"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFo-jb-aIK">
+                    <rect key="frame" x="0.0" y="6" width="300" height="68"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUMBAR DISC HERNIATION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zem-c6-lgN">
+                            <rect key="frame" x="8" y="24" width="284" height="20"/>
+                            <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="zem-c6-lgN" firstAttribute="leading" secondItem="IFo-jb-aIK" secondAttribute="leading" constant="8" id="1NN-9D-qkO"/>
+                        <constraint firstAttribute="centerY" secondItem="zem-c6-lgN" secondAttribute="centerY" id="bvb-7S-WCn"/>
+                        <constraint firstAttribute="trailing" secondItem="zem-c6-lgN" secondAttribute="trailing" constant="8" id="ceO-RH-0Fp"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="IFo-jb-aIK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="Mt2-EZ-gJZ"/>
+                <constraint firstItem="F6t-Ip-6h8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="RcX-eA-t24"/>
+                <constraint firstAttribute="bottom" secondItem="IFo-jb-aIK" secondAttribute="bottom" constant="6" id="SHA-9y-hyq"/>
+                <constraint firstItem="F6t-Ip-6h8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bVC-eh-EGR"/>
+                <constraint firstAttribute="bottom" secondItem="F6t-Ip-6h8" secondAttribute="bottom" constant="6" id="kby-uD-MST"/>
+                <constraint firstItem="IFo-jb-aIK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mNd-mS-xc3"/>
+                <constraint firstAttribute="trailing" secondItem="IFo-jb-aIK" secondAttribute="trailing" id="tLn-xb-jaA"/>
+                <constraint firstAttribute="trailing" secondItem="F6t-Ip-6h8" secondAttribute="trailing" id="u6K-uf-EZe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="thumbnailImageView" destination="F6t-Ip-6h8" id="DhW-Cw-85V"/>
+                <outlet property="title" destination="zem-c6-lgN" id="D2o-qC-FTW"/>
+            </connections>
+            <point key="canvasLocation" x="555" y="407"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="spine" width="1102" height="1536"/>
+    </resources>
+</document>
