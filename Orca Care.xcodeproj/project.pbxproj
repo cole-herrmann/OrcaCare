@@ -38,6 +38,8 @@
 		BE9C48631A26988800B2B3E6 /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9C48621A26988800B2B3E6 /* RefreshView.m */; };
 		BEBB53E01A3B783200ABF9A5 /* RecoveryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBB53DF1A3B783200ABF9A5 /* RecoveryTableViewCell.m */; };
 		BEBB53E21A3B93C800ABF9A5 /* recoveryVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BEBB53E11A3B93C800ABF9A5 /* recoveryVideo.mp4 */; };
+		BEBC0CE11A44A88900FDA7E6 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBC0CE01A44A88900FDA7E6 /* Media.m */; };
+		BEBC0CE41A4A18F600FDA7E6 /* BubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBC0CE31A4A18F600FDA7E6 /* BubbleTransition.m */; };
 		BED0BC531A3F6C55005F23EC /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = BED0BC521A3F6C55005F23EC /* Provider.m */; };
 		BED0BC591A41F978005F23EC /* Diagnosis.m in Sources */ = {isa = PBXBuildFile; fileRef = BED0BC581A41F978005F23EC /* Diagnosis.m */; };
 		BED0BC5F1A4200E2005F23EC /* CustomMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = BED0BC5E1A4200E2005F23EC /* CustomMedia.m */; };
@@ -135,6 +137,10 @@
 		BEBB53DE1A3B783200ABF9A5 /* RecoveryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecoveryTableViewCell.h; sourceTree = "<group>"; };
 		BEBB53DF1A3B783200ABF9A5 /* RecoveryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecoveryTableViewCell.m; sourceTree = "<group>"; };
 		BEBB53E11A3B93C800ABF9A5 /* recoveryVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = recoveryVideo.mp4; sourceTree = "<group>"; };
+		BEBC0CDF1A44A88900FDA7E6 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
+		BEBC0CE01A44A88900FDA7E6 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
+		BEBC0CE21A4A18F600FDA7E6 /* BubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTransition.h; sourceTree = "<group>"; };
+		BEBC0CE31A4A18F600FDA7E6 /* BubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleTransition.m; sourceTree = "<group>"; };
 		BED0BC511A3F6C55005F23EC /* Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
 		BED0BC521A3F6C55005F23EC /* Provider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Provider.m; sourceTree = "<group>"; };
 		BED0BC571A41F978005F23EC /* Diagnosis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Diagnosis.h; sourceTree = "<group>"; };
@@ -220,6 +226,8 @@
 				BED0BC581A41F978005F23EC /* Diagnosis.m */,
 				BED0BC5D1A4200E2005F23EC /* CustomMedia.h */,
 				BED0BC5E1A4200E2005F23EC /* CustomMedia.m */,
+				BEBC0CDF1A44A88900FDA7E6 /* Media.h */,
+				BEBC0CE01A44A88900FDA7E6 /* Media.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -269,6 +277,8 @@
 			children = (
 				E73988151A3792E0005DFC87 /* CardShellViewController.h */,
 				E73988161A3792E0005DFC87 /* CardShellViewController.m */,
+				BEBC0CE21A4A18F600FDA7E6 /* BubbleTransition.h */,
+				BEBC0CE31A4A18F600FDA7E6 /* BubbleTransition.m */,
 				E79823701A1D4FE8006002D0 /* AppDelegate.h */,
 				E79823711A1D4FE8006002D0 /* AppDelegate.m */,
 				E79823731A1D4FE8006002D0 /* CardViewController.h */,
@@ -542,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BED0BC651A42033D005F23EC /* OrcaMapping.m in Sources */,
+				BEBC0CE41A4A18F600FDA7E6 /* BubbleTransition.m in Sources */,
 				BE9C48331A2293DC00B2B3E6 /* DiagnosisViewController.m in Sources */,
 				BEEBE31D1A32653200057AE2 /* Encounter.m in Sources */,
 				BE9C48591A265C3500B2B3E6 /* EncounterTableViewCell.m in Sources */,
@@ -577,6 +588,7 @@
 				E7FFFED81A3A1C6A00588D9F /* ContentViewController.m in Sources */,
 				BED0BC5F1A4200E2005F23EC /* CustomMedia.m in Sources */,
 				BE910A701A3232DA00CBCC7B /* OrcaObjectRequestOperation.m in Sources */,
+				BEBC0CE11A44A88900FDA7E6 /* Media.m in Sources */,
 				BED0BC591A41F978005F23EC /* Diagnosis.m in Sources */,
 				E798239F1A1E6419006002D0 /* ManView.m in Sources */,
 				E733A3B01A42289400707F76 /* TimelineShellViewController.m in Sources */,

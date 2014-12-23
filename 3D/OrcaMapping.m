@@ -13,6 +13,7 @@
 #import "Provider.h"
 #import "Diagnosis.h"
 #import "CustomMedia.h"
+#import "Media.h"
 
 @implementation OrcaMapping
 
@@ -34,9 +35,6 @@
 
 + (RKObjectMapping *)encounterMapping {
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Encounter class]];
-    RKObjectMapping *providerMapping = [self providerMapping];
-    RKObjectMapping *diagnosisMapping = [self diagnosisMapping];
-    RKObjectMapping *customMediaMapping = [self customMediaMapping];
     
     NSDictionary *dictionary = @{
                                  @"id": @"encounterId",
@@ -44,9 +42,9 @@
                                  };
     
     [mapping addAttributeMappingsFromDictionary:dictionary];
-    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"provider" toKeyPath:@"provider" withMapping:providerMapping]];
-    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"diagnoses" toKeyPath:@"diagnoses" withMapping:diagnosisMapping]];
-    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"custom_media" toKeyPath:@"customMedia" withMapping:customMediaMapping]];
+    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"provider" toKeyPath:@"provider" withMapping:[self providerMapping]]];
+    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"diagnoses" toKeyPath:@"diagnoses" withMapping:[self diagnosisMapping]]];
+    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"custom_media" toKeyPath:@"customMedia" withMapping:[self customMediaMapping]]];
     
     return mapping;
 }
@@ -88,6 +86,7 @@
                                  };
     
     [mapping addAttributeMappingsFromDictionary:dictionary];
+//    [mapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"media" toKeyPath:@"media" withMapping:[self mediaMapping]]];
     
     return mapping;
 }
@@ -105,6 +104,18 @@
                                  @"encounter_id": @"encounterId",
                                  @"created_at": @"createdDate",
                                  @"updated_at": @"updatedDate"
+                                 };
+    
+    [mapping addAttributeMappingsFromDictionary:dictionary];
+    
+    return mapping;
+}
+
++ (RKObjectMapping *)mediaMapping {
+    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[Media class]];
+    
+    NSDictionary *dictionary = @{
+                                 
                                  };
     
     [mapping addAttributeMappingsFromDictionary:dictionary];
