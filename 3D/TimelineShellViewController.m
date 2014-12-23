@@ -20,40 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.backImageView = [[UIImageView alloc] init];
-//    self.backImageView.frame = self.containerView.frame;
-////    self.backImageView.backgroundColor = [UIColor greenColor];
-//    
-//    self.containerView.hidden = YES;
-//    
-//    [self.containerView addSubview:self.backImageView];
-//    
-//    CGRect grabRect = self.containerView.frame;
-//    [self makeGradientBackground];
-//    
-//    //for retina displays
-//    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
-//        UIGraphicsBeginImageContextWithOptions(self.view.frame.size, NO, [UIScreen mainScreen].scale);
-//    } else {
-//        UIGraphicsBeginImageContext(grabRect.size);
-//    }
-//    CGContextRef ctx = UIGraphicsGetCurrentContext();
-//    CGContextTranslateCTM(ctx, -grabRect.origin.x, -grabRect.origin.y);
-//    [self.view.layer renderInContext:ctx];
-//    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
-//    self.backImageView.image = viewImage;
-//    self.backImageView.contentMode = UIViewContentModeScaleAspectFill;
-//    UIGraphicsEndImageContext();
-//    
-//    self.lineView.hidden = NO;
-//    self.containerView.hidden = NO;
-//    
-//    [self.containerView sendSubviewToBack:self.backImageView];
     [self makeGradientBackground];
-    
-
-    
-    
 }
 
 -(void) makeGradientBackground

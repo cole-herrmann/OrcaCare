@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIView *topLine;
 @property (nonatomic, strong) UIView *bottomLine;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 
 @end
 
@@ -22,9 +23,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIColor *firstColor = [UIColor whiteColor];
+    UIColor *secondColor = [UIColor colorWithWhite:1 alpha:.7];
+//    self.headerView.backgroundColor = [UIColor whiteColor];
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.colors = [NSArray arrayWithObjects: (id)firstColor.CGColor, (id)secondColor.CGColor, nil];
+    
+    gradient.frame = self.headerView.bounds;
+    gradient.startPoint = CGPointMake(0.5, 0.75);
+    gradient.endPoint = CGPointMake(0.5, 1.1);
+    
+    [self.headerView.layer insertSublayer:gradient atIndex:0];
 
-   
+    self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.frame.size.height, 0, 0, 0);
 }
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -80,4 +95,10 @@
     
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 @end

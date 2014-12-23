@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContentView.h"
+#import "ContentTableView.h"
 
 @interface PlanSectionTableViewCell : UITableViewCell
 
 @property (nonatomic, weak, readonly) UILabel *planSectionLabel;
 @property (nonatomic, weak, readonly) UIImageView *cellCircle;
+@property (weak, nonatomic, readonly) UILabel *subtitleLabel;
 
+
+-(void)openCellWithTableView:(UITableView *) tableView forRowHeight:(CGFloat)rowHeight;
+-(void)closeCellRemoveCollectionView:(void (^)())completion;
 
 @end

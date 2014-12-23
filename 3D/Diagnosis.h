@@ -7,18 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OrcaObject.h"
 
-@interface Diagnosis : NSObject
+@interface Diagnosis : OrcaObject
 
 @property (nonatomic, copy) NSNumber *diagnosisId;
 @property (nonatomic, copy) NSNumber *contentCategoryId;
-@property (nonatomic, copy) NSDate *createdDate;
-@property (nonatomic, copy) NSDate *updatedDate;
-
-@property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *text;
 
-@property (nonatomic, copy) NSURL *thumbURL;
+//These properties are now taken care of by the OrcaObject parent class
+
+//@property (nonatomic, copy) NSDate *createdDate;
+//@property (nonatomic, copy) NSDate *updatedDate;
+
+//@property (nonatomic, copy) NSString *name;
+
+//@property (nonatomic, copy) NSURL *thumbURL;
 
 
 @end
