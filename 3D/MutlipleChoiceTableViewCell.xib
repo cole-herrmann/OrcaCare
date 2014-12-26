@@ -17,14 +17,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGg-UL-2jj">
-                    <rect key="frame" x="8" y="13" width="6.5" height="17"/>
+                    <rect key="frame" x="8" y="13" width="7" height="17"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="17"/>
                     <color key="textColor" red="0.0020174726378172636" green="0.28421682119369507" blue="0.52923250198364258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsb-5I-iEW">
-                    <rect key="frame" x="25" y="12.5" width="44.5" height="19"/>
+                    <rect key="frame" x="25" y="13" width="45" height="19"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="19"/>
                     <color key="textColor" red="0.0020174726378172636" green="0.28421682119369507" blue="0.52923250198364258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

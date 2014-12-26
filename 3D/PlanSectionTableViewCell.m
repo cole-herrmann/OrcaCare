@@ -16,17 +16,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *downArrow;
-//@property (nonatomic, weak) ContentView *viewWithCollectionView;
-@property (nonatomic, weak) UITableView *addedTableView;
+@property (weak, nonatomic) UITableView *tableView;
 
 
 @end
 
 @implementation PlanSectionTableViewCell
-
-- (void)awakeFromNib {
-
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -34,44 +29,38 @@
 
 -(void)openCellWithTableView:(UITableView *)tableView forRowHeight:(CGFloat)rowHeight
 {
-    self.addedTableView = tableView;
+    self.tableView = tableView;
     
-    if([self.addedTableView isKindOfClass:[ContentTableView class]]){
-        UINib *cellNib = [UINib nibWithNibName:@"ContentTableViewCell" bundle:nil];
-        [self.addedTableView registerNib:cellNib forCellReuseIdentifier:@"ContentTableViewCell"];
-        self.addedTableView.frame = CGRectMake(65, 90, 300, rowHeight);
-    }else if([self.addedTableView isKindOfClass:[MultipleChoiceTableView class]]){
-        UINib *cellNib = [UINib nibWithNibName:@"MutlipleChoiceTableViewCell" bundle:nil];
-        [self.addedTableView registerNib:cellNib forCellReuseIdentifier:@"MultipleChoiceCell"];
-        self.addedTableView.frame = CGRectMake(80, 90, 300, rowHeight);
-    }else{
-        UINib *cellNib = [UINib nibWithNibName:@"RecoveryTableViewCell" bundle:nil];
-        [self.addedTableView registerNib:cellNib forCellReuseIdentifier:@"RecoveryTableViewCell"];
-        self.addedTableView.frame = CGRectMake(65, 90, 300, rowHeight);
-    }
+    self.tableView.alpha = 0;
+    
+    self.tableView.frame = CGRectMake(CGRectGetMaxX(self.cellCircle.frame),
+                                      CGRectGetMaxY(self.subtitleLabel.frame) + 15,
+                                      (self.contentView.frame.size.width - CGRectGetMaxX(self.cellCircle.frame)) - 5,
+                                      rowHeight - CGRectGetMaxY(self.subtitleLabel.frame));
 
-    self.addedTableView.alpha = 0;
-
-    [self.contentView addSubview:self.addedTableView];
+    [self.contentView addSubview:self.tableView];
     
     [UIView animateWithDuration:0.55 animations:^{
-        self.addedTableView.alpha = 1;
+        self.tableView.alpha = 1;
         self.downArrow.alpha = 1;
         self.subtitleLabel.alpha = 1;
     }];
 }
 
 
-
 -(void)closeCellRemoveCollectionView:(void (^)())completion
 {
+    self.tableView.dataSource = nil;
+    self.tableView.delegate = nil;
+    
     [UIView animateWithDuration:0.14 animations:^{
-        self.addedTableView.alpha = 0;
+        self.tableView.alpha = 0;
         self.downArrow.alpha = 0;
         self.subtitleLabel.alpha = 0;
+        
     }completion:^(BOOL finished) {
-        [self.addedTableView removeFromSuperview];
-        self.addedTableView = nil;
+        [self.tableView removeFromSuperview];
+        self.tableView = nil;
         if(completion)
             completion();
     }];

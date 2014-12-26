@@ -16,7 +16,6 @@
 @property (nonatomic, weak, readonly) UIImageView *cellCircle;
 @property (weak, nonatomic, readonly) UILabel *subtitleLabel;
 
-
 -(void)openCellWithTableView:(UITableView *) tableView forRowHeight:(CGFloat)rowHeight;
 -(void)closeCellRemoveCollectionView:(void (^)())completion;
 
