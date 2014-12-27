@@ -22,6 +22,7 @@
     
     [self setupRestKit];
     
+    [[UITextField appearance] setTintColor:[UIColor colorWithRed:0.031 green:0.290 blue:0.522 alpha:1]];
     
     return YES;
 }
