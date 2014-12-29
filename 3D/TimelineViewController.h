@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BubbleTransition.h"
 
-@interface TimelineViewController : UIViewController
+@interface TimelineViewController : UIViewController <BubbleTransitionProtocol>
 
 @end

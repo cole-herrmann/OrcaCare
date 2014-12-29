@@ -17,6 +17,10 @@
 @property (nonatomic, strong) UIView *bottomLine;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 
+@property (nonatomic, weak) NSIndexPath *selectedIndexPath;
+@property (nonatomic, strong) NSArray *upCells;
+@property (nonatomic, strong) NSArray *downCells;
+
 @end
 
 @implementation TimelineViewController
@@ -94,6 +98,36 @@
 
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    self.selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    NSArray *visibleIndexPaths = [self.tableView indexPathsForVisibleRows];
+    NSIndexPath *lowestIndexPath = [visibleIndexPaths firstObject];
+    NSIndexPath *highestIndexPath = [visibleIndexPaths lastObject];
+    
+    NSMutableArray *upCells = [NSMutableArray array];
+    NSMutableArray *downCells = [NSMutableArray array];
+    
+    for(NSInteger i = lowestIndexPath.row; i <= self.selectedIndexPath.row; i++) {
+        [upCells addObject:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]]];
+    }
+    
+    for(NSInteger i = self.selectedIndexPath.row+1; i <= highestIndexPath.row; i++) {
+        [downCells addObject:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]]];
+    }
+    
+    self.upCells = [NSArray arrayWithArray:upCells];
+    self.downCells = [NSArray arrayWithArray:upCells];
+    
+}
+
+- (NSArray *)slideUpViews {
+    return self.upCells;
+}
+
+- (NSArray *)slideDownViews {
+    return self.downCells;
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath

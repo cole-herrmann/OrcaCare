@@ -7,7 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface BubbleTransition : NSObject
+@protocol BubbleTransitionProtocol <NSObject>
+
+- (NSArray *)slideUpViews;
+- (NSArray *)slideDownViews;
+
+@end
+
+@interface BubbleTransition : NSObject <UINavigationControllerDelegate, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate>
+
+- (instancetype)initWithNavigationController:(UINavigationController *)navigationController;
+
+@property (nonatomic, readonly) UINavigationController *navigationController;
+
+@property (nonatomic) CGFloat transitionDuration;
+@property (nonatomic) UIViewKeyframeAnimationOptions transitionAnimationOption;
 
 @end
