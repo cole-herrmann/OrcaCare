@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		061C2E1EE620F59EA660CA7A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 990000186EABDE1398D8D368 /* libPods.a */; };
-		E7067EFF1A36473500094DBE /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7067EFE1A36473500094DBE /* CardView.xib */; };
+		BE331FB11A51F13600610721 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE331FAF1A51F13600610721 /* LaunchScreen.xib */; };
+		BE331FB51A51F16F00610721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE331FB21A51F16F00610721 /* Main.storyboard */; };
+		BE331FB61A51F16F00610721 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE331FB41A51F16F00610721 /* CardView.xib */; };
 		E7C3ADEB1A51EB6C008136AD /* AMWaveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3AD651A51EB6B008136AD /* AMWaveTransition.m */; };
 		E7C3ADEC1A51EB6C008136AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3AD671A51EB6B008136AD /* AppDelegate.m */; };
-		E7C3ADED1A51EB6C008136AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C3AD691A51EB6B008136AD /* LaunchScreen.xib */; };
-		E7C3ADEE1A51EB6C008136AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C3AD6B1A51EB6B008136AD /* Main.storyboard */; };
 		E7C3ADEF1A51EB6C008136AD /* BubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3AD6E1A51EB6B008136AD /* BubbleTransition.m */; };
 		E7C3ADF01A51EB6C008136AD /* CardShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3AD701A51EB6B008136AD /* CardShellViewController.m */; };
 		E7C3ADF11A51EB6C008136AD /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3AD721A51EB6B008136AD /* CardView.m */; };
@@ -103,15 +103,15 @@
 		2BE7AC7607824D0864C90551 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3EA16F092A7657E359D32763 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		990000186EABDE1398D8D368 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7067EFE1A36473500094DBE /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = ../CardView.xib; sourceTree = "<group>"; };
+		BE331FB01A51F13600610721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = OrcaCare/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
+		BE331FB31A51F16F00610721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OrcaCare/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		BE331FB41A51F16F00610721 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = OrcaCare/CardView.xib; sourceTree = SOURCE_ROOT; };
 		E79823691A1D4FE8006002D0 /* OrcaCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrcaCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79823821A1D4FE8006002D0 /* OrcaCareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrcaCareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C3AD641A51EB6B008136AD /* AMWaveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMWaveTransition.h; path = OrcaCare/AMWaveTransition.h; sourceTree = SOURCE_ROOT; };
 		E7C3AD651A51EB6B008136AD /* AMWaveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMWaveTransition.m; path = OrcaCare/AMWaveTransition.m; sourceTree = SOURCE_ROOT; };
 		E7C3AD661A51EB6B008136AD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = OrcaCare/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		E7C3AD671A51EB6B008136AD /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = OrcaCare/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		E7C3AD6A1A51EB6B008136AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		E7C3AD6C1A51EB6B008136AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		E7C3AD6D1A51EB6B008136AD /* BubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BubbleTransition.h; path = OrcaCare/BubbleTransition.h; sourceTree = SOURCE_ROOT; };
 		E7C3AD6E1A51EB6B008136AD /* BubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BubbleTransition.m; path = OrcaCare/BubbleTransition.m; sourceTree = SOURCE_ROOT; };
 		E7C3AD6F1A51EB6B008136AD /* CardShellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardShellViewController.h; path = OrcaCare/CardShellViewController.h; sourceTree = SOURCE_ROOT; };
@@ -327,7 +327,7 @@
 		E798236B1A1D4FE8006002D0 /* OrcaCare */ = {
 			isa = PBXGroup;
 			children = (
-				E7C3AD691A51EB6B008136AD /* LaunchScreen.xib */,
+				BE331FAF1A51F13600610721 /* LaunchScreen.xib */,
 				E7C3AD661A51EB6B008136AD /* AppDelegate.h */,
 				E7C3AD671A51EB6B008136AD /* AppDelegate.m */,
 				E7C3AD9D1A51EB6B008136AD /* Images.xcassets */,
@@ -374,6 +374,7 @@
 		E79C857F1A449F1800ED884C /* Old Design */ = {
 			isa = PBXGroup;
 			children = (
+				BE331FB21A51F16F00610721 /* Main.storyboard */,
 				E7C3AD781A51EB6B008136AD /* ConditionText.plist */,
 				E7C3AD6F1A51EB6B008136AD /* CardShellViewController.h */,
 				E7C3AD701A51EB6B008136AD /* CardShellViewController.m */,
@@ -386,7 +387,7 @@
 				E7C3AD771A51EB6B008136AD /* CircleTransitionAnimator.swift */,
 				E7C3AD711A51EB6B008136AD /* CardView.h */,
 				E7C3AD721A51EB6B008136AD /* CardView.m */,
-				E7067EFE1A36473500094DBE /* CardView.xib */,
+				BE331FB41A51F16F00610721 /* CardView.xib */,
 				E7C3AD791A51EB6B008136AD /* ContentCollectionViewCell.h */,
 				E7C3AD7A1A51EB6B008136AD /* ContentCollectionViewCell.m */,
 				E7C3AD7B1A51EB6B008136AD /* ContentCollectionViewCell.xib */,
@@ -398,7 +399,6 @@
 				E7C3AD911A51EB6B008136AD /* DiagnosisViewController.m */,
 				E7C3AD941A51EB6B008136AD /* EncounterTableViewCell.h */,
 				E7C3AD951A51EB6B008136AD /* EncounterTableViewCell.m */,
-				E7C3AD6B1A51EB6B008136AD /* Main.storyboard */,
 				E7C3ADAD1A51EB6C008136AD /* MyContentViewController.h */,
 				E7C3ADAE1A51EB6C008136AD /* MyContentViewController.m */,
 				E7C3ADAF1A51EB6C008136AD /* Orca Care-Bridging-Header.h */,
@@ -622,18 +622,18 @@
 			files = (
 				E7C3ADF91A51EB6C008136AD /* ContentCollectionViewCellNew.xib in Resources */,
 				E7C3ADF71A51EB6C008136AD /* ContentCollectionViewCell.xib in Resources */,
+				BE331FB61A51F16F00610721 /* CardView.xib in Resources */,
 				E7C3ADFD1A51EB6C008136AD /* ContentTableViewCell.xib in Resources */,
 				E7C3AE261A51EB6C008136AD /* recoveryVideo.mp4 in Resources */,
-				E7067EFF1A36473500094DBE /* CardView.xib in Resources */,
+				BE331FB11A51F13600610721 /* LaunchScreen.xib in Resources */,
 				E7C3AE2F1A51EB6C008136AD /* TableHeader.xib in Resources */,
-				E7C3ADEE1A51EB6C008136AD /* Main.storyboard in Resources */,
 				E7C3AE0B1A51EB6C008136AD /* Images.xcassets in Resources */,
 				E7C3AE131A51EB6C008136AD /* MultipleChoiceTableView.xib in Resources */,
 				E7C3AE1F1A51EB6C008136AD /* Proxima Nova Light.ttf in Resources */,
 				E7C3AE0C1A51EB6C008136AD /* Info.plist in Resources */,
 				E7C3AE0E1A51EB6C008136AD /* lumbarvideo.mp4 in Resources */,
-				E7C3ADED1A51EB6C008136AD /* LaunchScreen.xib in Resources */,
 				E7C3AE2C1A51EB6C008136AD /* SecondDesign.storyboard in Resources */,
+				BE331FB51A51F16F00610721 /* Main.storyboard in Resources */,
 				E7C3AE2A1A51EB6C008136AD /* rotatorCuffTear.mp4 in Resources */,
 				E7C3ADF51A51EB6C008136AD /* ConditionText.plist in Resources */,
 				E7C3AE291A51EB6C008136AD /* RefreshView.xib in Resources */,
@@ -770,22 +770,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E7C3AD691A51EB6B008136AD /* LaunchScreen.xib */ = {
+		BE331FAF1A51F13600610721 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E7C3AD6A1A51EB6B008136AD /* Base */,
+				BE331FB01A51F13600610721 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = ../OrcaCare/Base.lproj;
 			sourceTree = "<group>";
 		};
-		E7C3AD6B1A51EB6B008136AD /* Main.storyboard */ = {
+		BE331FB21A51F16F00610721 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E7C3AD6C1A51EB6B008136AD /* Base */,
+				BE331FB31A51F16F00610721 /* Base */,
 			);
 			name = Main.storyboard;
-			path = ../OrcaCare/Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
