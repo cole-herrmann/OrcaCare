@@ -25,6 +25,7 @@
 @property (nonatomic) CGFloat expandedCellHeight;
 @property (nonatomic, retain) NSIndexPath *expandedCellIndexPath;
 @property (nonatomic, strong) URBMediaFocusViewController *mediaVC;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 
 @end
 
@@ -33,7 +34,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.contentInset = UIEdgeInsetsMake(85, 0, 0, 0);
+    UIColor *firstColor = [UIColor whiteColor];
+    UIColor *secondColor = [UIColor colorWithWhite:1 alpha:.7];
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.colors = [NSArray arrayWithObjects: (id)firstColor.CGColor, (id)secondColor.CGColor, nil];
+    
+    gradient.frame = self.headerView.bounds;
+    gradient.startPoint = CGPointMake(0.5, 0);
+    gradient.endPoint = CGPointMake(0.5, 0.8);
+    
+    [self.headerView.layer insertSublayer:gradient atIndex:0];
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(70, 0, 0, 0);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

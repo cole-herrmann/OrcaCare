@@ -11,6 +11,7 @@
 #import <POP+MCAnimate/POP+MCAnimate.h>
 #import "FadeTransitionAnimator.h"
 #import "TimelineShellViewController.h"
+
 //#import <MCShorthand.h>
 
 @interface FirstScreenViewController () <UIViewControllerTransitioningDelegate>
@@ -31,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *signUpFullName;
 @property (weak, nonatomic) IBOutlet UITextField *signUpEmail;
 @property (weak, nonatomic) IBOutlet UITextField *signUpPassword;
+@property (weak, nonatomic) IBOutlet UIButton *forgotPassword;
 
 @end
 
@@ -58,7 +60,9 @@
     gradient.startPoint = CGPointMake(0.5, 0.1);
     gradient.endPoint = CGPointMake(0.5, 1.5);
     
-    
+    self.loginView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.85, 0.85);
+    self.signUpView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.85, 0.85);
+
     gradient.frame = self.view.bounds;
     [self.view.layer insertSublayer:gradient atIndex:0];
 }
@@ -68,9 +72,16 @@
     if(([sender isEqual:self.login] && !self.loginMode) || [sender isEqual:self.dismissButton]){
     
         CGFloat loginButtonTranslate = -(self.login.frame.origin.y - (CGRectGetMaxY(self.loginView.frame) + 15));
+       
+        self.loginView.layer.pop_springBounciness = 5;
+        self.loginView.layer.pop_springSpeed = 15;
+        self.loginView.layer.pop_spring.pop_scaleXY = (self.loginMode) ?  CGPointMake(0.85, 0.85) : CGPointMake(1, 1);
         
         self.loginView.pop_spring.alpha = (self.loginMode) ? 0 : 1;
-        self.loginView.pop_duration = 0.2;
+        
+        self.loginView.layer.pop_duration = 0;
+        
+        self.forgotPassword.pop_spring.alpha = (self.loginMode) ? 1 : 0;
         
         self.orcaCareLabel.pop_spring.alpha = (self.loginMode) ? 1 : 0;
         self.dismissButton.pop_spring.alpha = (self.loginMode) ? 0 : 1;
@@ -84,14 +95,11 @@
         
         self.signUpButton.pop_spring.alpha = (self.loginMode) ? 1 : 0;
         
-//        self.loginView.layer.pop_springBounciness = 15;
-//        self.loginView.layer.pop_springSpeed = 30;
-//        self.loginView.layer.pop_spring.pop_scaleXY = (self.loginMode) ?  CGPointMake(0.8, 0.8) : CGPointMake(1, 1);
-        
         if([sender isEqual:self.dismissButton]){
             [self.view endEditing:YES];
         }else{
             [self.signInEmail becomeFirstResponder];
+           
         }
         
         self.loginMode = !self.loginMode;
@@ -111,31 +119,45 @@
     
     if(([sender isEqual:self.signUpButton] && !self.signUpMode) || [sender isEqual:self.dismissButton]){
     
-        CGFloat signUpButtonTranslate = -(self.signUpButton.frame.origin.y - (CGRectGetMaxY(self.signUpView.frame) + 15));
+        [NSObject pop_animate:^{
+            CGFloat signUpButtonTranslate = -(self.signUpButton.frame.origin.y - (CGRectGetMaxY(self.signUpView.frame) + 15));
+            
+            self.signUpView.layer.pop_springBounciness = 5;
+            self.signUpView.layer.pop_springSpeed = 15;
+            self.signUpView.layer.pop_spring.pop_scaleXY = (self.signUpMode) ?  CGPointMake(0.8, 0.8) : CGPointMake(1, 1);
+            
+            self.signUpView.pop_spring.alpha = (self.signUpMode) ? 0 : 1;
+            self.signUpView.pop_duration = 0.2;
+    
+            self.forgotPassword.pop_spring.alpha = (self.signUpMode) ? 1 : 0;
+            
+            self.orcaCareLabel.pop_spring.alpha = (self.signUpMode) ? 1 : 0;
+            
+            self.dismissButton.pop_spring.alpha = (self.signUpMode) ? 0 : 1;
+            
+            self.blueWhale.layer.pop_spring.pop_translationY = (self.signUpMode) ? 0 : -100;
+            self.blueWhale.layer.pop_spring.pop_scaleXY = (self.signUpMode) ?  CGPointMake(1, 1) : CGPointMake(0.6, 0.6);
+            
+            self.signUpButton.layer.pop_springBounciness = 3;
+            self.signUpButton.layer.pop_springSpeed = 10;
+            self.signUpButton.layer.pop_spring.pop_translationY = (self.signUpMode) ? 0 : signUpButtonTranslate;
+            
+            self.login.pop_spring.alpha = (self.signUpMode) ? 1 : 0;
+            
+            
+            if([sender isEqual:self.dismissButton]){
+                [self.view endEditing:YES];
+            }else{
+//                [self.signUpFullName becomeFirstResponder];
+            }
+        } completion:^(BOOL finished) {
+            if(![sender isEqual:self.dismissButton]){
+                [self.signUpFullName becomeFirstResponder];
+            }
+
+        }];
         
-        self.signUpView.pop_spring.alpha = (self.signUpMode) ? 0 : 1;
-        self.signUpView.pop_duration = 0.2;
-        self.orcaCareLabel.pop_spring.alpha = (self.signUpMode) ? 1 : 0;
-        self.dismissButton.pop_spring.alpha = (self.signUpMode) ? 0 : 1;
         
-        self.blueWhale.layer.pop_spring.pop_translationY = (self.signUpMode) ? 0 : -100;
-        self.blueWhale.layer.pop_spring.pop_scaleXY = (self.signUpMode) ?  CGPointMake(1, 1) : CGPointMake(0.6, 0.6);
-        
-        self.signUpButton.layer.pop_springBounciness = 3;
-        self.signUpButton.layer.pop_springSpeed = 10;
-        self.signUpButton.layer.pop_spring.pop_translationY = (self.signUpMode) ? 0 : signUpButtonTranslate;
-        
-        self.login.pop_spring.alpha = (self.signUpMode) ? 1 : 0;
-        
-//        self.signUpView.layer.pop_springBounciness = 15;
-//        self.signUpView.layer.pop_springSpeed = 30;
-//        self.signUpView.layer.pop_spring.pop_scaleXY = (self.signUpMode) ?  CGPointMake(0.8, 0.8) : CGPointMake(1, 1);
-        
-        if([sender isEqual:self.dismissButton]){
-            [self.view endEditing:YES];
-        }else{
-            [self.signUpFullName becomeFirstResponder];
-        }
         
         self.signUpMode = !self.signUpMode;
         
