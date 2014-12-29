@@ -10,7 +10,7 @@
 #import <SceneKit/SceneKit.h>
 #import <Shimmer/FBShimmeringView.h>
 #import "PlanViewController.h"
-#import "Orca_Care-Swift.h"
+#import "OrcaCare-Swift.h"
 #import "LoginViewModel.h"
 #import "EncounterViewModel.h"
 #import "CardView.h"

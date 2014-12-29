@@ -56,8 +56,10 @@
 		E733A3B31A42302200707F76 /* PlanSectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E733A3B21A42302200707F76 /* PlanSectionsViewController.m */; };
 		E733A3B61A42329300707F76 /* PlanSectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E733A3B51A42329300707F76 /* PlanSectionTableViewCell.m */; };
 		E73988171A3792E0005DFC87 /* CardShellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73988161A3792E0005DFC87 /* CardShellViewController.m */; };
+		E77E3D041A4F783E0028C26F /* FadeTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E3D031A4F783E0028C26F /* FadeTransitionAnimator.m */; };
 		E7822D371A3A4CB4001B8F6A /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7822D361A3A4CB4001B8F6A /* ContentCollectionViewCell.xib */; };
 		E7822D3A1A3A4D84001B8F6A /* ContentCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7822D391A3A4D84001B8F6A /* ContentCollectionViewCell.m */; };
+		E7823A7E1A4E2BDF0060E0F8 /* FirstScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7823A7D1A4E2BDF0060E0F8 /* FirstScreenViewController.m */; };
 		E785FEE11A4495160011A667 /* ContnentCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E785FEE01A4495160011A667 /* ContnentCollectionView.xib */; };
 		E798236F1A1D4FE8006002D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E798236E1A1D4FE8006002D0 /* main.m */; };
 		E79823721A1D4FE8006002D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79823711A1D4FE8006002D0 /* AppDelegate.m */; };
@@ -186,11 +188,15 @@
 		E733A3B51A42329300707F76 /* PlanSectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanSectionTableViewCell.m; sourceTree = "<group>"; };
 		E73988151A3792E0005DFC87 /* CardShellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardShellViewController.h; path = ../CardShellViewController.h; sourceTree = "<group>"; };
 		E73988161A3792E0005DFC87 /* CardShellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardShellViewController.m; path = ../CardShellViewController.m; sourceTree = "<group>"; };
+		E77E3D021A4F783E0028C26F /* FadeTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeTransitionAnimator.h; sourceTree = "<group>"; };
+		E77E3D031A4F783E0028C26F /* FadeTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeTransitionAnimator.m; sourceTree = "<group>"; };
 		E7822D361A3A4CB4001B8F6A /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
 		E7822D381A3A4D84001B8F6A /* ContentCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCollectionViewCell.h; sourceTree = "<group>"; };
 		E7822D391A3A4D84001B8F6A /* ContentCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCollectionViewCell.m; sourceTree = "<group>"; };
+		E7823A7C1A4E2BDF0060E0F8 /* FirstScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstScreenViewController.h; sourceTree = "<group>"; };
+		E7823A7D1A4E2BDF0060E0F8 /* FirstScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstScreenViewController.m; sourceTree = "<group>"; };
 		E785FEE01A4495160011A667 /* ContnentCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContnentCollectionView.xib; sourceTree = "<group>"; };
-		E79823691A1D4FE8006002D0 /* Orca Care.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orca Care.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E79823691A1D4FE8006002D0 /* OrcaCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrcaCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E798236D1A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E798236E1A1D4FE8006002D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E79823701A1D4FE8006002D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -200,7 +206,7 @@
 		E79823771A1D4FE8006002D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E79823791A1D4FE8006002D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E798237C1A1D4FE8006002D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E79823821A1D4FE8006002D0 /* Orca CareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orca CareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E79823821A1D4FE8006002D0 /* OrcaCareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrcaCareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79823871A1D4FE8006002D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E79823881A1D4FE8006002D0 /* _DTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _DTests.m; sourceTree = "<group>"; };
 		E798239D1A1E6419006002D0 /* ManView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManView.h; sourceTree = "<group>"; };
@@ -307,8 +313,8 @@
 		E798236A1A1D4FE8006002D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E79823691A1D4FE8006002D0 /* Orca Care.app */,
-				E79823821A1D4FE8006002D0 /* Orca CareTests.xctest */,
+				E79823691A1D4FE8006002D0 /* OrcaCare.app */,
+				E79823821A1D4FE8006002D0 /* OrcaCareTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -439,6 +445,10 @@
 			children = (
 				E733A3A41A41EE7500707F76 /* SecondDesign.storyboard */,
 				E733A3AC1A41FFD400707F76 /* HeaderAndFooterView.xib */,
+				E7823A7C1A4E2BDF0060E0F8 /* FirstScreenViewController.h */,
+				E7823A7D1A4E2BDF0060E0F8 /* FirstScreenViewController.m */,
+				E77E3D021A4F783E0028C26F /* FadeTransitionAnimator.h */,
+				E77E3D031A4F783E0028C26F /* FadeTransitionAnimator.m */,
 				E7A6BEF81A48A0B10062C79F /* timeline tableview */,
 				E7A6BEF71A48A09A0062C79F /* plan sections tableview */,
 				E7A6BEF61A48A06C0062C79F /* content tableview */,
@@ -528,9 +538,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E79823681A1D4FE8006002D0 /* Orca Care */ = {
+		E79823681A1D4FE8006002D0 /* OrcaCare */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E798238C1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "Orca Care" */;
+			buildConfigurationList = E798238C1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "OrcaCare" */;
 			buildPhases = (
 				91EA28D34FABB2421CB5A82D /* Check Pods Manifest.lock */,
 				E79823651A1D4FE8006002D0 /* Sources */,
@@ -542,14 +552,14 @@
 			);
 			dependencies = (
 			);
-			name = "Orca Care";
+			name = OrcaCare;
 			productName = 3D;
-			productReference = E79823691A1D4FE8006002D0 /* Orca Care.app */;
+			productReference = E79823691A1D4FE8006002D0 /* OrcaCare.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E79823811A1D4FE8006002D0 /* Orca CareTests */ = {
+		E79823811A1D4FE8006002D0 /* OrcaCareTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E798238F1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "Orca CareTests" */;
+			buildConfigurationList = E798238F1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "OrcaCareTests" */;
 			buildPhases = (
 				E798237E1A1D4FE8006002D0 /* Sources */,
 				E798237F1A1D4FE8006002D0 /* Frameworks */,
@@ -560,9 +570,9 @@
 			dependencies = (
 				E79823841A1D4FE8006002D0 /* PBXTargetDependency */,
 			);
-			name = "Orca CareTests";
+			name = OrcaCareTests;
 			productName = 3DTests;
-			productReference = E79823821A1D4FE8006002D0 /* Orca CareTests.xctest */;
+			productReference = E79823821A1D4FE8006002D0 /* OrcaCareTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -584,7 +594,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E79823641A1D4FE8006002D0 /* Build configuration list for PBXProject "Orca Care" */;
+			buildConfigurationList = E79823641A1D4FE8006002D0 /* Build configuration list for PBXProject "OrcaCare" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -597,8 +607,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E79823681A1D4FE8006002D0 /* Orca Care */,
-				E79823811A1D4FE8006002D0 /* Orca CareTests */,
+				E79823681A1D4FE8006002D0 /* OrcaCare */,
+				E79823811A1D4FE8006002D0 /* OrcaCareTests */,
 			);
 		};
 /* End PBXProject section */
@@ -707,6 +717,7 @@
 				E733A3AB1A41F83800707F76 /* TimelineTableViewCell.m in Sources */,
 				BE9C48511A251F1200B2B3E6 /* TransitionAnimator.m in Sources */,
 				BE910A731A3240B600CBCC7B /* OrcaObjectManager.m in Sources */,
+				E7823A7E1A4E2BDF0060E0F8 /* FirstScreenViewController.m in Sources */,
 				BE910A6D1A322E2100CBCC7B /* User.m in Sources */,
 				BE9C483F1A2295EB00B2B3E6 /* DiagnosisDetailsViewController.m in Sources */,
 				E79C85821A449FD800ED884C /* ContentCollectionViewCellNew.m in Sources */,
@@ -715,6 +726,7 @@
 				E7A6BEF51A48953C0062C79F /* ContentTableViewCell.m in Sources */,
 				E7E799D11A49E4C400B78E79 /* RecoveryTableViewCellNew.m in Sources */,
 				BEEBE31A1A32644600057AE2 /* EncounterViewModel.m in Sources */,
+				E77E3D041A4F783E0028C26F /* FadeTransitionAnimator.m in Sources */,
 				E7E799D41A49E5DE00B78E79 /* RecoveryTableView.m in Sources */,
 				E79823751A1D4FE8006002D0 /* CardViewController.m in Sources */,
 				BE9C48541A25509100B2B3E6 /* AMWaveTransition.m in Sources */,
@@ -750,7 +762,7 @@
 /* Begin PBXTargetDependency section */
 		E79823841A1D4FE8006002D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E79823681A1D4FE8006002D0 /* Orca Care */;
+			target = E79823681A1D4FE8006002D0 /* OrcaCare */;
 			targetProxy = E79823831A1D4FE8006002D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -863,7 +875,7 @@
 				INFOPLIST_FILE = 3D/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "Orca Care";
+				PRODUCT_NAME = OrcaCare;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "3D/Orca Care-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -882,7 +894,7 @@
 				INFOPLIST_FILE = 3D/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "Orca Care";
+				PRODUCT_NAME = OrcaCare;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "3D/Orca Care-Bridging-Header.h";
 			};
@@ -902,8 +914,8 @@
 				);
 				INFOPLIST_FILE = 3DTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "Orca CareTests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/3D.app/3D";
+				PRODUCT_NAME = OrcaCareTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrcaCare.app/OrcaCare";
 			};
 			name = Debug;
 		};
@@ -917,15 +929,15 @@
 				);
 				INFOPLIST_FILE = 3DTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "Orca CareTests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/3D.app/3D";
+				PRODUCT_NAME = OrcaCareTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrcaCare.app/OrcaCare";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E79823641A1D4FE8006002D0 /* Build configuration list for PBXProject "Orca Care" */ = {
+		E79823641A1D4FE8006002D0 /* Build configuration list for PBXProject "OrcaCare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E798238A1A1D4FE8006002D0 /* Debug */,
@@ -934,7 +946,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E798238C1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "Orca Care" */ = {
+		E798238C1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "OrcaCare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E798238D1A1D4FE8006002D0 /* Debug */,
@@ -943,7 +955,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E798238F1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "Orca CareTests" */ = {
+		E798238F1A1D4FE8006002D0 /* Build configuration list for PBXNativeTarget "OrcaCareTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E79823901A1D4FE8006002D0 /* Debug */,

@@ -18,12 +18,14 @@
 #import "RecoveryTableView.h"
 #import <URBMediaFocusViewController/URBMediaFocusViewController.h>
 
+
 @interface PlanSectionsViewController () <UITableViewDataSource, UITableViewDelegate, URBMediaFocusViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) CGFloat expandedCellHeight;
 @property (nonatomic, retain) NSIndexPath *expandedCellIndexPath;
 @property (nonatomic, strong) URBMediaFocusViewController *mediaVC;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 
 @end
 
@@ -32,12 +34,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
+    UIColor *firstColor = [UIColor whiteColor];
+    UIColor *secondColor = [UIColor colorWithWhite:1 alpha:.7];
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.colors = [NSArray arrayWithObjects: (id)firstColor.CGColor, (id)secondColor.CGColor, nil];
+    
+    gradient.frame = self.headerView.bounds;
+    gradient.startPoint = CGPointMake(0.5, 0);
+    gradient.endPoint = CGPointMake(0.5, 0.8);
+    
+    [self.headerView.layer insertSublayer:gradient atIndex:0];
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(70, 0, 0, 0);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
    
-    if(tableView == self.tableView){
+    if([tableView isEqual:self.tableView]){
         
         CGFloat cellHeight = 90;
         
@@ -64,7 +78,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(tableView == self.tableView){
+    if([tableView isEqual:self.tableView]){
         return 4;
     }else if([tableView isKindOfClass:[MultipleChoiceTableView class]]){
         return 2;
@@ -80,7 +94,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(tableView == self.tableView){
+    if([tableView isEqual:self.tableView]){
         return [self configureSectionsTableView:tableView indexPath:indexPath];
     }else if([tableView isKindOfClass:[MultipleChoiceTableView class]]){
         return [self configureMultipleChoicCell:tableView indexPath:indexPath];
@@ -189,7 +203,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    if(tableView == self.tableView){
+    if([tableView isEqual:self.tableView]){
        
         [self selectedRowForSectionsTableView:tableView indexPath:indexPath];
         [self.tableView beginUpdates];
@@ -201,11 +215,15 @@
        
         [cell closeCellRemoveCollectionView:^{
             
-            [self addContentTableViewToCell:cell indexPath:self.expandedCellIndexPath];
+            [self addTableViewToCellWithNibName:@"ContentTableView"
+                                    withCellNibName:@"ContentTableViewCell"
+                            withReuseIdentifier:@"ContentTableViewCell"
+                                         toCell:cell];
             
             [self.tableView beginUpdates];
             [self.tableView endUpdates];
         }];
+        
     }else if([tableView isKindOfClass:[ContentTableView class]]){
         
         self.mediaVC = [[URBMediaFocusViewController alloc]init];
@@ -223,7 +241,7 @@
     PlanSectionTableViewCell *cell = (PlanSectionTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
 
     //if the selected cell is already open, close it.
-    if(indexPath == self.expandedCellIndexPath){
+    if([indexPath isEqual:self.expandedCellIndexPath]){
         
         [cell closeCellRemoveCollectionView:nil];
         self.expandedCellHeight = 90;
@@ -237,65 +255,46 @@
         }
         
         if(indexPath.row == 0){
-            [self addMultipleChoiceTableViewToCell:cell indexPath:indexPath];
+            [self addTableViewToCellWithNibName:@"MultipleChoiceTableView"
+                                    withCellNibName:@"MutlipleChoiceTableViewCell"
+                            withReuseIdentifier:@"MultipleChoiceCell"
+                                         toCell:cell];
         }else if(indexPath.row == 2){
-            [self addRecoveryTableViewToCell:cell indexPath:indexPath];
+            [self addTableViewToCellWithNibName:@"RecoveryTableView"
+                                    withCellNibName:@"RecoveryTableViewCell"
+                            withReuseIdentifier:@"RecoveryTableViewCell"
+                                         toCell:cell];
         }else{
-            [self addContentTableViewToCell:cell indexPath:indexPath];
+            [self addTableViewToCellWithNibName:@"ContentTableView"
+                                    withCellNibName:@"ContentTableViewCell"
+                            withReuseIdentifier:@"ContentTableViewCell"
+                                         toCell:cell];
         }
+        
+        self.expandedCellIndexPath = indexPath;
     }
 }
 
--(void)addContentTableViewToCell:(PlanSectionTableViewCell *)cell indexPath:(NSIndexPath *)indexPath
+-(void)addTableViewToCellWithNibName:(NSString *)nibName
+                         withCellNibName:(NSString *)cellNibName
+                 withReuseIdentifier:(NSString *)reuseIdentifier
+                              toCell:(PlanSectionTableViewCell *)cell
 {
-    ContentTableView *ctv = [[[NSBundle mainBundle] loadNibNamed:@"ContentTableView"
-                                                           owner:self
-                                                         options:nil] firstObject];
+    UITableView *tableView = [[[NSBundle mainBundle] loadNibNamed:nibName
+                                                            owner:self
+                                                          options:nil] firstObject];
     
-    ctv.delegate = self;
-    ctv.dataSource = self;
-    ctv.backgroundColor = [UIColor clearColor];
+    UINib *cellNib = [UINib nibWithNibName:cellNibName bundle:nil];
+    [tableView registerNib:cellNib forCellReuseIdentifier:reuseIdentifier];
     
-    self.expandedCellIndexPath = indexPath;
-    self.expandedCellHeight = ctv.rowHeight * [ctv numberOfRowsInSection:0] + 80;
+    tableView.delegate = self;
+    tableView.dataSource =self;
+    tableView.backgroundColor = [UIColor clearColor];
+    self.expandedCellHeight = tableView.rowHeight * [tableView numberOfRowsInSection:0] + 80;
     
-    [cell openCellWithTableView:ctv forRowHeight:self.expandedCellHeight];
-   
+    [cell openCellWithTableView:tableView forRowHeight:self.expandedCellHeight];
 }
 
--(void)addMultipleChoiceTableViewToCell:(PlanSectionTableViewCell *)cell indexPath:(NSIndexPath *)indexPath
-{
-    MultipleChoiceTableView *mctv = [[[NSBundle mainBundle] loadNibNamed:@"MultipleChoiceTableView"
-                                                                   owner:self
-                                                                 options:nil] firstObject];
-    
-    mctv.delegate = self;
-    mctv.dataSource = self;
-    mctv.backgroundColor = [UIColor clearColor];
-    
-    self.expandedCellIndexPath = indexPath;
-    self.expandedCellHeight = mctv.rowHeight * [mctv numberOfRowsInSection:0] + 80;
-    
-    [cell openCellWithTableView:mctv forRowHeight:self.expandedCellHeight];
-    
-}
-
--(void)addRecoveryTableViewToCell:(PlanSectionTableViewCell *)cell indexPath:(NSIndexPath *)indexPath
-{
-    RecoveryTableView *rtv = [[[NSBundle mainBundle] loadNibNamed:@"RecoveryTableView"
-                                                                   owner:self
-                                                                 options:nil] firstObject];
-    
-    rtv.delegate = self;
-    rtv.dataSource = self;
-    rtv.backgroundColor = [UIColor clearColor];
-    
-    self.expandedCellIndexPath = indexPath;
-    self.expandedCellHeight = rtv.rowHeight * [rtv numberOfRowsInSection:0] + 80;
-    
-    [cell openCellWithTableView:rtv forRowHeight:self.expandedCellHeight];
-    
-}
 
 
 @end

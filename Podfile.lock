@@ -4,8 +4,30 @@ PODS:
     - RKValueTransformers (~> 1.1.0)
   - LUKeychainAccess (1.2.3)
   - pop (1.0.7)
+  - POP+MCAnimate (2.0.1):
+    - pop (~> 1.0)
+    - POP+MCAnimate/Animations (= 2.0.1)
+    - POP+MCAnimate/Group (= 2.0.1)
+    - POP+MCAnimate/Internal (= 2.0.1)
+    - POP+MCAnimate/Shorthand (= 2.0.1)
+    - POP+MCAnimate/Velocity (= 2.0.1)
+  - POP+MCAnimate/Animations (2.0.1):
+    - pop (~> 1.0)
+    - POP+MCAnimate/Group
+    - POP+MCAnimate/Internal
+    - POP+MCAnimate/Shorthand
+    - POP+MCAnimate/Velocity
+  - POP+MCAnimate/Group (2.0.1):
+    - pop (~> 1.0)
+  - POP+MCAnimate/Internal (2.0.1):
+    - pop (~> 1.0)
+  - POP+MCAnimate/Shorthand (2.0.1):
+    - pop (~> 1.0)
+  - POP+MCAnimate/Velocity (2.0.1):
+    - pop (~> 1.0)
+    - POP+MCAnimate/Internal
   - RestKit (0.24.0):
-    - RestKit/Core
+    - RestKit/Core (= 0.24.0)
   - RestKit/Core (0.24.0):
     - RestKit/CoreData
     - RestKit/Network
@@ -32,6 +54,7 @@ PODS:
 DEPENDENCIES:
   - LUKeychainAccess (~> 1.2)
   - pop (~> 1.0)
+  - POP+MCAnimate (~> 2.0)
   - RestKit (~> 0.24)
   - Shimmer (~> 1.0)
   - URBMediaFocusViewController (~> 0.5)
@@ -41,6 +64,7 @@ SPEC CHECKSUMS:
   ISO8601DateFormatterValueTransformer: a705384ea6531255258e25b6480ba1180db703a0
   LUKeychainAccess: 8d45b6c894c0d808786b1740c057b5e776313d88
   pop: 2f14a1ea61339767af9e66741b418c831b3844df
+  POP+MCAnimate: 528a556e3754a0b406adc481b02ec2984cfd1032
   RestKit: 8e301e50e1d25ce427215539f4fd72463f4a2a58
   RKValueTransformers: 67b4ea3eb6a1c1a0b8c3c37eb4e4c05e4febeba2
   Shimmer: 057fcfe9c1c978d69d50b64fce93a61080cd08ec
@@ -48,4 +72,4 @@ SPEC CHECKSUMS:
   TransitionKit: 6a6f3ddda38ae758778aa889dcb930e4f8d64edc
   URBMediaFocusViewController: 4dff9de3767e60b96ba325c897d4ffa7131a122e
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.36.0.beta.1
