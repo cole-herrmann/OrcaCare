@@ -11,6 +11,7 @@
 #import <POP+MCAnimate/POP+MCAnimate.h>
 #import "FadeTransitionAnimator.h"
 #import "TimelineShellViewController.h"
+#import "LoginViewModel.h"
 
 //#import <MCShorthand.h>
 
