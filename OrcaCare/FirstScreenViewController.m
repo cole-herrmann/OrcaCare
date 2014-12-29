@@ -106,11 +106,7 @@
     
     }else if([sender isEqual:self.login] && self.loginMode){
         //login logic
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"SecondDesign" bundle: nil];
-        TimelineShellViewController *timelineVC = (TimelineShellViewController *)[storyBoard instantiateViewControllerWithIdentifier: @"TimelineShellVC"];
-        timelineVC.transitioningDelegate = self;
-        timelineVC.modalPresentationStyle = UIModalPresentationCustom;
-        [self presentViewController:timelineVC animated:YES completion:nil];
+        [self pushToTimeline];
     }
     
 }
@@ -119,57 +115,53 @@
     
     if(([sender isEqual:self.signUpButton] && !self.signUpMode) || [sender isEqual:self.dismissButton]){
     
-        [NSObject pop_animate:^{
-            CGFloat signUpButtonTranslate = -(self.signUpButton.frame.origin.y - (CGRectGetMaxY(self.signUpView.frame) + 15));
-            
-            self.signUpView.layer.pop_springBounciness = 5;
-            self.signUpView.layer.pop_springSpeed = 15;
-            self.signUpView.layer.pop_spring.pop_scaleXY = (self.signUpMode) ?  CGPointMake(0.8, 0.8) : CGPointMake(1, 1);
-            
-            self.signUpView.pop_spring.alpha = (self.signUpMode) ? 0 : 1;
-            self.signUpView.pop_duration = 0.2;
-    
-            self.forgotPassword.pop_spring.alpha = (self.signUpMode) ? 1 : 0;
-            
-            self.orcaCareLabel.pop_spring.alpha = (self.signUpMode) ? 1 : 0;
-            
-            self.dismissButton.pop_spring.alpha = (self.signUpMode) ? 0 : 1;
-            
-            self.blueWhale.layer.pop_spring.pop_translationY = (self.signUpMode) ? 0 : -100;
-            self.blueWhale.layer.pop_spring.pop_scaleXY = (self.signUpMode) ?  CGPointMake(1, 1) : CGPointMake(0.6, 0.6);
-            
-            self.signUpButton.layer.pop_springBounciness = 3;
-            self.signUpButton.layer.pop_springSpeed = 10;
-            self.signUpButton.layer.pop_spring.pop_translationY = (self.signUpMode) ? 0 : signUpButtonTranslate;
-            
-            self.login.pop_spring.alpha = (self.signUpMode) ? 1 : 0;
-            
-            
-            if([sender isEqual:self.dismissButton]){
-                [self.view endEditing:YES];
-            }else{
-//                [self.signUpFullName becomeFirstResponder];
-            }
-        } completion:^(BOOL finished) {
-            if(![sender isEqual:self.dismissButton]){
-                [self.signUpFullName becomeFirstResponder];
-            }
+        CGFloat signUpButtonTranslate = -(self.signUpButton.frame.origin.y - (CGRectGetMaxY(self.signUpView.frame) + 15));
+        
+        self.signUpView.layer.pop_springBounciness = 5;
+        self.signUpView.layer.pop_springSpeed = 15;
+        self.signUpView.layer.pop_spring.pop_scaleXY = (self.signUpMode) ?  CGPointMake(0.8, 0.8) : CGPointMake(1, 1);
+        
+        self.signUpView.pop_spring.alpha = (self.signUpMode) ? 0 : 1;
+        self.signUpView.pop_duration = 0.2;
 
-        }];
+        self.forgotPassword.pop_spring.alpha = (self.signUpMode) ? 1 : 0;
+        
+        self.orcaCareLabel.pop_spring.alpha = (self.signUpMode) ? 1 : 0;
+        
+        self.dismissButton.pop_spring.alpha = (self.signUpMode) ? 0 : 1;
+        
+        self.blueWhale.layer.pop_spring.pop_translationY = (self.signUpMode) ? 0 : -100;
+        self.blueWhale.layer.pop_spring.pop_scaleXY = (self.signUpMode) ?  CGPointMake(1, 1) : CGPointMake(0.6, 0.6);
+        
+        self.signUpButton.layer.pop_springBounciness = 3;
+        self.signUpButton.layer.pop_springSpeed = 10;
+        self.signUpButton.layer.pop_spring.pop_translationY = (self.signUpMode) ? 0 : signUpButtonTranslate;
+        
+        self.login.pop_spring.alpha = (self.signUpMode) ? 1 : 0;
         
         
+        if([sender isEqual:self.dismissButton]){
+            [self.view endEditing:YES];
+        }else{
+            [self.signUpFullName becomeFirstResponder];
+        }
         
         self.signUpMode = !self.signUpMode;
         
     }else if([sender isEqual:self.signUpButton] && self.signUpMode){
         //login logic
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"SecondDesign" bundle: nil];
-        TimelineShellViewController *timelineVC = (TimelineShellViewController *)[storyBoard instantiateViewControllerWithIdentifier: @"TimelineShellVC"];
-        timelineVC.transitioningDelegate = self;
-        timelineVC.modalPresentationStyle = UIModalPresentationCustom;
-        [self presentViewController:timelineVC animated:YES completion:nil];
+        [self pushToTimeline];
     }
 
+}
+
+-(void)pushToTimeline
+{
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"SecondDesign" bundle: nil];
+    TimelineShellViewController *timelineVC = (TimelineShellViewController *)[storyBoard instantiateViewControllerWithIdentifier: @"TimelineShellVC"];
+    timelineVC.transitioningDelegate = self;
+    timelineVC.modalPresentationStyle = UIModalPresentationCustom;
+    [self presentViewController:timelineVC animated:YES completion:nil];
 }
 
 - (IBAction)dismiss:(id)sender {
