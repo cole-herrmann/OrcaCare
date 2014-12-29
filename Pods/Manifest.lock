@@ -6,11 +6,11 @@ PODS:
   - pop (1.0.7)
   - POP+MCAnimate (2.0.1):
     - pop (~> 1.0)
-    - POP+MCAnimate/Animations (= 2.0.1)
-    - POP+MCAnimate/Group (= 2.0.1)
-    - POP+MCAnimate/Internal (= 2.0.1)
-    - POP+MCAnimate/Shorthand (= 2.0.1)
-    - POP+MCAnimate/Velocity (= 2.0.1)
+    - POP+MCAnimate/Animations
+    - POP+MCAnimate/Group
+    - POP+MCAnimate/Internal
+    - POP+MCAnimate/Shorthand
+    - POP+MCAnimate/Velocity
   - POP+MCAnimate/Animations (2.0.1):
     - pop (~> 1.0)
     - POP+MCAnimate/Group
@@ -27,7 +27,7 @@ PODS:
     - pop (~> 1.0)
     - POP+MCAnimate/Internal
   - RestKit (0.24.0):
-    - RestKit/Core (= 0.24.0)
+    - RestKit/Core
   - RestKit/Core (0.24.0):
     - RestKit/CoreData
     - RestKit/Network
@@ -72,4 +72,4 @@ SPEC CHECKSUMS:
   TransitionKit: 6a6f3ddda38ae758778aa889dcb930e4f8d64edc
   URBMediaFocusViewController: 4dff9de3767e60b96ba325c897d4ffa7131a122e
 
-COCOAPODS: 0.36.0.beta.1
+COCOAPODS: 0.34.4
