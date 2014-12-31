@@ -58,7 +58,6 @@
     UITableView *toTableView = [toVC tableViewToBubble];
     NSArray *downViews = [[[fromVC slideDownViews] reverseObjectEnumerator] allObjects];
     NSMutableArray *fromUpViews = [[fromVC slideUpViews] mutableCopy];
-    NSInteger count = fromUpViews.count;
     
     UIView *selectedView = [fromUpViews lastObject];
 //    selectedView.backgroundColor = [UIColor redColor];
@@ -66,9 +65,7 @@
     CGRect frame = [fromTableView rectForRowAtIndexPath:[fromTableView indexPathForSelectedRow]];
     selectedView.frame = [containerView convertRect:frame fromView:fromTableView];
     [fromUpViews removeLastObject];
-    
-//    frame = upView.bounds;
-//    selectedView.pop_spring.frame = selectedView.bounds;
+
     [toVC modifyViewForHeaderUse:selectedView];
     
     [fromUpViews pop_sequenceWithInterval:0 animations:^(UIView *upView, NSInteger index){
@@ -77,21 +74,23 @@
         upView.pop_spring.frame = frame;
         
     } completion:^(BOOL finished){
-         //this block moved the whole view into place
-        //Move the entire view into place. Not doing individual cells because I was struggling to get them to load in properly.
-        CGRect frame = toVC.view.frame;
-        frame.origin.y += containerView.bounds.size.height;
-        toVC.view.frame = frame;
         [containerView insertSubview:toVC.view belowSubview:selectedView];
-        [NSObject pop_animate:^{
-            toVC.view.pop_spring.frame = [transitionContext finalFrameForViewController:toVC];
-        } completion:^(BOOL finished) {
-            NSLog(@"transition done");
-            [fromVC.view removeFromSuperview];
-            UIView *snapshotView = [selectedView snapshotViewAfterScreenUpdates:NO];
-            [toVC handleSnapshot:snapshotView];
-            [selectedView removeFromSuperview];
-            [transitionContext completeTransition:finished];
+        toVC.view.frame = [transitionContext finalFrameForViewController:toVC];
+        
+        [UIView animateWithDuration:0 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:nil completion:^(BOOL finished) {
+            [[toTableView visibleCells] pop_sequenceWithInterval:0.05 animations:^(UIView *view, NSInteger index) {
+                CGRect frame = view.frame;
+                frame.origin.y += containerView.bounds.size.height;
+                view.frame = frame;
+                frame.origin.y -= containerView.bounds.size.height;
+                view.pop_spring.frame = frame;
+            } completion:^(BOOL finished) {
+                [fromVC.view removeFromSuperview];
+                UIView *snapshotView = [selectedView snapshotViewAfterScreenUpdates:NO];
+                [toVC handleSnapshot:snapshotView];
+                [selectedView removeFromSuperview];
+                [transitionContext completeTransition:finished];
+            }];
         }];
     }];
     

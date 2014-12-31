@@ -11,7 +11,6 @@
 		BE331FB81A51F2DC00610721 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE331FB71A51F2DC00610721 /* CardView.xib */; };
 		BE331FBD1A51F2FA00610721 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE331FB91A51F2FA00610721 /* LaunchScreen.xib */; };
 		BE331FBE1A51F2FA00610721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE331FBB1A51F2FA00610721 /* Main.storyboard */; };
-		BE331FC11A5324FC00610721 /* ClearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE331FC01A5324FC00610721 /* ClearViewController.m */; };
 		E7C3ADEB1A51EB6C008136AD /* AMWaveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3AD651A51EB6B008136AD /* AMWaveTransition.m */; };
 		E7C3ADEC1A51EB6C008136AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3AD671A51EB6B008136AD /* AppDelegate.m */; };
 		E7C3ADEF1A51EB6C008136AD /* BubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3AD6E1A51EB6B008136AD /* BubbleTransition.m */; };
@@ -107,8 +106,6 @@
 		BE331FB71A51F2DC00610721 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = OrcaCare/CardView.xib; sourceTree = SOURCE_ROOT; };
 		BE331FBA1A51F2FA00610721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = OrcaCare/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		BE331FBC1A51F2FA00610721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OrcaCare/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
-		BE331FBF1A5324FC00610721 /* ClearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearViewController.h; sourceTree = SOURCE_ROOT; };
-		BE331FC01A5324FC00610721 /* ClearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearViewController.m; sourceTree = SOURCE_ROOT; };
 		E79823691A1D4FE8006002D0 /* OrcaCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrcaCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79823821A1D4FE8006002D0 /* OrcaCareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrcaCareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C3AD641A51EB6B008136AD /* AMWaveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMWaveTransition.h; path = OrcaCare/AMWaveTransition.h; sourceTree = SOURCE_ROOT; };
@@ -443,8 +440,6 @@
 				E7C3AD9B1A51EB6B008136AD /* FirstScreenViewController.m */,
 				E7C3AD981A51EB6B008136AD /* FadeTransitionAnimator.h */,
 				E7C3AD991A51EB6B008136AD /* FadeTransitionAnimator.m */,
-				BE331FBF1A5324FC00610721 /* ClearViewController.h */,
-				BE331FC01A5324FC00610721 /* ClearViewController.m */,
 				E7A6BEF81A48A0B10062C79F /* timeline tableview */,
 				E7A6BEF71A48A09A0062C79F /* plan sections tableview */,
 				E7A6BEF61A48A06C0062C79F /* content tableview */,
@@ -748,7 +743,6 @@
 				E7C3AE2B1A51EB6C008136AD /* SearchViewController.m in Sources */,
 				E7C3ADF61A51EB6C008136AD /* ContentCollectionViewCell.m in Sources */,
 				E7C3AE0F1A51EB6C008136AD /* main.m in Sources */,
-				BE331FC11A5324FC00610721 /* ClearViewController.m in Sources */,
 				E7C3AE041A51EB6C008136AD /* DiagnosisViewController.m in Sources */,
 				E7C3ADEF1A51EB6C008136AD /* BubbleTransition.m in Sources */,
 				E7C3AE021A51EB6C008136AD /* Diagnosis.m in Sources */,

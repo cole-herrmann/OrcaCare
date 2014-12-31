@@ -37,7 +37,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.headerView.hidden = YES;
     self.closeButton.alpha = 0;
     
     [self makeHeaderGradient];
@@ -46,7 +45,6 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    self.headerView.hidden = NO;
     self.closeButton.pop_duration = 0.4;
     self.closeButton.pop_linear.alpha = 1;
 }
