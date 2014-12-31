@@ -34,16 +34,16 @@
     self.tableView.alpha = 0;
     
     self.tableView.frame = CGRectMake(CGRectGetMaxX(self.cellCircle.frame),
-                                      CGRectGetMaxY(self.subtitleLabel.frame) + 8,
+                                      CGRectGetMaxY(self.subtitleLabel.frame),
                                       (self.contentView.frame.size.width - CGRectGetMaxX(self.cellCircle.frame)) - 5,
-                                      rowHeight + 15);
+                                      rowHeight + 10);
 
     [self.contentView addSubview:self.tableView];
     
     [UIView animateWithDuration:0.55 animations:^{
         self.tableView.alpha = 1;
         self.downArrow.alpha = 1;
-        self.subtitleLabel.alpha = 1;
+//        self.subtitleLabel.alpha = 1;
     }];
 }
 
@@ -56,7 +56,7 @@
     [UIView animateWithDuration:0.14 animations:^{
         self.tableView.alpha = 0;
         self.downArrow.alpha = 0;
-        self.subtitleLabel.alpha = 0;
+//        self.subtitleLabel.alpha = 0;
         
     }completion:^(BOOL finished) {
         [self.tableView removeFromSuperview];

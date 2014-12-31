@@ -124,6 +124,29 @@
     
     }else if([sender isEqual:self.login] && self.loginMode){
         
+        self.loginView.pop_spring.alpha = 0;
+        self.dismissButton.pop_spring.alpha = 0;
+        
+        self.blueWhale.layer.pop_spring.pop_translationY = -50;
+        self.blueWhale.layer.pop_spring.pop_scaleXY = CGPointMake(0.8, 0.8);
+
+        
+        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+//        indicator.backgroundColor = [UIColor colorWithRed:0.031 green:0.290 blue:0.522 alpha:.85];
+        indicator.layer.cornerRadius = 15.0;
+        indicator.frame = CGRectMake(0.0,
+                                     0.0,
+                                     self.login.frame.size.width,
+                                     self.login.frame.size.height);
+        
+        [self.login addSubview:indicator];
+//        self.login.titleLabel.text = nil;
+//        [indicator bringSubviewToFront:self.view];
+        [self.login setTitle:@"" forState:UIControlStateNormal];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
+        [indicator startAnimating];
+        
         [self.loginVM loginWithEmail:self.signInEmail.text password:self.signInPassword.text];
     }
     
