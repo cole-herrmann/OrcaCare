@@ -18,5 +18,4 @@
 + (RKObjectMapping *)diagnosisMapping;
 + (RKObjectMapping *)customMediaMapping;
 
-
 @end

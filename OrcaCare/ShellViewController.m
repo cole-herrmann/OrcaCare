@@ -60,6 +60,7 @@
     } else if (videoName) {
         NSURL *urlString = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:videoName ofType:@"mp4"]];
         
+    
         MPMoviePlayerViewController *playerVC = [[MPMoviePlayerViewController alloc] initWithContentURL:urlString];
         playerVC.view.alpha = 0.0;
         [self addChildViewController:playerVC];

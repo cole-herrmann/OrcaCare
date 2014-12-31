@@ -13,15 +13,31 @@
 
 @implementation EncounterViewModel
 
+//not permanent, not correct, but it'll do until the data is all stores in Core Data
++ (instancetype)singleton {
+    static dispatch_once_t once;
+    static id _sharedInstance = nil;
+    
+    dispatch_once(&once, ^{
+        _sharedInstance = [[EncounterViewModel alloc] init];
+    });
+    
+    return _sharedInstance;
+}
+
 - (void)all {
     RKObjectMapping *mapping = [OrcaMapping encounterMapping];
     RKObjectManager *manager = [RKObjectManager sharedManager];
     [manager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodGET pathPattern:nil keyPath:@"encounters" statusCodes:nil]];
     
     [manager getObject:nil path:@"/v3/patient/encounters" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        NSArray *encounters = [mappingResult array];
+        [EncounterViewModel singleton].encounters = [mappingResult array];
         NSString *response = operation.HTTPRequestOperation.responseString;
-//        [self batchRequestsWithEncounters:encounters];
+        
+        if([self.delegate respondsToSelector:@selector(encounterSyncSucceeded)]){
+            [self.delegate encounterSyncSucceeded];
+        }
+        //        [self batchRequestsWithEncounters:encounters];
         
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         NSLog(@"error");

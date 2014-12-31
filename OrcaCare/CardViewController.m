@@ -42,7 +42,7 @@
     self.loginVM = [[LoginViewModel alloc] init];
     self.loginVM.delegate = self;
     
-    self.encounterVM = [[EncounterViewModel alloc] init];
+    self.encounterVM = [EncounterViewModel singleton];
     
     return self;
 }

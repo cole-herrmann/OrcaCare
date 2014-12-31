@@ -22,7 +22,7 @@
 @property (nonatomic, copy) NSString *suffix;
 @property (nonatomic, copy) NSString *occupation;
 
-@property (nonatomic, copy) NSURL *photoURL;
-@property (nonatomic, copy) NSURL *logoURL;
+@property (nonatomic, copy) NSString *photoURL;
+@property (nonatomic, copy) NSString *logoURL;
 
 @end

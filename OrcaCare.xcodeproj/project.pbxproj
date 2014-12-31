@@ -11,6 +11,10 @@
 		BE331FB81A51F2DC00610721 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE331FB71A51F2DC00610721 /* CardView.xib */; };
 		BE331FBD1A51F2FA00610721 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE331FB91A51F2FA00610721 /* LaunchScreen.xib */; };
 		BE331FBE1A51F2FA00610721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE331FBB1A51F2FA00610721 /* Main.storyboard */; };
+		E7327F2E1A53295700244A7F /* Treatment.m in Sources */ = {isa = PBXBuildFile; fileRef = E7327F2D1A53295700244A7F /* Treatment.m */; };
+		E7327F311A532B9500244A7F /* RehabAssignment.m in Sources */ = {isa = PBXBuildFile; fileRef = E7327F301A532B9500244A7F /* RehabAssignment.m */; };
+		E7327F341A532C2600244A7F /* Rehab.m in Sources */ = {isa = PBXBuildFile; fileRef = E7327F331A532C2600244A7F /* Rehab.m */; };
+		E7327F371A5330FA00244A7F /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = E7327F361A5330FA00244A7F /* Note.m */; };
 		E7C3ADEB1A51EB6C008136AD /* AMWaveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3AD651A51EB6B008136AD /* AMWaveTransition.m */; };
 		E7C3ADEC1A51EB6C008136AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3AD671A51EB6B008136AD /* AppDelegate.m */; };
 		E7C3ADEF1A51EB6C008136AD /* BubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3AD6E1A51EB6B008136AD /* BubbleTransition.m */; };
@@ -106,6 +110,14 @@
 		BE331FB71A51F2DC00610721 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = OrcaCare/CardView.xib; sourceTree = SOURCE_ROOT; };
 		BE331FBA1A51F2FA00610721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = OrcaCare/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		BE331FBC1A51F2FA00610721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OrcaCare/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		E7327F2C1A53295700244A7F /* Treatment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Treatment.h; path = OrcaCare/Treatment.h; sourceTree = SOURCE_ROOT; };
+		E7327F2D1A53295700244A7F /* Treatment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Treatment.m; path = OrcaCare/Treatment.m; sourceTree = SOURCE_ROOT; };
+		E7327F2F1A532B9500244A7F /* RehabAssignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RehabAssignment.h; sourceTree = SOURCE_ROOT; };
+		E7327F301A532B9500244A7F /* RehabAssignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RehabAssignment.m; sourceTree = SOURCE_ROOT; };
+		E7327F321A532C2600244A7F /* Rehab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rehab.h; sourceTree = SOURCE_ROOT; };
+		E7327F331A532C2600244A7F /* Rehab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rehab.m; sourceTree = SOURCE_ROOT; };
+		E7327F351A5330FA00244A7F /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = OrcaCare/Note.h; sourceTree = SOURCE_ROOT; };
+		E7327F361A5330FA00244A7F /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = OrcaCare/Note.m; sourceTree = SOURCE_ROOT; };
 		E79823691A1D4FE8006002D0 /* OrcaCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrcaCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79823821A1D4FE8006002D0 /* OrcaCareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrcaCareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C3AD641A51EB6B008136AD /* AMWaveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMWaveTransition.h; path = OrcaCare/AMWaveTransition.h; sourceTree = SOURCE_ROOT; };
@@ -272,6 +284,8 @@
 				E7C3ADA61A51EB6B008136AD /* Media.m */,
 				E7C3AD8C1A51EB6B008136AD /* Diagnosis.h */,
 				E7C3AD8D1A51EB6B008136AD /* Diagnosis.m */,
+				E7327F2C1A53295700244A7F /* Treatment.h */,
+				E7327F2D1A53295700244A7F /* Treatment.m */,
 				E7C3AD921A51EB6B008136AD /* Encounter.h */,
 				E7C3AD931A51EB6B008136AD /* Encounter.m */,
 				E7C3ADE81A51EB6C008136AD /* User.h */,
@@ -280,6 +294,12 @@
 				E7C3ADBF1A51EB6C008136AD /* Provider.m */,
 				E7C3ADB41A51EB6C008136AD /* OrcaObjectManager.h */,
 				E7C3ADB51A51EB6C008136AD /* OrcaObjectManager.m */,
+				E7327F2F1A532B9500244A7F /* RehabAssignment.h */,
+				E7327F301A532B9500244A7F /* RehabAssignment.m */,
+				E7327F321A532C2600244A7F /* Rehab.h */,
+				E7327F331A532C2600244A7F /* Rehab.m */,
+				E7327F351A5330FA00244A7F /* Note.h */,
+				E7327F361A5330FA00244A7F /* Note.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -715,9 +735,11 @@
 				E7C3ADFF1A51EB6C008136AD /* ContentViewController.m in Sources */,
 				E7C3AE081A51EB6C008136AD /* FadeTransitionAnimator.m in Sources */,
 				E7C3AE051A51EB6C008136AD /* Encounter.m in Sources */,
+				E7327F341A532C2600244A7F /* Rehab.m in Sources */,
 				E7C3AE2D1A51EB6C008136AD /* SettingsViewController.m in Sources */,
 				E7C3ADF41A51EB6C008136AD /* CircleTransitionAnimator.swift in Sources */,
 				E7C3ADF81A51EB6C008136AD /* ContentCollectionViewCellNew.m in Sources */,
+				E7327F371A5330FA00244A7F /* Note.m in Sources */,
 				E7C3AE181A51EB6C008136AD /* OrcaObject.m in Sources */,
 				E7C3AE1E1A51EB6C008136AD /* Provider.m in Sources */,
 				E7C3ADFA1A51EB6C008136AD /* ContentTableView.m in Sources */,
@@ -743,6 +765,8 @@
 				E7C3AE2B1A51EB6C008136AD /* SearchViewController.m in Sources */,
 				E7C3ADF61A51EB6C008136AD /* ContentCollectionViewCell.m in Sources */,
 				E7C3AE0F1A51EB6C008136AD /* main.m in Sources */,
+				E7327F2E1A53295700244A7F /* Treatment.m in Sources */,
+				E7327F311A532B9500244A7F /* RehabAssignment.m in Sources */,
 				E7C3AE041A51EB6C008136AD /* DiagnosisViewController.m in Sources */,
 				E7C3ADEF1A51EB6C008136AD /* BubbleTransition.m in Sources */,
 				E7C3AE021A51EB6C008136AD /* Diagnosis.m in Sources */,

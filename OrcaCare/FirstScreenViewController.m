@@ -12,10 +12,11 @@
 #import "FadeTransitionAnimator.h"
 #import "TimelineShellViewController.h"
 #import "LoginViewModel.h"
+#import "EncounterViewModel.h"
 
 //#import <MCShorthand.h>
 
-@interface FirstScreenViewController () <UIViewControllerTransitioningDelegate>
+@interface FirstScreenViewController () <UIViewControllerTransitioningDelegate, LoginVMDelegate, EncounterVMDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIButton *login;
@@ -35,9 +36,25 @@
 @property (weak, nonatomic) IBOutlet UITextField *signUpPassword;
 @property (weak, nonatomic) IBOutlet UIButton *forgotPassword;
 
+@property (nonatomic, strong) LoginViewModel *loginVM;
+@property (nonatomic, strong) EncounterViewModel *encounterVM;
+
 @end
 
 @implementation FirstScreenViewController
+
+-(void)awakeFromNib{
+    
+    [super awakeFromNib];
+    
+    self.loginVM = [LoginViewModel new];
+    self.loginVM.delegate = self;
+    
+    self.encounterVM = [EncounterViewModel new];
+    self.encounterVM.delegate = self;
+    
+    NSLog(@"awaking from the nib");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -106,8 +123,8 @@
         self.loginMode = !self.loginMode;
     
     }else if([sender isEqual:self.login] && self.loginMode){
-        //login logic
-        [self pushToTimeline];
+        
+        [self.loginVM loginWithEmail:self.signInEmail.text password:self.signInPassword.text];
     }
     
 }
@@ -154,6 +171,16 @@
         [self pushToTimeline];
     }
 
+}
+
+-(void)loginSucceeded
+{
+    [self.encounterVM all];
+}
+
+-(void)encounterSyncSucceeded
+{
+     [self pushToTimeline];
 }
 
 -(void)pushToTimeline

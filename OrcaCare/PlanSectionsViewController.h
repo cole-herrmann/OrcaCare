@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Encounter.h"
 
 @interface PlanSectionsViewController : UIViewController
+
+@property (nonatomic, strong) Encounter *encounter;
 
 @end

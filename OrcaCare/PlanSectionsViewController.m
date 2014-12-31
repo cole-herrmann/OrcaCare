@@ -16,7 +16,16 @@
 #import "MultipleChoiceTableViewCell.h"
 #import "RecoveryTableViewCellNew.h"
 #import "RecoveryTableView.h"
+#import "OrcaObject.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "Media.h"
+#import <MediaPlayer/MediaPlayer.h>
 #import <URBMediaFocusViewController/URBMediaFocusViewController.h>
+
+NSString *const diagnosis = @"D I A G N O S I S";
+NSString *const treatment = @"T R E A T M E N T";
+NSString *const recovery = @"R E C O V E R Y";
+NSString *const handouts = @"H A N D O U T S";
 
 
 @interface PlanSectionsViewController () <UITableViewDataSource, UITableViewDelegate, URBMediaFocusViewControllerDelegate>
@@ -26,6 +35,10 @@
 @property (nonatomic, retain) NSIndexPath *expandedCellIndexPath;
 @property (nonatomic, strong) URBMediaFocusViewController *mediaVC;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (nonatomic, strong) NSMutableArray *sectionsArray;
+@property (nonatomic, strong) NSArray *multipleChoiceDataSource;
+@property (nonatomic, strong) OrcaObject *orcaObjectForContent;
+@property (nonatomic, strong) MPMoviePlayerViewController *playerVC;
 
 @end
 
@@ -36,6 +49,8 @@
     
     UIColor *firstColor = [UIColor whiteColor];
     UIColor *secondColor = [UIColor colorWithWhite:1 alpha:.7];
+    
+    self.sectionsArray = [[NSMutableArray alloc]init];
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.colors = [NSArray arrayWithObjects: (id)firstColor.CGColor, (id)secondColor.CGColor, nil];
@@ -79,14 +94,42 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if([tableView isEqual:self.tableView]){
-        return 4;
+        return [self numberOfRowsForMainTableView];
     }else if([tableView isKindOfClass:[MultipleChoiceTableView class]]){
-        return 2;
+        return [self.multipleChoiceDataSource count];
     }else if([tableView isKindOfClass:[ContentTableView class]]){
-        return 4;
+        return [self.orcaObjectForContent.media count];
     }else{
         return 4;
     }
+}
+
+-(NSInteger)numberOfRowsForMainTableView
+{
+    NSInteger rows = 0;
+    
+    if([self.encounter.diagnoses count] > 0){
+        [self.sectionsArray addObject:@{@"title" : diagnosis, @"imageName" : @"steth", @"content" : self.encounter.diagnoses}];
+        rows += 1;
+    }
+    
+    if([self.encounter.treatments count] > 0){
+        [self.sectionsArray addObject:@{@"title" : treatment, @"imageName" : @"bandaid", @"content" : self.encounter.treatments}];
+        rows += 1;
+    }
+    
+    if([self.encounter.rehabAssignments count] > 0){
+        [self.sectionsArray addObject:@{@"title" : recovery, @"imageName" : @"crutch", @"content" : self.encounter.rehabAssignments}];
+
+      rows += 1;
+    }
+
+    if([self.encounter.handouts count] > 0 || [self.encounter.media count] > 0|| [self.encounter.customMedia count] > 0 || [self.encounter.notes count] > 0){
+        [self.sectionsArray addObject:@{@"title" : handouts, @"imageName" : @"handout"}];
+        rows += 1;
+    }
+    
+    return rows;
 }
 
 
@@ -115,19 +158,8 @@
         cell = [[PlanSectionTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
-    if(indexPath.row == 0){
-        cell.planSectionLabel.text = @"D I A G N O S I S";
-        cell.cellCircle.image = [UIImage imageNamed:@"steth"];
-    }else if(indexPath.row == 1){
-        cell.planSectionLabel.text = @"T R E A T M E N T";
-        cell.cellCircle.image = [UIImage imageNamed:@"bandaid"];
-    }else if(indexPath.row == 2){
-        cell.planSectionLabel.text = @"R E C O V E R Y";
-        cell.cellCircle.image = [UIImage imageNamed:@"crutch"];
-    }else if(indexPath.row == 3){
-        cell.planSectionLabel.text = @"H A N D O U T S";
-        cell.cellCircle.image = [UIImage imageNamed:@"handout"];
-    }
+    cell.planSectionLabel.text = [self.sectionsArray[indexPath.row] valueForKey:@"title"];
+    cell.cellCircle.image = [UIImage imageNamed:(NSString *)[self.sectionsArray[indexPath.row] valueForKey:@"imageName"]];
     
     return cell;
 }
@@ -145,11 +177,8 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    if(indexPath.row % 2 == 0){
-        cell.title.text = @"Lumbar Disc Herniation";
-    }else{
-        cell.title.text = @"Lumbar Spine Fracture";
-    }
+    OrcaObject *orcaObject = self.multipleChoiceDataSource[indexPath.row];
+    cell.title.text = orcaObject.name;
     
     return cell;
 }
@@ -164,12 +193,21 @@
         cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
-    if(indexPath.row % 2 == 0){
-        cell.title.text = @"Lumbar Disc Herniation";
-    }else{
-        cell.thumbnailImageView.image = [UIImage imageNamed:@"abnormal"];
-        cell.title.text = @"Abnormal Disc";
-    }
+//    if(indexPath.row % 2 == 0){
+//        cell.title.text = @"Lumbar Disc Herniation";
+//    }else{
+//        cell.thumbnailImageView.image = [UIImage imageNamed:@"abnormal"];
+//        cell.title.text = @"Abnormal Disc";
+//    }
+    
+
+    Media *m = self.orcaObjectForContent.media[indexPath.row];
+    
+    cell.title.text = m.name;
+    
+    NSString *photoUrl = [NSString stringWithFormat:@"https:%@", m.thumbUrl];
+    [cell.thumbnailImageView sd_setImageWithURL:[NSURL URLWithString:photoUrl]
+                          placeholderImage:nil];
     
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -212,6 +250,8 @@
     }else if([tableView isKindOfClass:[MultipleChoiceTableView class]]){
         
         PlanSectionTableViewCell *cell = (PlanSectionTableViewCell *)[self.tableView cellForRowAtIndexPath:self.expandedCellIndexPath];
+        self.orcaObjectForContent = self.multipleChoiceDataSource[indexPath.row];
+        self.multipleChoiceDataSource = nil;
        
         [cell closeCellRemoveCollectionView:^{
             
@@ -228,17 +268,57 @@
         
         self.mediaVC = [[URBMediaFocusViewController alloc]init];
         self.mediaVC.shouldDismissOnImageTap = YES;
-        NSString *imageName = (indexPath.row % 2 == 0) ? @"spine" : @"abnormal";
-        [self.mediaVC showImage:[UIImage imageNamed:imageName] fromView:[tableView cellForRowAtIndexPath:indexPath]];
+        
+//        NSString *imageName = (indexPath.row % 2 == 0) ? @"spine" : @"abnormal";
+        
+        Media *m = self.orcaObjectForContent.media[indexPath.row];
+        if([m.fileContentType  isEqual: @"video/mp4"]){
+            
+            NSString *videoUrlString = [NSString stringWithFormat:@"https:%@", m.fullUrl];
+            NSURL *videoUrl = [NSURL URLWithString:videoUrlString];
+            self.playerVC = [[MPMoviePlayerViewController alloc] initWithContentURL:videoUrl];
+            self.playerVC.view.alpha = 0.0;
+            [self addChildViewController:self.playerVC];
+            [self.view addSubview:self.playerVC.view];
+            
+            [UIView animateWithDuration:0.4 animations:^{
+                self.playerVC.view.alpha = 1.0;
+            }];
+            
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(movieDone:)
+                                                         name:MPMoviePlayerPlaybackDidFinishNotification
+                                                       object:nil];
+            
+//            [self.mediaVC showImageFromURL:videoUrl fromView:[tableView cellForRowAtIndexPath:indexPath]];
+            
+        }else{
+            NSString *photoUrlString = [NSString stringWithFormat:@"https:%@", m.fullUrl];
+            NSURL *photoUrl = [NSURL URLWithString:photoUrlString];
+            [self.mediaVC showImageFromURL:photoUrl fromView:[tableView cellForRowAtIndexPath:indexPath]];
+        }
+       
+//        [self.mediaVC showImage:[UIImage imageNamed:imageName] fromView:[tableView cellForRowAtIndexPath:indexPath]];
     
     }
     
+}
+
+-(void)movieDone:(NSNotification *)notification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        self.playerVC.view.alpha = 0.0;
+    }];
 }
 
 
 -(void)selectedRowForSectionsTableView:(UITableView*)tableView indexPath:(NSIndexPath *)indexPath
 {
     PlanSectionTableViewCell *cell = (PlanSectionTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    NSDictionary *selectedDictionary = self.sectionsArray[indexPath.row];
 
     //if the selected cell is already open, close it.
     if([indexPath isEqual:self.expandedCellIndexPath]){
@@ -254,12 +334,27 @@
             [(PlanSectionTableViewCell *)[tableView cellForRowAtIndexPath:self.expandedCellIndexPath] closeCellRemoveCollectionView:nil];
         }
         
-        if(indexPath.row == 0){
+        NSString *cellTitle = [selectedDictionary valueForKey:@"title"];
+        
+        if([[selectedDictionary valueForKey:@"content"] count] > 1 && (cellTitle == diagnosis || cellTitle == treatment)){
+           
+            self.multipleChoiceDataSource = [selectedDictionary valueForKey:@"content"];
+            
             [self addTableViewToCellWithNibName:@"MultipleChoiceTableView"
                                     withCellNibName:@"MutlipleChoiceTableViewCell"
                             withReuseIdentifier:@"MultipleChoiceCell"
                                          toCell:cell];
-        }else if(indexPath.row == 2){
+            
+        }else if([[selectedDictionary valueForKey:@"content"] count] == 1 && (cellTitle == diagnosis || cellTitle == treatment)){
+            
+            self.orcaObjectForContent = [[selectedDictionary valueForKey:@"content"] firstObject];
+            
+            [self addTableViewToCellWithNibName:@"ContentTableView"
+                                withCellNibName:@"ContentTableViewCell"
+                            withReuseIdentifier:@"ContentTableViewCell"
+                                         toCell:cell];
+            
+        }else if(cellTitle == recovery){
             [self addTableViewToCellWithNibName:@"RecoveryTableView"
                                     withCellNibName:@"RecoveryTableViewCell"
                             withReuseIdentifier:@"RecoveryTableViewCell"
