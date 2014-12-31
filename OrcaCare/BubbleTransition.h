@@ -16,6 +16,7 @@
 - (UITableView *)tableViewToBubble;
 
 - (void)modifyViewForHeaderUse:(UIView *)view;
+- (void)handleSnapshot:(UIView *)view;
 
 @end
 

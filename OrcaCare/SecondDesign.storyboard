@@ -316,7 +316,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TimelineCell" rowHeight="145" id="RVI-ZN-yY5" customClass="TimelineTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TimelineCell" rowHeight="145" id="RVI-ZN-yY5" customClass="TimelineTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RVI-ZN-yY5" id="PyI-8H-KGD">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -525,9 +525,24 @@
                                     <constraint firstAttribute="height" constant="70" id="8QL-0Y-6t0"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9E-Gf-Ir2">
+                                <rect key="frame" x="556" y="13" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="FfS-hr-OLo"/>
+                                    <constraint firstAttribute="width" constant="44" id="zTr-ed-WBh"/>
+                                </constraints>
+                                <color key="tintColor" red="0.031372549020000001" green="0.2901960784" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                <state key="normal" image="cancel"/>
+                                <connections>
+                                    <action selector="close:" destination="8gi-NF-Gmp" eventType="touchUpInside" id="3r7-kO-MPR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="w9E-Gf-Ir2" firstAttribute="trailing" secondItem="Mab-FF-psN" secondAttribute="trailing" id="Cas-T5-aJz"/>
+                            <constraint firstItem="w9E-Gf-Ir2" firstAttribute="top" secondItem="XFL-8G-WV2" secondAttribute="bottom" constant="13" id="Cvz-18-Ug4"/>
                             <constraint firstItem="iS8-X5-mGk" firstAttribute="leading" secondItem="Mab-FF-psN" secondAttribute="leading" id="Goy-yC-fNw"/>
                             <constraint firstAttribute="trailing" secondItem="iS8-X5-mGk" secondAttribute="trailing" id="NYl-r7-jte"/>
                             <constraint firstItem="1AM-DS-u9U" firstAttribute="leading" secondItem="Mab-FF-psN" secondAttribute="leading" id="TvK-Qz-KFy"/>
@@ -539,6 +554,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="LM0-KU-WYp"/>
                     <connections>
+                        <outlet property="closeButton" destination="w9E-Gf-Ir2" id="Rh6-0T-b61"/>
                         <outlet property="headerView" destination="iS8-X5-mGk" id="smY-wj-jnK"/>
                         <outlet property="tableView" destination="1AM-DS-u9U" id="uBe-rG-sWj"/>
                     </connections>
@@ -568,6 +584,7 @@
     </scenes>
     <resources>
         <image name="bluewhale" width="230" height="288"/>
+        <image name="cancel" width="64" height="64"/>
         <image name="downarrow" width="50" height="28"/>
         <image name="steth" width="50" height="50"/>
     </resources>

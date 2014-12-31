@@ -59,96 +59,40 @@
     NSArray *downViews = [[[fromVC slideDownViews] reverseObjectEnumerator] allObjects];
     NSMutableArray *fromUpViews = [[fromVC slideUpViews] mutableCopy];
     NSInteger count = fromUpViews.count;
-    [containerView addSubview:toVC.view];
-    toVC.view.frame = [transitionContext finalFrameForViewController:toVC];
-    
-    NSArray *toUpCells = toTableView.am_visibleViews;
-    for(UIView *view in toUpCells) {
-        [view setTransform:CGAffineTransformMakeTranslation(0, 300)];
-    }
-    
-    __block NSArray *currentViews;
-    __block NSUInteger currentVisibleViewsCount;
-    
-    void (^cellAnimation)(id, NSUInteger, BOOL*) = ^(UIView *view, NSUInteger idx, BOOL *stop){
-//        BOOL fromMode = currentViews == fromViews;
-        NSTimeInterval delay = 0;// ((float)idx / (float)currentVisibleViewsCount) * self.maxDelay;
-//        if (!fromMode) {
-            [view setTransform:CGAffineTransformMakeTranslation(0, 300)];
-//        }
-        void (^animation)() = ^{
-//            if (fromMode) {
-//                view.transform = CGAffineTransformMakeTranslation(0, -delta);
-//                view.alpha = 0;
-//            } else {
-                view.transform = CGAffineTransformIdentity;
-//                view.alpha = 1;
-//            }
-        };
-        void (^completion)(BOOL) = ^(BOOL finished2){
-//            if (fromMode) {
-//                [view setTransform:CGAffineTransformIdentity];
-//            }
-        };
-        [UIView animateWithDuration:2.5 delay:delay options:UIViewAnimationOptionCurveEaseIn animations:animation completion:completion];
-        //            if (self.transitionType == AMWaveTransitionTypeSubtle) {
-        //                [UIView animateWithDuration:self.duration delay:delay options:UIViewAnimationOptionCurveEaseIn animations:animation completion:completion];
-        //            } else if (self.transitionType == AMWaveTransitionTypeNervous) {
-        //                [UIView animateWithDuration:self.duration delay:delay usingSpringWithDamping:0.75 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseIn animations:animation completion:completion];
-        //            } else if (self.transitionType == AMWaveTransitionTypeBounce){
-        //                [UIView animateWithDuration:self.duration delay:delay options:UIViewAnimationOptionCurveEaseInOut animations:animation completion:completion];
-        //            }
-    };
-    
-    NSArray *viewsArrays = @[toUpCells];
-    
-    for (currentViews in viewsArrays) {
-        // Animates all views
-        currentVisibleViewsCount = currentViews.count;
-        [currentViews enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:cellAnimation];
-    }
-    
     
     UIView *selectedView = [fromUpViews lastObject];
-//    UIView *copyView = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:selectedView]];
-    selectedView.backgroundColor = [UIColor redColor];
-//    selectedView.hidden = YES;
-//    UIView *newView = [selectedView snapshotViewAfterScreenUpdates:NO];
+//    selectedView.backgroundColor = [UIColor redColor];
     [containerView addSubview:selectedView];
-//    newView.backgroundColor = [UIColor redColor];
     CGRect frame = [fromTableView rectForRowAtIndexPath:[fromTableView indexPathForSelectedRow]];
     selectedView.frame = [containerView convertRect:frame fromView:fromTableView];
-//    [fromUpViews addObject:newView];
+    [fromUpViews removeLastObject];
+    
+//    frame = upView.bounds;
+//    selectedView.pop_spring.frame = selectedView.bounds;
+    [toVC modifyViewForHeaderUse:selectedView];
     
     [fromUpViews pop_sequenceWithInterval:0 animations:^(UIView *upView, NSInteger index){
         CGRect frame = upView.frame;
-        if(index+1 == count) {
-            frame = upView.bounds;
-            [toVC modifyViewForHeaderUse:upView];
-        } else {
-            frame.origin.y -= containerView.bounds.size.height;
-        }
+        frame.origin.y -= containerView.bounds.size.height;
         upView.pop_spring.frame = frame;
         
     } completion:^(BOOL finished){
-        
-        
-        
-        /* //this block moved the whole view into place
-        [fromVC.view removeFromSuperview];
+         //this block moved the whole view into place
         //Move the entire view into place. Not doing individual cells because I was struggling to get them to load in properly.
         CGRect frame = toVC.view.frame;
-        CGRect frameCopy = frame;
         frame.origin.y += containerView.bounds.size.height;
         toVC.view.frame = frame;
-        [containerView addSubview:toVC.view];
+        [containerView insertSubview:toVC.view belowSubview:selectedView];
         [NSObject pop_animate:^{
-            toVC.view.pop_spring.frame = frameCopy;
+            toVC.view.pop_spring.frame = [transitionContext finalFrameForViewController:toVC];
         } completion:^(BOOL finished) {
             NSLog(@"transition done");
+            [fromVC.view removeFromSuperview];
+            UIView *snapshotView = [selectedView snapshotViewAfterScreenUpdates:NO];
+            [toVC handleSnapshot:snapshotView];
+            [selectedView removeFromSuperview];
             [transitionContext completeTransition:finished];
         }];
-         */
     }];
     
     [downViews pop_sequenceWithInterval:0 animations:^(UIView *downView, NSInteger index){

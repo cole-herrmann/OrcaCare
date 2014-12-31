@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSIndexPath *expandedCellIndexPath;
 @property (nonatomic, strong) URBMediaFocusViewController *mediaVC;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @end
 
@@ -36,10 +37,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.headerView.hidden = YES;
+    self.closeButton.alpha = 0;
     
     [self makeHeaderGradient];
     
     self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.bounds.size.height, 0, 0, 0);
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    self.headerView.hidden = NO;
+    self.closeButton.pop_duration = 0.4;
+    self.closeButton.pop_linear.alpha = 1;
+}
+- (IBAction)close:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)makeHeaderGradient {
@@ -305,10 +317,22 @@
     return self.tableView;
 }
 
+- (void)handleSnapshot:(UIView *)view {
+    [self.headerView addSubview:view];
+}
+
 - (void)modifyViewForHeaderUse:(UIView *)view {
     TimelineTableViewCell *cell = (TimelineTableViewCell *)view;
-    cell.doctorPicture.pop_spring.pop_scaleXY = CGPointMake(0.7, 0.7);
-//    cell.doctorLabel.pop_linear.center = CGPointMake(0.5, 0.5);
+//    cell.backgroundColor = [UIColor redColor];
+    CGFloat headerHeight = self.headerView.bounds.size.height;
+    CGRect frame = cell.frame;
+    frame.size.height = headerHeight;
+    cell.frame = frame;
+    cell.pop_spring.frame = cell.bounds;
+    cell.doctorPicture.pop_linear.pop_scaleXY = CGPointMake(0.7, 0.7);
+    cell.doctorLabel.pop_spring.center = CGPointMake(170, headerHeight/2);
+    cell.dateLabel.pop_duration = 0.2;
+    cell.dateLabel.pop_linear.alpha = 0.0f;
 }
 
 @end
