@@ -8,8 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol EncounterVMDelegate <NSObject> //delete this later in favor of RAC
+
+- (void)encounterSyncSucceeded;
+
+@end
+
 @interface EncounterViewModel : NSObject
 
+@property (nonatomic, weak) id<EncounterVMDelegate> delegate;
+@property (nonatomic, strong) NSArray *encounters;
+
 - (void)all;
+
++ (instancetype)singleton;
 
 @end

@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Cole Herrmann. All rights reserved.
 //
 
+#import "Note.h"
+
 #import <Foundation/Foundation.h>
 
 @class Provider;
@@ -20,6 +22,7 @@
 @property (nonatomic, copy) NSArray *treatments;
 @property (nonatomic, copy) NSArray *customMedia;
 @property (nonatomic, copy) NSArray *notes;
+@property (nonatomic, copy) NSArray *rehabAssignments;
 @property (nonatomic, copy) NSArray *handouts;
 @property (nonatomic, copy) NSArray *media;
 @property (nonatomic, strong) Provider *provider;

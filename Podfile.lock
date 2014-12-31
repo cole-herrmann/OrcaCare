@@ -46,6 +46,9 @@ PODS:
   - RestKit/Support (0.24.0):
     - TransitionKit (= 2.1.0)
   - RKValueTransformers (1.1.1)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.7.1)
   - Shimmer (1.0.2)
   - SOCKit (1.1)
   - TransitionKit (2.1.0)
@@ -56,6 +59,7 @@ DEPENDENCIES:
   - pop (~> 1.0)
   - POP+MCAnimate (~> 2.0)
   - RestKit (~> 0.24)
+  - SDWebImage (~> 3.7)
   - Shimmer (~> 1.0)
   - URBMediaFocusViewController (~> 0.5)
 
@@ -67,6 +71,7 @@ SPEC CHECKSUMS:
   POP+MCAnimate: 528a556e3754a0b406adc481b02ec2984cfd1032
   RestKit: 8e301e50e1d25ce427215539f4fd72463f4a2a58
   RKValueTransformers: 67b4ea3eb6a1c1a0b8c3c37eb4e4c05e4febeba2
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   Shimmer: 057fcfe9c1c978d69d50b64fce93a61080cd08ec
   SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
   TransitionKit: 6a6f3ddda38ae758778aa889dcb930e4f8d64edc

@@ -20,6 +20,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+//    self.doctorPicture.layer.masksToBounds = YES;
+    self.doctorPicture.clipsToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

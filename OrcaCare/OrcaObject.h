@@ -12,7 +12,8 @@
 
 @property (nonatomic, copy) NSDate *createdDate;
 @property (nonatomic, copy) NSDate *updatedDate;
-@property (nonatomic, copy) NSURL *thumbURL;
+@property (nonatomic, copy) NSString *thumbURL;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSArray *media;
 
 @end

@@ -22,8 +22,8 @@
     
     NSDictionary *params = @{
                              @"patient" : @{
-                                     @"email" : email,
-                                     @"password" : password
+                                     @"email" : @"zeluff@orcahealth.com",
+                                     @"password" : @"password"
                                      }
                              };
     
@@ -36,6 +36,7 @@
         }
 
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        NSString *response = operation.HTTPRequestOperation.responseString;
         NSLog(@"error");
     }];
 }
