@@ -8,18 +8,20 @@
 
 #import "TimelineViewController.h"
 #import "TimelineTableViewCell.h"
+#import "BubbleTransition.h"
 
-
-@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate, BubbleTransitionProtocol>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIView *topLine;
 @property (nonatomic, strong) UIView *bottomLine;
+@property (nonatomic, weak) IBOutlet UIView *viewInHeader;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 
 @property (nonatomic, weak) NSIndexPath *selectedIndexPath;
 @property (nonatomic, strong) NSArray *upCells;
 @property (nonatomic, strong) NSArray *downCells;
+@property (nonatomic, strong) BubbleTransition *transition;
 
 @end
 
@@ -27,11 +29,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self makeHeaderGradient];
+    self.transition = [[BubbleTransition alloc] initWithNavigationController:self.navigationController];
+    self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.bounds.size.height, 0, 0, 0);
+}
+
+- (void)makeHeaderGradient {
     UIColor *firstColor = [UIColor whiteColor];
     UIColor *secondColor = [UIColor colorWithWhite:1 alpha:.7];
-//    self.headerView.backgroundColor = [UIColor whiteColor];
-    
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.colors = [NSArray arrayWithObjects: (id)firstColor.CGColor, (id)secondColor.CGColor, nil];
     
@@ -40,10 +45,7 @@
     gradient.endPoint = CGPointMake(0.5, 1.1);
     
     [self.headerView.layer insertSublayer:gradient atIndex:0];
-
-    self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.frame.size.height, 0, 0, 0);
 }
-
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -109,6 +111,9 @@
     NSMutableArray *upCells = [NSMutableArray array];
     NSMutableArray *downCells = [NSMutableArray array];
     
+    //The header always moves up
+    [upCells addObject:self.viewInHeader];
+    
     for(NSInteger i = lowestIndexPath.row; i <= self.selectedIndexPath.row; i++) {
         [upCells addObject:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]]];
     }
@@ -118,8 +123,11 @@
     }
     
     self.upCells = [NSArray arrayWithArray:upCells];
-    self.downCells = [NSArray arrayWithArray:upCells];
-    
+    self.downCells = [NSArray arrayWithArray:downCells];
+}
+
+- (UITableView *)tableViewToBubble {
+    return self.tableView;
 }
 
 - (NSArray *)slideUpViews {

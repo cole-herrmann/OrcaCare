@@ -13,6 +13,9 @@
 
 - (NSArray *)slideUpViews;
 - (NSArray *)slideDownViews;
+- (UITableView *)tableViewToBubble;
+
+- (void)modifyViewForHeaderUse:(UIView *)view;
 
 @end
 

@@ -23,7 +23,7 @@
     [self makeGradientBackground];
 }
 
--(void) makeGradientBackground
+-(void)makeGradientBackground
 {
     UIColor *firstColor = [UIColor colorWithRed:1.000 green:1.000 blue:1.000 alpha:1];
     UIColor *secondColor = [UIColor colorWithRed:0.031 green:0.290 blue:0.522 alpha:1];

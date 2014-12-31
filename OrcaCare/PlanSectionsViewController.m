@@ -17,9 +17,12 @@
 #import "RecoveryTableViewCellNew.h"
 #import "RecoveryTableView.h"
 #import <URBMediaFocusViewController/URBMediaFocusViewController.h>
+#import "BubbleTransition.h"
+#import "TimelineTableViewCell.h"
+#import <POP+MCAnimate.h>
 
 
-@interface PlanSectionsViewController () <UITableViewDataSource, UITableViewDelegate, URBMediaFocusViewControllerDelegate>
+@interface PlanSectionsViewController () <UITableViewDataSource, UITableViewDelegate, URBMediaFocusViewControllerDelegate, BubbleTransitionProtocol>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) CGFloat expandedCellHeight;
@@ -34,19 +37,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self makeHeaderGradient];
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.bounds.size.height, 0, 0, 0);
+}
+
+- (void)makeHeaderGradient {
     UIColor *firstColor = [UIColor whiteColor];
     UIColor *secondColor = [UIColor colorWithWhite:1 alpha:.7];
-    
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.colors = [NSArray arrayWithObjects: (id)firstColor.CGColor, (id)secondColor.CGColor, nil];
     
     gradient.frame = self.headerView.bounds;
-    gradient.startPoint = CGPointMake(0.5, 0);
-    gradient.endPoint = CGPointMake(0.5, 0.8);
+    gradient.startPoint = CGPointMake(0.5, 0.75);
+    gradient.endPoint = CGPointMake(0.5, 1.1);
     
     [self.headerView.layer insertSublayer:gradient atIndex:0];
-    
-    self.tableView.contentInset = UIEdgeInsetsMake(70, 0, 0, 0);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -295,6 +301,14 @@
     [cell openCellWithTableView:tableView forRowHeight:self.expandedCellHeight];
 }
 
+- (UITableView *)tableViewToBubble {
+    return self.tableView;
+}
 
+- (void)modifyViewForHeaderUse:(UIView *)view {
+    TimelineTableViewCell *cell = (TimelineTableViewCell *)view;
+    cell.doctorPicture.pop_spring.pop_scaleXY = CGPointMake(0.7, 0.7);
+//    cell.doctorLabel.pop_linear.center = CGPointMake(0.5, 0.5);
+}
 
 @end
