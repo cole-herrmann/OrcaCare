@@ -68,56 +68,56 @@
         cell = [[TimelineTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
-    Encounter *encounter = self.encounterVM.encounters[indexPath.row];
-    Provider *provider = encounter.provider;
+//    Encounter *encounter = self.encounterVM.encounters[indexPath.row];
+//    Provider *provider = encounter.provider;
+//    
+//    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:encounter.createdDate];
+//    NSInteger day = [components day];
+//    NSInteger month = [components month];
+//    NSInteger year = [components year];
+//    
+//    cell.doctorLabel.text = [NSString stringWithFormat:@"%@ %@ %@ %@", provider.prefix, provider.firstName, provider.lastName, provider.suffix];
+//    cell.dateLabel.text = [NSString stringWithFormat:@"%ld • %ld • %ld", (long)month, (long)day, (long)year];
+//    NSString *photoUrl = [NSString stringWithFormat:@"https:%@", provider.photoURL];
+//    [cell.doctorPicture sd_setImageWithURL:[NSURL URLWithString:photoUrl]
+//                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:encounter.createdDate];
-    NSInteger day = [components day];
-    NSInteger month = [components month];
-    NSInteger year = [components year];
     
-    cell.doctorLabel.text = [NSString stringWithFormat:@"%@ %@ %@ %@", provider.prefix, provider.firstName, provider.lastName, provider.suffix];
-    cell.dateLabel.text = [NSString stringWithFormat:@"%ld • %ld • %ld", (long)month, (long)day, (long)year];
-    NSString *photoUrl = [NSString stringWithFormat:@"https:%@", provider.photoURL];
-    [cell.doctorPicture sd_setImageWithURL:[NSURL URLWithString:photoUrl]
-                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-    
-    
-//    if(indexPath.row == 0){
-//        
-//        cell.doctorPicture.image = [UIImage imageNamed:@"docpic"];
-//        cell.doctorLabel.text = @"Dr. Chad Zeluff";
-//        cell.dateLabel.text = @"10 • 22 • 2014";
-//        
-//    }else if(indexPath.row == 1){
-//        
-//        cell.doctorPicture.image = [UIImage imageNamed:@"drli"];
-//        cell.doctorLabel.text = @"Dr. Li Hashimoto";
-//        cell.dateLabel.text = @"7 • 12 • 2013";
-//        
-//    }else if(indexPath.row == 2){
-//        
-//        cell.doctorPicture.image = [UIImage imageNamed:@"mark"];
-//        cell.doctorLabel.text = @"Dr. Mark Johnson";
-//        cell.dateLabel.text = @"4 • 8 • 2011";
-//    }else  if(indexPath.row == 3){
-//        
-//        cell.doctorPicture.image = [UIImage imageNamed:@"docpic"];
-//        cell.doctorLabel.text = @"Dr. Chad Zeluff";
-//        cell.dateLabel.text = @"10 • 22 • 2014";
-//        
-//    }else if(indexPath.row == 4){
-//        
-//        cell.doctorPicture.image = [UIImage imageNamed:@"drli"];
-//        cell.doctorLabel.text = @"Dr. Li Hashimoto";
-//        cell.dateLabel.text = @"7 • 12 • 2013";
-//        
-//    }else if(indexPath.row == 5){
-//        
-//        cell.doctorPicture.image = [UIImage imageNamed:@"mark"];
-//        cell.doctorLabel.text = @"Dr. Mark Johnson";
-//        cell.dateLabel.text = @"4 • 8 • 2011";
-//    }
+    if(indexPath.row == 0){
+        
+        cell.doctorPicture.image = [UIImage imageNamed:@"docpic"];
+        cell.doctorLabel.text = @"Dr. Chad Zeluff";
+        cell.dateLabel.text = @"10 • 22 • 2014";
+        
+    }else if(indexPath.row == 1){
+        
+        cell.doctorPicture.image = [UIImage imageNamed:@"drli"];
+        cell.doctorLabel.text = @"Dr. Li Hashimoto";
+        cell.dateLabel.text = @"7 • 12 • 2013";
+        
+    }else if(indexPath.row == 2){
+        
+        cell.doctorPicture.image = [UIImage imageNamed:@"mark"];
+        cell.doctorLabel.text = @"Dr. Mark Johnson";
+        cell.dateLabel.text = @"4 • 8 • 2011";
+    }else  if(indexPath.row == 3){
+        
+        cell.doctorPicture.image = [UIImage imageNamed:@"docpic"];
+        cell.doctorLabel.text = @"Dr. Chad Zeluff";
+        cell.dateLabel.text = @"10 • 22 • 2014";
+        
+    }else if(indexPath.row == 4){
+        
+        cell.doctorPicture.image = [UIImage imageNamed:@"drli"];
+        cell.doctorLabel.text = @"Dr. Li Hashimoto";
+        cell.dateLabel.text = @"7 • 12 • 2013";
+        
+    }else if(indexPath.row == 5){
+        
+        cell.doctorPicture.image = [UIImage imageNamed:@"mark"];
+        cell.doctorLabel.text = @"Dr. Mark Johnson";
+        cell.dateLabel.text = @"4 • 8 • 2011";
+    }
 
     
     return cell;
@@ -126,9 +126,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     self.selectedIndexPath = [self.tableView indexPathForSelectedRow];
     
-    PlanSectionsViewController *psvc = (PlanSectionsViewController *)segue.destinationViewController;
-    Encounter *e = self.encounterVM.encounters[self.selectedIndexPath.row];
-    psvc.encounter = self.encounterVM.encounters[self.selectedIndexPath.row];
+//    PlanSectionsViewController *psvc = (PlanSectionsViewController *)segue.destinationViewController;
+//    Encounter *e = self.encounterVM.encounters[self.selectedIndexPath.row];
+//    psvc.encounter = self.encounterVM.encounters[self.selectedIndexPath.row];
     
     NSArray *visibleIndexPaths = [self.tableView indexPathsForVisibleRows];
     NSIndexPath *lowestIndexPath = [visibleIndexPaths firstObject];

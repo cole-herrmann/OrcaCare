@@ -19,6 +19,8 @@
 #import "OrcaObject.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "Media.h"
+#import "RehabAssignment.h"
+#import "Rehab.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <URBMediaFocusViewController/URBMediaFocusViewController.h>
 
@@ -37,6 +39,7 @@ NSString *const handouts = @"H A N D O U T S";
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (nonatomic, strong) NSMutableArray *sectionsArray;
 @property (nonatomic, strong) NSArray *multipleChoiceDataSource;
+@property (nonatomic, strong) NSArray *recoveryDataSource;
 @property (nonatomic, strong) OrcaObject *orcaObjectForContent;
 @property (nonatomic, strong) MPMoviePlayerViewController *playerVC;
 
@@ -46,7 +49,7 @@ NSString *const handouts = @"H A N D O U T S";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+        
     UIColor *firstColor = [UIColor whiteColor];
     UIColor *secondColor = [UIColor colorWithWhite:1 alpha:.7];
     
@@ -94,13 +97,13 @@ NSString *const handouts = @"H A N D O U T S";
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if([tableView isEqual:self.tableView]){
-        return [self numberOfRowsForMainTableView];
+        return 4;//[self numberOfRowsForMainTableView];
     }else if([tableView isKindOfClass:[MultipleChoiceTableView class]]){
-        return [self.multipleChoiceDataSource count];
+        return 2;//[self.multipleChoiceDataSource count];
     }else if([tableView isKindOfClass:[ContentTableView class]]){
-        return [self.orcaObjectForContent.media count];
+        return 4;//[self.orcaObjectForContent.media count];
     }else{
-        return 4;
+        return 3;//[self.recoveryDataSource count];
     }
 }
 
@@ -158,8 +161,18 @@ NSString *const handouts = @"H A N D O U T S";
         cell = [[PlanSectionTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
-    cell.planSectionLabel.text = [self.sectionsArray[indexPath.row] valueForKey:@"title"];
-    cell.cellCircle.image = [UIImage imageNamed:(NSString *)[self.sectionsArray[indexPath.row] valueForKey:@"imageName"]];
+//    cell.planSectionLabel.text = [self.sectionsArray[indexPath.row] valueForKey:@"title"];
+//    cell.cellCircle.image = [UIImage imageNamed:(NSString *)[self.sectionsArray[indexPath.row] valueForKey:@"imageName"]];
+    
+    if(indexPath.row == 0){
+        cell.planSectionLabel.text = diagnosis;
+    }else if(indexPath.row == 1){
+        cell.planSectionLabel.text = treatment;
+    }else if(indexPath.row == 2){
+        cell.planSectionLabel.text = recovery;
+    }else if(indexPath.row == 3){
+        cell.planSectionLabel.text = handouts;
+    }
     
     return cell;
 }
@@ -177,8 +190,15 @@ NSString *const handouts = @"H A N D O U T S";
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    OrcaObject *orcaObject = self.multipleChoiceDataSource[indexPath.row];
-    cell.title.text = orcaObject.name;
+//    OrcaObject *orcaObject = self.multipleChoiceDataSource[indexPath.row];
+//    cell.title.text = orcaObject.name;
+    
+    if(indexPath.row % 2 == 0)
+    {
+        cell.title.text = @"Lumbar Disc Herniation";
+    }else{
+        cell.title.text = @"Spine Fracture";
+    }
     
     return cell;
 }
@@ -193,21 +213,28 @@ NSString *const handouts = @"H A N D O U T S";
         cell = [[ContentTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
-//    if(indexPath.row % 2 == 0){
-//        cell.title.text = @"Lumbar Disc Herniation";
-//    }else{
-//        cell.thumbnailImageView.image = [UIImage imageNamed:@"abnormal"];
-//        cell.title.text = @"Abnormal Disc";
-//    }
-    
+    if(indexPath.row == 0){
+        cell.title.text = @"Lumbar Disc Herniation";
+    }else if(indexPath.row == 1){
+        cell.thumbnailImageView.image = [UIImage imageNamed:@"abnormal"];
+        cell.title.text = @"Abnormal Disc";
+    }else if(indexPath.row == 2){
+        cell.thumbnailImageView.image = [UIImage imageNamed:@"normal"];
+        cell.title.text = @"Normal Disc";
+    }else if(indexPath.row == 3){
+        cell.thumbnailImageView.image = nil;
+        cell.thumbnailImageView.backgroundColor = [UIColor colorWithRed:0.031 green:0.290 blue:0.522 alpha:0.5];
+        cell.title.text = @"Lumbar Disc Herniation Description";
+    }
 
-    Media *m = self.orcaObjectForContent.media[indexPath.row];
-    
-    cell.title.text = m.name;
-    
-    NSString *photoUrl = [NSString stringWithFormat:@"https:%@", m.thumbUrl];
-    [cell.thumbnailImageView sd_setImageWithURL:[NSURL URLWithString:photoUrl]
-                          placeholderImage:nil];
+
+//    Media *m = self.orcaObjectForContent.media[indexPath.row];
+//    
+//    cell.title.text = m.name;
+//    
+//    NSString *photoUrl = [NSString stringWithFormat:@"https:%@", m.thumbUrl];
+//    [cell.thumbnailImageView sd_setImageWithURL:[NSURL URLWithString:photoUrl]
+//                          placeholderImage:nil];
     
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -228,6 +255,11 @@ NSString *const handouts = @"H A N D O U T S";
     cell.firstDetail.text = @"3 reps";
     cell.secondDetail.text = @"2 sets";
     cell.thirdDetail.text = @"1 time per day";
+    
+    
+//    RehabAssignment *rehabAssignment = self.recoveryDataSource[indexPath.row];
+//    Rehab *rehab = rehabAssignment.rehab;
+//    cell.title.text = rehab.name;
     
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -250,8 +282,9 @@ NSString *const handouts = @"H A N D O U T S";
     }else if([tableView isKindOfClass:[MultipleChoiceTableView class]]){
         
         PlanSectionTableViewCell *cell = (PlanSectionTableViewCell *)[self.tableView cellForRowAtIndexPath:self.expandedCellIndexPath];
-        self.orcaObjectForContent = self.multipleChoiceDataSource[indexPath.row];
-        self.multipleChoiceDataSource = nil;
+        
+//        self.orcaObjectForContent = self.multipleChoiceDataSource[indexPath.row];
+//        self.multipleChoiceDataSource = nil;
        
         [cell closeCellRemoveCollectionView:^{
             
@@ -269,37 +302,57 @@ NSString *const handouts = @"H A N D O U T S";
         self.mediaVC = [[URBMediaFocusViewController alloc]init];
         self.mediaVC.shouldDismissOnImageTap = YES;
         
-//        NSString *imageName = (indexPath.row % 2 == 0) ? @"spine" : @"abnormal";
-        
-        Media *m = self.orcaObjectForContent.media[indexPath.row];
-        if([m.fileContentType  isEqual: @"video/mp4"]){
-            
-            NSString *videoUrlString = [NSString stringWithFormat:@"https:%@", m.fullUrl];
-            NSURL *videoUrl = [NSURL URLWithString:videoUrlString];
-            self.playerVC = [[MPMoviePlayerViewController alloc] initWithContentURL:videoUrl];
-            self.playerVC.view.alpha = 0.0;
-            [self addChildViewController:self.playerVC];
-            [self.view addSubview:self.playerVC.view];
-            
-            [UIView animateWithDuration:0.4 animations:^{
-                self.playerVC.view.alpha = 1.0;
-            }];
-            
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(movieDone:)
-                                                         name:MPMoviePlayerPlaybackDidFinishNotification
-                                                       object:nil];
-            
-//            [self.mediaVC showImageFromURL:videoUrl fromView:[tableView cellForRowAtIndexPath:indexPath]];
-            
-        }else{
-            NSString *photoUrlString = [NSString stringWithFormat:@"https:%@", m.fullUrl];
-            NSURL *photoUrl = [NSURL URLWithString:photoUrlString];
-            [self.mediaVC showImageFromURL:photoUrl fromView:[tableView cellForRowAtIndexPath:indexPath]];
-        }
+        NSString *imageName = (indexPath.row % 2 == 0) ? @"spine" : @"abnormal";
+        [self.mediaVC showImage:[UIImage imageNamed:imageName] fromView:[tableView cellForRowAtIndexPath:indexPath]];
+
+//
+//        Media *m = self.orcaObjectForContent.media[indexPath.row];
+//        if([m.fileContentType  isEqual: @"video/mp4"]){
+//            
+//            NSString *videoUrlString = [NSString stringWithFormat:@"https:%@", m.fullUrl];
+//            NSURL *videoUrl = [NSURL URLWithString:videoUrlString];
+//            self.playerVC = [[MPMoviePlayerViewController alloc] initWithContentURL:videoUrl];
+//            self.playerVC.view.alpha = 0.0;
+//            [self addChildViewController:self.playerVC];
+//            [self.view addSubview:self.playerVC.view];
+//            
+//            [UIView animateWithDuration:0.4 animations:^{
+//                self.playerVC.view.alpha = 1.0;
+//            }];
+//            
+//            [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                     selector:@selector(movieDone:)
+//                                                         name:MPMoviePlayerPlaybackDidFinishNotification
+//                                                       object:nil];
+//            
+////            [self.mediaVC showImageFromURL:videoUrl fromView:[tableView cellForRowAtIndexPath:indexPath]];
+//            
+//        }else{
+//            NSString *photoUrlString = [NSString stringWithFormat:@"https:%@", m.fullUrl];
+//            NSURL *photoUrl = [NSURL URLWithString:photoUrlString];
+//            
+//            [self.mediaVC showImageFromURL:photoUrl fromView:[tableView cellForRowAtIndexPath:indexPath]];
+//        }
        
-//        [self.mediaVC showImage:[UIImage imageNamed:imageName] fromView:[tableView cellForRowAtIndexPath:indexPath]];
     
+    }else if([tableView isKindOfClass:[RecoveryTableView class]]){
+        NSURL *videoUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"recoveryVideo" ofType:@"mp4"]];
+
+        self.playerVC = [[MPMoviePlayerViewController alloc] initWithContentURL:videoUrl];
+        self.playerVC.view.alpha = 0.0;
+        [self addChildViewController:self.playerVC];
+        [self.view addSubview:self.playerVC.view];
+
+        [UIView animateWithDuration:0.4 animations:^{
+            self.playerVC.view.alpha = 1.0;
+        }];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(movieDone:)
+                                                     name:MPMoviePlayerPlaybackDidFinishNotification
+                                                   object:nil];
+
+//            [self.mediaVC showImageFromURL:videoUrl fromView:[tableView cellForRowAtIndexPath:indexPath]];
     }
     
 }
@@ -318,7 +371,7 @@ NSString *const handouts = @"H A N D O U T S";
 {
     PlanSectionTableViewCell *cell = (PlanSectionTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     
-    NSDictionary *selectedDictionary = self.sectionsArray[indexPath.row];
+//    NSDictionary *selectedDictionary = self.sectionsArray[indexPath.row];
 
     //if the selected cell is already open, close it.
     if([indexPath isEqual:self.expandedCellIndexPath]){
@@ -334,37 +387,40 @@ NSString *const handouts = @"H A N D O U T S";
             [(PlanSectionTableViewCell *)[tableView cellForRowAtIndexPath:self.expandedCellIndexPath] closeCellRemoveCollectionView:nil];
         }
         
-        NSString *cellTitle = [selectedDictionary valueForKey:@"title"];
+//        NSString *cellTitle = [selectedDictionary valueForKey:@"title"];
         
-        if([[selectedDictionary valueForKey:@"content"] count] > 1 && (cellTitle == diagnosis || cellTitle == treatment)){
+        if(indexPath.row == 0/*[[selectedDictionary valueForKey:@"content"] count] > 1 && (cellTitle == diagnosis || cellTitle == treatment)*/){
            
-            self.multipleChoiceDataSource = [selectedDictionary valueForKey:@"content"];
+//            self.multipleChoiceDataSource = [selectedDictionary valueForKey:@"content"];
             
             [self addTableViewToCellWithNibName:@"MultipleChoiceTableView"
                                     withCellNibName:@"MutlipleChoiceTableViewCell"
                             withReuseIdentifier:@"MultipleChoiceCell"
                                          toCell:cell];
             
-        }else if([[selectedDictionary valueForKey:@"content"] count] == 1 && (cellTitle == diagnosis || cellTitle == treatment)){
+        }else if(indexPath.row == 1 || indexPath.row == 3/*[[selectedDictionary valueForKey:@"content"] count] == 1 && (cellTitle == diagnosis || cellTitle == treatment)*/){
             
-            self.orcaObjectForContent = [[selectedDictionary valueForKey:@"content"] firstObject];
+//            self.orcaObjectForContent = [[selectedDictionary valueForKey:@"content"] firstObject];
             
             [self addTableViewToCellWithNibName:@"ContentTableView"
                                 withCellNibName:@"ContentTableViewCell"
                             withReuseIdentifier:@"ContentTableViewCell"
                                          toCell:cell];
             
-        }else if(cellTitle == recovery){
+        }else if(indexPath.row == 2){
+            
+//            self.recoveryDataSource = [selectedDictionary valueForKey:@"content"];
+
             [self addTableViewToCellWithNibName:@"RecoveryTableView"
                                     withCellNibName:@"RecoveryTableViewCell"
                             withReuseIdentifier:@"RecoveryTableViewCell"
                                          toCell:cell];
-        }else{
+        }/*else{
             [self addTableViewToCellWithNibName:@"ContentTableView"
                                     withCellNibName:@"ContentTableViewCell"
                             withReuseIdentifier:@"ContentTableViewCell"
                                          toCell:cell];
-        }
+        }*/
         
         self.expandedCellIndexPath = indexPath;
     }

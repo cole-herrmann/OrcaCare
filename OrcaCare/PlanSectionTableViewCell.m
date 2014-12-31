@@ -34,9 +34,9 @@
     self.tableView.alpha = 0;
     
     self.tableView.frame = CGRectMake(CGRectGetMaxX(self.cellCircle.frame),
-                                      CGRectGetMaxY(self.subtitleLabel.frame) + 15,
+                                      CGRectGetMaxY(self.subtitleLabel.frame) + 8,
                                       (self.contentView.frame.size.width - CGRectGetMaxX(self.cellCircle.frame)) - 5,
-                                      rowHeight - CGRectGetMaxY(self.subtitleLabel.frame));
+                                      rowHeight + 15);
 
     [self.contentView addSubview:self.tableView];
     
