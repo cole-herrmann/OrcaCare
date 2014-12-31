@@ -321,7 +321,15 @@ NSString *const handouts = @"H A N D O U T S";
         self.mediaVC = [[URBMediaFocusViewController alloc]init];
         self.mediaVC.shouldDismissOnImageTap = YES;
         
-        NSString *imageName = (indexPath.row % 2 == 0) ? @"spine" : @"abnormal";
+        NSString *imageName;
+        if(indexPath.row == 0){
+           imageName = @"spine";
+        }else if(indexPath.row == 1){
+            imageName = @"abnormal";
+        }else if(indexPath.row == 2){
+            imageName = @"normal";
+        }
+        
         [self.mediaVC showImage:[UIImage imageNamed:imageName] fromView:[tableView cellForRowAtIndexPath:indexPath]];
 
 //
