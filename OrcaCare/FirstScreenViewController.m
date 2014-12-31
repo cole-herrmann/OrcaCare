@@ -128,7 +128,7 @@
         self.dismissButton.pop_spring.alpha = 0;
         
         self.blueWhale.layer.pop_spring.pop_translationY = -50;
-        self.blueWhale.layer.pop_spring.pop_scaleXY = CGPointMake(0.8, 0.8);
+        self.blueWhale.layer.pop_spring.pop_scaleXY = CGPointMake(1, 1);
 
         
         UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
